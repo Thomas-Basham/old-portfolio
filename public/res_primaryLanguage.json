@@ -1,9 +1,9 @@
 {
     "basic_info": {
-      "description_header": "Hi",
-      "description": "👋 I'm Ursula Lopez. Fictional person for preview purposes :) I'm working with newest front-end frameworks like Angular, React and Vue. What you are seeing now is portfolio template from Code Fellows. If you like this portfolio template, make sure to ⭐ the repository to make it more recognizable for other users. Thank you 💜",
+      "description_header": "Hello!",
+      "description": "My name is Thomas Basham and I am a bootcamp and partially self taught Software Developer. I am a US Army Veteran and a former carpenter. I decided to start learning Software Development because I was feeling like the only enthusiastic person in my former trade of carpentry. I want to be challenged mentally and also flex my creativity and be apart of a community of driven, talented people in an environment where everyone is constantly learning, so after researching all of the available languages that the preferred bootcamp in my area is currently teaching, I chose to learn Python because it appears to be the most in demand and fluid language I can learn, although I hope this is barely the start of how many languages I will learn throughout my career. I’m looking forward to bringing my creative skills and strong work ethic that I’ve gained from my experience in the Army and as a Carpenter to the tech community. ",
       "section_name": {
-        "about": "About me",
+        "about": "",
         "projects": "Projects",
         "skills": "Skills",
         "experience": "Experience"
@@ -88,15 +88,10 @@
           "Angular 8/9/10"
         ],
         "technologies": [
-          "REST API",
-          "RxJS",
+
           "JavaScript",
-          "Bootstrap",
-          "MDBootstrap",
-          "EF Core",
-          ".NET Core",
-          "SignalR",
-          "Angular Material"
+          "Bootstrap"
+    
         ]
       },
       {
