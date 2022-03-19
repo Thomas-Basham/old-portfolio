@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Switch from "react-switch";
+// import Switch from "react-switch";
 import Nav from 'react-bootstrap/Nav'
 import { LinkContainer } from "react-router-bootstrap";
 
@@ -56,7 +56,7 @@ class Header extends Component {
             </LinkContainer>
           </Nav.Item>
           <Nav.Item>
-            <Switch 
+            {/* <Switch 
               checked={this.state.checked}
               onChange={this.onThemeSwitchChange}
               offColor="#baaa80"
@@ -95,7 +95,7 @@ class Header extends Component {
                 ></span>
               }
               id="icon-switch"
-            />
+            /> */}
           </Nav.Item>
         </Nav>
         <div className="row aligner" style={{height: '100%'}}>

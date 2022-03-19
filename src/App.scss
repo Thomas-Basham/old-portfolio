@@ -34,11 +34,12 @@ header {
 	height: 520px;
 	min-height: 450px;
 	width: 100%;
-	background-size: cover;
+	color: white;
+	background-size:contain;
 	-webkit-background-size: cover;
 	text-align: center;
 	overflow: hidden;
-	background-color: #e9d5a1;
+	background-image: url(../public/images/codewallpaper.png);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -95,7 +96,7 @@ header h1 {
 	font-size: 400%;
 	text-align: center;
 	font-weight: 600 !important;
-	color: #353239;
+	color: #ffffff;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	margin: 0 auto 18px auto;
 	width: 100%;
@@ -231,7 +232,7 @@ header h1 {
 }
 
 #resume {
-	background: #efe1bd;
+	background-image: linear-gradient(to right top, #061123, #0c1a2d, #122237, #172a41, #1d334c);
 }
 
 .experience-icon {
@@ -245,7 +246,7 @@ header h1 {
 	text-align: left !important;
 	padding: 5px 8px 5px 8px !important;
 	vertical-align: baseline;
-	background-color: #AE944F !important;
+	background-color: #061123 !important;
 	color: white;
 	font-weight: lighter !important;
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -353,7 +354,7 @@ header h1 {
 }
 
 #portfolio {
-	background: #efe1bd;
+	background-image: linear-gradient(to right top, #061123, #0c1a2d, #122237, #172a41, #1d334c);
 	padding-bottom: 5%;
 }
 
