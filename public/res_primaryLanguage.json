@@ -11,102 +11,123 @@
     },
     "projects": [
       {
-        "title": "Animal Shelter",
-        "startDate": "2020",
-        "description": "The most expanded application I had opportunity to work with. I've learned many technologies and my code was reviewed by awesome curator. Application handles all adoption processess and allows to store all evidence on adopting animals from animal shelter.",
+        "title": "Bus Mall",
+        "startDate": "2022",
+        "description": "A Web Application that takes a client's product images and allows the user to vote their favorite out of 3 displayed giving the client market research information ",
         "images": [
-          "images/portfolio/animal-shelter/p1.jpg",
-          "images/portfolio/animal-shelter/p2.jpg"
+          "images/portfolio/busmall/busmall.png"
         ],
         "url": "",
         "technologies": [
           {
-            "class": "devicon-angularjs-plain",
-            "name": "Angular"
+            "class": "devicon-javascript-plain",
+            "name": "Javascript"
           },
           {
-            "class": "devicon-typescript-plain",
-            "name": "TypeScript"
+            "class": "devicon-html5-plain",
+            "name": "HTML5"
           },
           {
-            "class": "devicon-csharp-plain",
-            "name": "C#"
+            "class": "devicon-css3-plain",
+            "name": "CSS3"
           }
         ]
       },
       {
-        "title": "Photography",
-        "startDate": "2018",
-        "description": "Personal project for study subject. I was responsible for testing photography application that optimizes images with popular algorithms used by graphic editors like Pixlr or Adobe Photoshop. I've earned A grade :)",
+        "title": "Salmon Cookies",
+        "startDate": "2022",
+        "description": "A web application that compiles relevant fictional product sales so that the client can have more accurate stock and staff counts",
         "images": [
-          "images/portfolio/photography/p1.jpg",
-          "images/portfolio/photography/p2.jpg"
+          "images/portfolio/salmoncookies/salmoncookies.png"
         ],
         "url": "https://github.com",
         "technologies": [
-          {
-            "class": "devicon-react-original",
-            "name": "React"
-          },
           {
             "class": "devicon-javascript-plain",
-            "name": "JavaScript"
+            "name": "Javascript"
+          },
+          {
+            "class": "devicon-html5-plain",
+            "name": "HTML5"
+          },
+          {
+            "class": "devicon-css3-plain",
+            "name": "CSS3"
           }
         ]
       },
       {
-        "title": "3D Object Viewer",
-        "startDate": "2015",
-        "description": "One of the first apps I was working on my internship. I had to develop front-end implementation for app that shows 3D models of known buildings. This was also my first project in Angular framework. I've learned a lot!",
+        "title": "Beverly Hills Madlibs",
+        "startDate": "2022",
+        "description": "A madlibs style web application that takes in a users input and writes a pre-curated story with the users words inserted. Made with with James Brooks, Marcus Hartwig, and Abdinnasir Yussuf. Titled Beverly Hills per our groupname",
         "images": [
-          "images/portfolio/adventure/p1.jpg",
-          "images/portfolio/adventure/p2.jpg"
+          "images/portfolio/wordgame/wordgame.png",
+          "images/portfolio/wordgame/domain-map.jpg"
         ],
         "url": "https://github.com",
         "technologies": [
           {
-            "class": "devicon-angularjs-plain",
-            "name": "Angular"
+            "class": "devicon-javascript-plain",
+            "name": "Javascript"
           },
           {
-            "class": "devicon-typescript-plain",
-            "name": "TypeScript"
+            "class": "devicon-html5-plain",
+            "name": "HTML5"
           },
           {
-            "class": "devicon-csharp-plain",
-            "name": "C#"
+            "class": "devicon-css3-plain",
+            "name": "CSS3"
           }
         ]
       }
     ],
     "experience": [
       {
-        "company": "DefOpenSource",
-        "title": "Front-End Developer",
-        "years": "10.2019 - present",
+        "company": "Code Fellows",
+        "title": "Student",
+        "years": "02.2022 - present",
         "mainTech": [
-          "Angular 8/9/10"
+          "Javascript"
         ],
         "technologies": [
 
+          "HTML5",
+          "CSS3",
           "JavaScript",
-          "Bootstrap"
+          "Bootstrap",
+          "React"
+    
+        ]
+      },
+
+      {
+        "company": "Icon Collective College of Music",
+        "title": "Student",
+        "years": "01.2020 - 01.2021",
+        "mainTech": [
+          "Music Production"
+        ],
+        "technologies": [
+
+          "Ableton Live",
+          "Serum",
+          "Ozone Suite",
+          "Logic Pro"
     
         ]
       },
       {
-        "company": "Serros Solutions",
-        "title": "Intern",
-        "years": "01.2018 - 09.2019",
+        "company": "Art Institute of Seattle",
+        "title": "Student",
+        "years": "01.2015 - 05.2016",
         "mainTech": [
-          "Angular 7/8"
+          "Adobe Creative Suite"
         ],
         "technologies": [
-          "RxJS",
-          "Django",
-          "PHP",
-          "JavaScript",
-          "DHTMLX Gantt"
+          "Photoshop",
+          "Illustrator",
+          "After Effects",
+          "Premiere"
         ]
       }
     ]

@@ -39,8 +39,13 @@
           "level": "70"
         },
         {
-          "name": "Sass",
-          "class": "devicon-sass-original",
+          "name": "React",
+          "class": "devicon-react-plain",
+          "level": "95"
+        },
+        {
+          "name": "Bootstrap",
+          "class": "devicon-bootstrap-plain",
           "level": "75"
         }
 
