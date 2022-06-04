@@ -1,7 +1,7 @@
 {
     "basic_info": {
       "name": "Thomas Basham",
-      "titles": [ "Carpenter, Music Producer, Software Developer" ],
+      "titles": [ "Full Stack Software Developer" ],
       "social": [
         {
           "name": "github",
@@ -10,7 +10,7 @@
         },
         {
           "name": "linkedin",
-          "url": "https://www.linkedin.com/in/thomas-basham/",
+          "url": "https://www.linkedin.com/in/thomas-basham",
           "class": "fab fa-linkedin"
         },
         {
