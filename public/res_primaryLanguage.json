@@ -14,7 +14,7 @@
       {
         "title": "Digital Bookshelf",
         "startDate": "May 2022",
-        "description": "A full-stack mobile-first web app that allows users to sign in securely, manage their own digital bookshelf, and add books from Google Books™  API ",
+        "description": "A full stack mobile-first React web app that allows users to sign in securely, manage their own digital bookshelf, and add books from Google Books™  API ",
         "images": [
           "images/portfolio/digitalBookshelf/DigBooks1.png",
           "images/portfolio/digitalBookshelf/DigBooks02.png",
@@ -25,7 +25,7 @@
           "images/portfolio/digitalBookshelf/DigBooks6.png"
 
         ],
-        "url": "",
+        "url": "https://digitalbookshelf.netlify.app",
         "technologies": [
           {
             "class": "devicon-javascript-plain",
@@ -58,16 +58,16 @@
         ]
       },
       {
-        "title": "Salmon Cookies",
+        "title": "City explorer",
         "startDate": "May 2022",
-        "description": "A web application that compiles relevant fictional product sales so that the client can have more accurate stock and staff counts",
+        "description": "A Full Stack React web application that compiles relevant fictional product sales so that the client can have more accurate stock and staff counts",
         "images": [
             "images/portfolio/cityExplorer/cityExplorer3.png",
             "images/portfolio/cityExplorer/cityExplorer4.png",
             "images/portfolio/cityExplorer/cityExplorer5.png",
             "images/portfolio/cityExplorer/cityExplorer6.png"
         ],
-        "url": "https://github.com",
+        "url": "https://city-explorer-thomas-basham.netlify.app",
         "technologies": [
           {
             "class": "devicon-javascript-plain",
@@ -100,18 +100,162 @@
         ]
       },
       {
-        "title": "Beverly Hills Madlibs",
+        "title": "Hiking Trails API",
         "startDate": "2022",
-        "description": "A madlibs style web application that takes in a users input and writes a pre-curated story with the users words inserted. Made with with James Brooks, Marcus Hartwig, and Abdinnasir Yussuf. Titled Beverly Hills per our groupname",
+        "description": "A Full Stack Django Restful Services API for storing favorite hiking trails, built with Django Rest Framework, PostgreSQL, Pandas, and Folium",
         "images": [
-          "images/portfolio/wordgame/wordgame.png",
-          "images/portfolio/wordgame/domain-map.jpg"
+          "images/portfolio/HikingTrailsAPI/HikingTrailsAPI1.png",
+          "images/portfolio/HikingTrailsAPI/HikingTrailsAPI2.png",
+          "images/portfolio/HikingTrailsAPI/HikingTrailsAPI3.png",
+          "images/portfolio/HikingTrailsAPI/HikingTrailsAPI4.png",
+          "images/portfolio/HikingTrailsAPI/HikingTrailsAPI5.png",
+          "images/portfolio/HikingTrailsAPI/HikingTrailsAPI6.png"
         ],
-        "url": "https://github.com",
+        "url": "https://trails-api-thomas-basham.herokuapp.com",
         "technologies": [
           {
-            "class": "devicon-javascript-plain",
-            "name": "Javascript"
+            "class": "devicon-python-plain",
+            "name": "Python"
+          },
+          {
+            "class": "devicon-django-plain",
+            "name": "Django"
+          },
+          {
+            "class": "devicon-postgresql-plain",
+            "name": "PostgreSQL"
+          },
+          {
+            "class": "devicon-plain",
+            "name": "Pandas"
+          },
+          {
+            "class": "devicon-Folium-plain",
+            "name": "Folium"
+          },
+          {
+            "class": "devicon-html5-plain",
+            "name": "HTML5"
+          },
+          {
+            "class": "devicon-css3-plain",
+            "name": "CSS3"
+          }
+        ]
+      },
+      {
+        "title": "Music API",
+        "startDate": "2022",
+        "description": "A Full Stack Django Restful Services API for storing favorite music, built with Django Rest Framework, PostgreSQL, Paginator, Wavesurfer, and AWS S3 bucket for user file uploads",
+        "images": [
+          "images/portfolio/MusicAPI/MusicAPI1.png",
+          "images/portfolio/MusicAPI/MusicAPI2.png",
+          "images/portfolio/MusicAPI/MusicAPI3.png",
+          "images/portfolio/MusicAPI/MusicAPI4.png"
+        ],
+        "url": "https://music-api-thomas-basham.herokuapp.com/",
+        "technologies": [
+          {
+            "class": "devicon-python-plain",
+            "name": "Python"
+          },
+          {
+            "class": "devicon-django-plain",
+            "name": "Django"
+          },
+          {
+            "class": "devicon-postgresql-plain",
+            "name": "PostgreSQL"
+          },
+          {
+            "class": "devicon-amazonwebservices-plain",
+            "name": "AWS S3 Bucket"
+          },
+          {
+            "class": "devicon-html5-plain",
+            "name": "HTML5"
+          },
+          {
+            "class": "devicon-css3-plain",
+            "name": "CSS3"
+          }
+        ]
+      },
+      {
+        "title": "Puppy Pics API",
+        "startDate": "2022",
+        "description": "A Full Stack Django Restful Services API for storing favorite family pet pics, built with Django Rest Framework, PostgreSQL, and Cloudinary for user file uploads",
+        "images": [
+          "images/portfolio/PuppyPicAPI/PuppyPicAPI1.png",
+          "images/portfolio/PuppyPicAPI/PuppyPicAPI2.png",
+          "images/portfolio/PuppyPicAPI/PuppyPicAPI3.png",
+          "images/portfolio/PuppyPicAPI/PuppyPicAPI4.png",
+          "images/portfolio/PuppyPicAPI/PuppyPicAPI5.png",
+          "images/portfolio/PuppyPicAPI/PuppyPicAPI6.png"
+
+        ],
+        "url": "https://puppy-pics-api-thomas-basham.herokuapp.com",
+        "technologies": [
+          {
+            "class": "devicon-python-plain",
+            "name": "Python"
+          },
+          {
+            "class": "devicon-django-plain",
+            "name": "Django"
+          },
+          {
+            "class": "devicon-postgresql-plain",
+            "name": "PostgreSQL"
+          },
+          {
+            "class": "devicon-cloudinary-plain",
+            "name": "Couldinary"
+          },
+          {
+            "class": "devicon-djangorestframework-plain",
+            "name": "Django Rest framework"
+          },
+          {
+            "class": "devicon-html5-plain",
+            "name": "HTML5"
+          },
+          {
+            "class": "devicon-css3-plain",
+            "name": "CSS3"
+          }
+        ]
+      },
+      {
+        "title": "Washington Stocked Trout Finder",
+        "startDate": "2022",
+        "description": "A Full Stack Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State. Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
+        "images": [
+          "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes1.png",
+          "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes2.png",
+          "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes3.png"
+        ],
+        "url": "https://wa-stocked-trout-finder.herokuapp.com",
+        "technologies": [
+          {
+            "class": "devicon-python-plain",
+            "name": "Python"
+          },
+          {
+            "class": "devicon-flask-plain",
+            "name": "Flask"
+          },
+          {
+            "class": "devicon-beautifulsoup-plain",
+            "name": "Beautiful Soup"
+          },
+          {
+            "class": "devicon-plain",
+            "name": "Pandas"
+          },
+          {
+            "class": "devicon-Folium-plain",
+            "name": "Folium"
           },
           {
             "class": "devicon-html5-plain",

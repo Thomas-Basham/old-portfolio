@@ -9,6 +9,7 @@ class ProjectDetailsModal extends Component {
     if (this.props.data) {
       const technologies = this.props.data.technologies;
       const images = this.props.data.images;
+      const deployedlink = this.props.data.deployedlink;
       var title = this.props.data.title;
       var description = this.props.data.description;
       var url = this.props.data.url;
@@ -30,7 +31,13 @@ class ProjectDetailsModal extends Component {
         });
         if (this.props.data.images) {
           var img = images.map((elem, i) => {
-            return <div style={{marginInline:"auto", position:"relative"}} key={i} data-src={elem} />;
+            return (
+              <div
+                style={{ marginInline: "auto", position: "relative" }}
+                key={i}
+                data-src={elem}
+              />
+            );
           });
         }
       }
@@ -46,9 +53,12 @@ class ProjectDetailsModal extends Component {
         <span onClick={this.props.onHide} className="modal-close">
           <i className="fas fa-times fa-3x close-icon"></i>
         </span>
-        <div  className="col-md-12">
-          <div className="col-md-10 mx-auto" style={{ paddingBottom: "50px", textAlign:"center" }}>
-            <div className="slider-tab" >
+        <div className="col-md-12">
+          <div
+            className="col-md-10 mx-auto"
+            style={{ paddingBottom: "50px", textAlign: "center" }}
+          >
+            <div className="slider-tab">
               <span
                 className="iconify slider-iconfiy"
                 data-icon="emojione:red-circle"
