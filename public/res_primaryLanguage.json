@@ -272,17 +272,53 @@
       {
         "company": "Code Fellows",
         "title": "Student",
-        "years": "02.2022 - present",
+        "years": "04.2022 - 06.2022",
         "mainTech": [
-          "Javascript"
+          "Certificate for Software Development in Python"
         ],
         "technologies": [
 
+          "Python",
+          "Django",
+          "Flask",
+          "Pandas",
+          "PostgreSQL",
+          "Folium",
+          "JavaScript",
+          "JavaScript",
+          "MongoDB",
+          "ExpressJS",
+          "React",
+          "NodeJS",
+          "VS Code",
+          "Heroku",
+          "Netlify",
           "HTML5",
           "CSS3",
+          "Bootstrap"
+    
+        ]
+      },
+      {
+        "company": "Code Fellows",
+        "title": "Student",
+        "years": "02.2022 - 04.2022",
+        "mainTech": [
+          "Certificate for Advanced Software Development in Javascript"
+        ],
+        "technologies": [
+
           "JavaScript",
-          "Bootstrap",
-          "React"
+          "MongoDB",
+          "ExpressJS",
+          "React",
+          "NodeJS",
+          "VS Code",
+          "Heroku",
+          "Netlify",
+          "HTML5",
+          "CSS3",
+          "Bootstrap"
     
         ]
       },
@@ -292,7 +328,7 @@
         "title": "Student",
         "years": "01.2020 - 01.2021",
         "mainTech": [
-          "Music Production"
+          "Certificate in Music Production on campus, Los Angeles"
         ],
         "technologies": [
 
@@ -301,6 +337,20 @@
           "Ozone Suite",
           "Logic Pro"
     
+        ]
+      },
+      {
+        "company": "Westmark Construction",
+        "title": "Lead Carpenter",
+        "years": "05.2018 - 12.2019",
+        "mainTech": [
+          "Commercial Building Carpentry/Maintenance"
+        ],
+        "technologies": [
+          "Framing",
+          "Finish Carpentry",
+          "Remodel Carpentry",
+          "Building Maintenance"
         ]
       },
       {
@@ -315,6 +365,20 @@
           "Illustrator",
           "After Effects",
           "Premiere"
+        ]
+      },
+      {
+        "company": "US Army",
+        "title": "Cavalry Scout (Sergeant)",
+        "years": "11.2011 - 03.2015",
+        "mainTech": [
+          "Team Leader"
+        ],
+        "technologies": [
+          "Leadership",
+          "Teamwork",
+          "Integrity",
+          "Accountability"
         ]
       }
     ]
