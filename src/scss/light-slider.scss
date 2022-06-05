@@ -113,13 +113,12 @@ $content-background-color: #D7CAAA;
     @extend %fill-parent;
     background-color: var(--content-background-color);
     overflow: hidden;
-    width: 321px;
     height: 100%;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    > img,
+    > img
     > video {
       width: 100%;
       position: absolute;

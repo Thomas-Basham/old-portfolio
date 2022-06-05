@@ -59,10 +59,13 @@
       },
       {
         "title": "Salmon Cookies",
-        "startDate": "2022",
+        "startDate": "May 2022",
         "description": "A web application that compiles relevant fictional product sales so that the client can have more accurate stock and staff counts",
         "images": [
-          "images/portfolio/salmoncookies/salmoncookies.png"
+            "images/portfolio/cityExplorer/cityExplorer3.png",
+            "images/portfolio/cityExplorer/cityExplorer4.png",
+            "images/portfolio/cityExplorer/cityExplorer5.png",
+            "images/portfolio/cityExplorer/cityExplorer6.png"
         ],
         "url": "https://github.com",
         "technologies": [
@@ -71,8 +74,24 @@
             "name": "Javascript"
           },
           {
-            "class": "devicon-html5-plain",
-            "name": "HTML5"
+            "class": "devicon-react-plain",
+            "name": "React"
+          },
+          {
+            "class": "devicon-mongodb-plain",
+            "name": "MongoDB"
+          },
+          {
+            "class": "devicon-express-original",
+            "name": "ExpressJS"
+          },
+          {
+            "class": "devicon-nodejs-plain",
+            "name": "NodeJS"
+          },
+          {
+            "class": "devicon-bootstrap-plain",
+            "name": "Bootstrap"
           },
           {
             "class": "devicon-css3-plain",
