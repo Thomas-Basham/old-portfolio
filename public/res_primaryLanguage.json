@@ -1,7 +1,8 @@
 {
     "basic_info": {
-      "description_header": "Hello!",
-      "description": "My name is Thomas Basham and I am a bootcamp and partially self taught Software Developer. I am a US Army Veteran and a former carpenter. I decided to start learning Software Development because I was feeling like the only enthusiastic person in my former trade of carpentry. I want to be challenged mentally and also flex my creativity and be apart of a community of driven, talented people in an environment where everyone is constantly learning, so after researching all of the available languages that the preferred bootcamp in my area is currently teaching, I chose to learn Python because it appears to be the most in demand and fluid language I can learn, although I hope this is barely the start of how many languages I will learn throughout my career. I’m looking forward to bringing my creative skills and strong work ethic that I’ve gained from my experience in the Army and as a Carpenter to the tech community. ",
+      "description_header": "Greetings! 🖖👽💻🌲🏔",
+      "description": "My name is Thomas Basham, I’m a Software Developer based in the Seattle area and I’m also a US Army Veteran. Before I learned how to write code, I made houses and commercial buildings beautiful with my carpentry skills. I enjoy making things and I have a curious mind, which is why one day while looking for other options in life things pointed to Software Development. I love a good mental challenge, and I like to learn as fast as possible so that’s why I picked a bootcamp to start my journey into coding and the experience has been transformative. ",
+      
       "section_name": {
         "about": "",
         "projects": "Projects",
@@ -11,11 +12,18 @@
     },
     "projects": [
       {
-        "title": "Bus Mall",
-        "startDate": "2022",
-        "description": "A Web Application that takes a client's product images and allows the user to vote their favorite out of 3 displayed giving the client market research information ",
+        "title": "Digital Bookshelf",
+        "startDate": "May 2022",
+        "description": "A full-stack mobile-first web app that allows users to sign in securely, manage their own digital bookshelf, and add books from Google Books™  API ",
         "images": [
-          "images/portfolio/busmall/busmall.png"
+          "images/portfolio/digitalBookshelf/DigBooks1.png",
+          "images/portfolio/digitalBookshelf/DigBooks02.png",
+          "images/portfolio/digitalBookshelf/DigBooks2.png",
+          "images/portfolio/digitalBookshelf/DigBooks3.png",
+          "images/portfolio/digitalBookshelf/DigBooks4.png",
+          "images/portfolio/digitalBookshelf/DigBooks5.png",
+          "images/portfolio/digitalBookshelf/DigBooks6.png"
+
         ],
         "url": "",
         "technologies": [
@@ -24,8 +32,24 @@
             "name": "Javascript"
           },
           {
-            "class": "devicon-html5-plain",
-            "name": "HTML5"
+            "class": "devicon-react-plain",
+            "name": "React"
+          },
+          {
+            "class": "devicon-mongodb-plain",
+            "name": "MongoDB"
+          },
+          {
+            "class": "devicon-express-original",
+            "name": "ExpressJS"
+          },
+          {
+            "class": "devicon-nodejs-plain",
+            "name": "NodeJS"
+          },
+          {
+            "class": "devicon-bootstrap-plain",
+            "name": "Bootstrap"
           },
           {
             "class": "devicon-css3-plain",

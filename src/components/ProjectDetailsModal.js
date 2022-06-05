@@ -30,7 +30,7 @@ class ProjectDetailsModal extends Component {
         });
         if (this.props.data.images) {
           var img = images.map((elem, i) => {
-            return <div key={i} data-src={elem} />;
+            return <div style={{marginInline:"auto", position:"relative"}} key={i} data-src={elem} />;
           });
         }
       }
@@ -38,7 +38,7 @@ class ProjectDetailsModal extends Component {
     return (
       <Modal
         {...this.props}
-        size="lg"
+        size="xl"
         aria-labelledby="contained-modal-title-vcenter"
         centered
         className="modal-inside"
@@ -46,9 +46,9 @@ class ProjectDetailsModal extends Component {
         <span onClick={this.props.onHide} className="modal-close">
           <i className="fas fa-times fa-3x close-icon"></i>
         </span>
-        <div className="col-md-12">
-          <div className="col-md-10 mx-auto" style={{ paddingBottom: "50px" }}>
-            <div className="slider-tab">
+        <div  className="col-md-12">
+          <div className="col-md-10 mx-auto" style={{ paddingBottom: "50px", textAlign:"center" }}>
+            <div className="slider-tab" >
               <span
                 className="iconify slider-iconfiy"
                 data-icon="emojione:red-circle"

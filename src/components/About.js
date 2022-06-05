@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 // import angularIcon from "@iconify/icons-logos/angular-icon";
 import reactIcon from "@iconify/icons-logos/react";
-import cssIcon from "@iconify/icons-logos/css-3";
+import pythonIcon from "@iconify/icons-logos/python"
+import djangoIcon from "@iconify/icons-logos/django-icon";
 import javascriptIcon from "@iconify/icons-logos/javascript";
 
 // import linkedin from "/@iconify/icons-logos/linkedin"
@@ -29,20 +30,29 @@ class About extends Component {
               <div className="polaroid">
                 <span style={{ cursor: "auto" }}>
                   <img
+                    style={{margin:"0 auto"}}
                     height="100px"
                     src={profilepic}
                     alt="Avatar placeholder"
                   />
                   <Icon
+                    icon={pythonIcon}
+                    style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
+                  />
+                  <Icon
+                    icon={Icon.Poop}
+                    style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
+                  />
+                  <Icon
                     icon={javascriptIcon}
                     style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
                   />
+                    <Icon
+                      icon={djangoIcon}
+                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
+                    />
                   <Icon
                     icon={reactIcon}
-                    style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                  />
-                  <Icon
-                    icon={cssIcon}
                     style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
                   />
                 </span>
@@ -80,7 +90,7 @@ class About extends Component {
                     }}
                   >
                     <br />
-                    <span className="wave">{hello} :) </span>
+                    <span className="wave">{hello}  </span>
                     <br />
                     <br />
                     {about}

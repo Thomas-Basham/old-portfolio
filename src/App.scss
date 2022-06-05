@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap');
 
 html {
-	font-size: 62.5%;
+	font-size: 75%;
 	-webkit-font-smoothing: antialiased;
 	margin: 0;
 	padding: 0;
@@ -30,6 +30,7 @@ html {
 }
 
 header {
+	font-size: 2rem;
 	position: relative;
 	height: 520px;
 	min-height: 450px;
@@ -169,6 +170,9 @@ header h1 {
 .foto img {
 	display: block;
 	width: 100%;
+	margin: 0 auto;
+	-moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
 }
 
 .foto div {
@@ -217,7 +221,7 @@ header h1 {
 
 .polaroid img {
 	display: block;
-	max-width: 200px;
+	max-width: 600px;
 }
 
 .polaroid span {
@@ -267,6 +271,11 @@ header h1 {
 	background-image: linear-gradient(to right top, #061123, #0c1a2d, #122237, #172a41, #1d334c);
 }
 
+#resume h1{
+	font-size: 1.5vmax;
+
+}
+
 .experience-icon {
 	font-size: 300%;
 	margin-top: 25%;
@@ -310,7 +319,10 @@ header h1 {
 
 .modal-inside .modal-content {
 	background: white;
+
 }
+
+
 
 .bars {
 	width: 95%;
@@ -390,6 +402,10 @@ header h1 {
 	padding-bottom: 5%;
 }
 
+#portfolio h1{
+	font-size: 1.5vmax;
+}
+
 .portfolio-item {
 	max-width: 100%;
 	margin-bottom: 15px;
@@ -427,6 +443,10 @@ header h1 {
 	width: 100%;
 	overflow: hidden;
 	padding-bottom: 10%;
+}
+
+#skills h1{
+	font-size: 1.5vmax;
 }
 
 .section-title {
