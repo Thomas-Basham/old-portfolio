@@ -4,8 +4,37 @@ import AwesomeSlider from "react-awesome-slider";
 import AwesomeSliderStyles from "../scss/light-slider.scss";
 import AwesomeSliderStyles2 from "../scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
+
 class ProjectDetailsModal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: null
+    };
+  }
+  handleSubmit = (e) => {
+    // e.preventDefault()
+    let updatedProject = {
+      project: this.props.currentProject.project ,
+      likes: this.props.currentProject.likes + 1,
+      likedBy: this.props.currentProject.likedBy,
+      comments: this.props.currentProject.comments ,
+      _id: this.props.currentProject._id,
+      __v: this.props.currentProject.__v
+    }
+    this.setState({
+      counter: this.props.currentProject.likes + 1
+    })
+    this.props.updateProject(updatedProject);
+  }
+  componentDidMount() {
+    this.setState(
+      {counter: this.props.currentProject.likes}
+    )
+  }  
   render() {
+    console.log(this.props.currentProject.likes);
+    console.log(this.state.counter);
     if (this.props.data) {
       const technologies = this.props.data.technologies;
       const images = this.props.data.images;
@@ -39,8 +68,18 @@ class ProjectDetailsModal extends Component {
             );
           });
         }
+        // var prjcts = this.props.currentProject.map((elem) => {
+        //   // console.log(`ELEMENT: {elem}`)
+        //   return (
+        //     <>
+        //       <div>Likes: {elem.likes}</div>
+        //     </>
+        //   );
+        // });
       }
     }
+    console.log(this.state.counter)
+    console.log(this.props.currentProject)
     return (
       <Modal
         {...this.props}
@@ -102,8 +141,15 @@ class ProjectDetailsModal extends Component {
                 </a>
               ) : null}
             </h3>
-            <p className="modal-description">{description}</p>
+
+            {/* TODO: Add crud for user likes */}
+
+            <p className="modal-description"> {description}</p>
             <div className="col-md-12 text-center">
+              <form>
+            <button onClick={this.handleSubmit}>❤️{this.props.currentProject.likes}</button>
+            </form>
+            <p>Comments: {this.props.currentProject.comments}</p>
               <ul className="list-inline mx-auto">{tech}</ul>
             </div>
           </div>

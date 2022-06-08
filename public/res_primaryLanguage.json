@@ -12,6 +12,7 @@
     },
     "projects": [
       {
+        "likes": "Digital Bookshelf",
         "title": "Digital Bookshelf",
         "startDate": "May 2022",
         "description": "A full stack mobile-first React web app that allows users to sign in securely, manage their own digital bookshelf, and add books from Google Books™  API ",

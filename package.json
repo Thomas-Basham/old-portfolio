@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.27.2",
     "bootstrap": "^4.6.1",
     "jquery": "^3.6.0",
     "react": "^17.0.2",
@@ -15,7 +16,8 @@
     "react-scripts": "5.0.0",
     "react-switch": "^6.0.0",
     "react-vertical-timeline-component": "^3.5.2",
-    "sass": "^1.52.2"
+    "sass": "^1.52.2",
+    "use-state-if-mounted": "^1.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
