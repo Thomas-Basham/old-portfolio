@@ -33,6 +33,7 @@ class ProjectDetailsModal extends Component {
     let postedComment = {
       project: this.props.currentProject.project,
       user: "TEST USER",
+      userEmail: "TEST USER",
       text: e.target.comment.value,
       updated: new Date(),
 
@@ -92,10 +93,16 @@ class ProjectDetailsModal extends Component {
     let comments = filteredComments.map((commentData) => {
       return (
         <div key={commentData._id}>
-      <p >{commentData.user}</p>; 
-      <p >{commentData.text}</p>; 
-      <p >{commentData.updated}</p>; 
-      
+      <p >Commented By: {commentData.user}</p>
+      <p >{commentData.text}</p> 
+      <p >{new Date(commentData.updated).toLocaleString()}</p> 
+       { commentData.user === 'TEST USER'
+      ?
+       
+        <button>EDIT COMMENT</button>
+        :
+        ''
+       }
       </div>
       )
     })
