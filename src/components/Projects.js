@@ -28,6 +28,7 @@ class Projects extends Component {
     this.getProjects();
   }
 
+
   postProject = async (newProject) => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/project`;
@@ -50,6 +51,7 @@ class Projects extends Component {
           ? rebornProject.data
           : element;
       });
+      console.log("REBORN PROJECT:" , rebornProject)
       this.setState({
         projectLikes: newProjects,
       });
@@ -66,9 +68,7 @@ class Projects extends Component {
         currentProject: currentProject,
       });
     };
-    const projectLikes = this.state.projectLikes;
-
-
+    let projectLikes = this.state.projectLikes;
 
     let detailsModalClose = () => this.setState({ detailsModalShow: false });
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {

@@ -9,29 +9,46 @@ class ProjectDetailsModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      counter: null
+      // counter: 0,
     };
   }
-  handleSubmit = (e) => {
-    // e.preventDefault()
+  handleLikes = (e) => {
+    e.preventDefault()
     let updatedProject = {
-      project: this.props.currentProject.project ,
-      likes: this.props.currentProject.likes + 1,
+      project: this.props.currentProject.project,
+      likes: this.props.currentProject.likes += 1,
       likedBy: this.props.currentProject.likedBy,
-      comments: this.props.currentProject.comments ,
+      comments: this.props.currentProject.comments,
       _id: this.props.currentProject._id,
-      __v: this.props.currentProject.__v
-    }
+      __v: this.props.currentProject.__v,
+    };
     this.setState({
-      counter: this.props.currentProject.likes + 1
-    })
+      counter: this.props.currentProject.likes + 1,
+    });
     this.props.updateProject(updatedProject);
-  }
+  };
+
+  handleComments = (e) => {
+    e.preventDefault()
+    let updatedProject = {
+      project: this.props.currentProject.project,
+      likes: this.props.currentProject.likes,
+      likedBy: this.props.currentProject.likedBy,
+      comments: [this.props.currentProject.comments += (", ", e.target.comment.value)],
+      _id: this.props.currentProject._id,
+      __v: this.props.currentProject.__v,
+    };
+    this.setState({
+      counter: this.props.currentProject.likes + 1,
+    });
+    this.props.updateProject(updatedProject);
+  };
+
   componentDidMount() {
     this.setState(
       {counter: this.props.currentProject.likes}
     )
-  }  
+  }
   render() {
     console.log(this.props.currentProject.likes);
     console.log(this.state.counter);
@@ -78,8 +95,8 @@ class ProjectDetailsModal extends Component {
         // });
       }
     }
-    console.log(this.state.counter)
-    console.log(this.props.currentProject)
+    console.log(this.state.counter);
+    console.log(this.props.currentProject);
     return (
       <Modal
         {...this.props}
@@ -147,9 +164,15 @@ class ProjectDetailsModal extends Component {
             <p className="modal-description"> {description}</p>
             <div className="col-md-12 text-center">
               <form>
-            <button onClick={this.handleSubmit}>❤️{this.props.currentProject.likes}</button>
-            </form>
-            <p>Comments: {this.props.currentProject.comments}</p>
+                <button onClick={this.handleLikes}>
+                  ❤️{this.props.currentProject.likes}
+                </button>
+              </form>
+              <form onSubmit={this.handleComments}>
+                <input id="comment" type="text" className="w-100"></input>
+                <button type="submit">Comment</button>
+              </form>
+              <p>Comments: {this.props.currentProject.comments}</p>
               <ul className="list-inline mx-auto">{tech}</ul>
             </div>
           </div>
