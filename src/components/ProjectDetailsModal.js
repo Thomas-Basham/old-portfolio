@@ -13,10 +13,10 @@ class ProjectDetailsModal extends Component {
     };
   }
   handleLikes = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     let updatedProject = {
       project: this.props.currentProject.project,
-      likes: this.props.currentProject.likes += 1,
+      likes: (this.props.currentProject.likes += 1),
       likedBy: this.props.currentProject.likedBy,
       comments: this.props.currentProject.comments,
       _id: this.props.currentProject._id,
@@ -29,26 +29,26 @@ class ProjectDetailsModal extends Component {
   };
 
   handleComments = (e) => {
-    e.preventDefault()
-    let updatedProject = {
+    e.preventDefault();
+    let postedComment = {
       project: this.props.currentProject.project,
-      likes: this.props.currentProject.likes,
-      likedBy: this.props.currentProject.likedBy,
-      comments: [this.props.currentProject.comments += (", ", e.target.comment.value)],
-      _id: this.props.currentProject._id,
-      __v: this.props.currentProject.__v,
+      user: "TEST USER",
+      text: e.target.comment.value,
+      updated: new Date(),
+
     };
     this.setState({
-      counter: this.props.currentProject.likes + 1,
-    });
-    this.props.updateProject(updatedProject);
+      comments: this.props.comments
+    })
+
+    this.props.postComment(postedComment);
   };
 
   componentDidMount() {
-    this.setState(
-      {counter: this.props.currentProject.likes}
-    )
+    this.setState({ counter: this.props.currentProject.likes });
+    this.setState( { comments: this.props.comments})
   }
+
   render() {
     console.log(this.props.currentProject.likes);
     console.log(this.state.counter);
@@ -85,18 +85,25 @@ class ProjectDetailsModal extends Component {
             );
           });
         }
-        // var prjcts = this.props.currentProject.map((elem) => {
-        //   // console.log(`ELEMENT: {elem}`)
-        //   return (
-        //     <>
-        //       <div>Likes: {elem.likes}</div>
-        //     </>
-        //   );
-        // });
+
       }
     }
-    console.log(this.state.counter);
+    const filteredComments = this.props.comments.filter(comments => this.props.currentProject.project === comments.project)
+    let comments = filteredComments.map((commentData) => {
+      return (
+        <div key={commentData._id}>
+      <p >{commentData.user}</p>; 
+      <p >{commentData.text}</p>; 
+      <p >{commentData.updated}</p>; 
+      
+      </div>
+      )
+    })
+
+
     console.log(this.props.currentProject);
+    console.log(this.state.comments)
+    console.log("FILTEREDDD: ",filteredComments)
     return (
       <Modal
         {...this.props}
@@ -172,7 +179,12 @@ class ProjectDetailsModal extends Component {
                 <input id="comment" type="text" className="w-100"></input>
                 <button type="submit">Comment</button>
               </form>
-              <p>Comments: {this.props.currentProject.comments}</p>
+              <p>
+                Comments:
+                
+              </p>
+              {comments}
+
               <ul className="list-inline mx-auto">{tech}</ul>
             </div>
           </div>

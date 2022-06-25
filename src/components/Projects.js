@@ -8,8 +8,9 @@ class Projects extends Component {
     this.state = {
       deps: {},
       detailsModalShow: false,
-      projectLikes: [],
+      projectData: [],
       currentProject: {},
+      comments: [],
     };
   }
 
@@ -18,7 +19,7 @@ class Projects extends Component {
       let url = `${process.env.REACT_APP_SERVER}/project`;
       let projects = await axios.get(url);
       this.setState({
-        projectLikes: projects.data,
+        projectData: projects.data,
       });
     } catch (error) {
       console.log(error);
@@ -26,15 +27,15 @@ class Projects extends Component {
   };
   componentDidMount() {
     this.getProjects();
+    this.getComments();
   }
-
 
   postProject = async (newProject) => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/project`;
       let createdProject = await axios.post(url, newProject);
       this.setState({
-        projectLikes: [...this.state.projects, createdProject.data],
+        projectData: [...this.state.projectData, createdProject.data],
       });
     } catch (error) {
       console.log("we have an error:", error.response.data);
@@ -45,22 +46,62 @@ class Projects extends Component {
     try {
       let id = updatedProject._id;
       let url = `${process.env.REACT_APP_SERVER}/project/${id}`;
-      let rebornProject = await axios.put(url, updatedProject);
+      let request = await axios.put(url, updatedProject);
+      console.log("REQUEST:", request);
       let newProjects = this.state.project.map((element) => {
-        return element._id === updatedProject._id
-          ? rebornProject.data
-          : element;
+        return element._id === id ? request.data : element;
       });
-      console.log("REBORN PROJECT:" , rebornProject)
       this.setState({
-        projectLikes: newProjects,
+        projectData: newProjects,
+      });
+    } catch (error) {
+      console.log("we have an error:", error);
+    }
+  };
+
+  getComments = async () => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/Comment`;
+      let comments = await axios.get(url);
+      this.setState({
+        comments: comments.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  postComment = async (newComment) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/comment`;
+      let createdComment = await axios.post(url, newComment);
+      this.setState({
+        comments: [...this.state.comments, createdComment.data],
       });
     } catch (error) {
       console.log("we have an error:", error.response.data);
     }
   };
 
+  updateComment = async (updatedComment) => {
+    try {
+      let id = updatedComment._id;
+      let url = `${process.env.REACT_APP_SERVER}/comment/${id}`;
+      let request = await axios.put(url, updatedComment);
+      console.log("REQUEST:", request);
+      let newComments = this.state.comments.map((element) => {
+        return element._id === id ? request.data : element;
+      });
+      // this.setState({
+      //   comments: newComments,
+      // });
+    } catch (error) {
+      console.log("we have an error:", error);
+    }
+  };
   render() {
+    console.log("PROJECT COMMENTS STATE: ", this.state.comments)
+
     let detailsModalShow = (data, currentProject) => {
       this.setState({
         detailsModalShow: true,
@@ -68,7 +109,7 @@ class Projects extends Component {
         currentProject: currentProject,
       });
     };
-    let projectLikes = this.state.projectLikes;
+    let projectData = this.state.projectData;
 
     let detailsModalClose = () => this.setState({ detailsModalShow: false });
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {
@@ -83,7 +124,7 @@ class Projects extends Component {
             <span className="portfolio-item d-block">
               <div
                 className="foto"
-                onClick={() => detailsModalShow(projects, projectLikes[i])}
+                onClick={() => detailsModalShow(projects, projectData[i])}
               >
                 <div>
                   <img
@@ -109,7 +150,7 @@ class Projects extends Component {
       });
     }
 
-    console.log(JSON.stringify(projectLikes[0]));
+    console.log(JSON.stringify(projectData[0]));
     return (
       <section id="portfolio">
         <div className="col-md-12">
@@ -125,6 +166,8 @@ class Projects extends Component {
             data={this.state.deps}
             currentProject={this.state.currentProject}
             updateProject={this.updateProject}
+            comments={this.state.comments}
+            postComment={this.postComment}
           />
         </div>
       </section>
