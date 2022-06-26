@@ -12,6 +12,8 @@ class Projects extends Component {
       projectData: [],
       currentProject: {},
       comments: [],
+      showCommentUpdateForm: false
+
     };
   }
 
@@ -93,14 +95,28 @@ class Projects extends Component {
       let newComments = this.state.comments.map((element) => {
         return element._id === id ? request.data : element;
       });
-      // this.setState({
-      //   comments: newComments,
-      // });
+      this.setState({
+        comments: newComments,
+      });
     } catch (error) {
       console.log("we have an error:", error);
     }
   };
+   showEditCommentForm = (commentData) => {
+    this.setState({commentData: commentData})
+    this.setState({showCommentUpdateForm: true})
+  };
+   hideEditCommentForm = () => {
+
+    this.setState({showCommentUpdateForm: false})
+  };
+
+
   render() {
+
+
+
+
     console.log("PROJECT COMMENTS STATE: ", this.state.comments)
 
     let detailsModalShow = (data, currentProject) => {
@@ -112,7 +128,7 @@ class Projects extends Component {
     };
     let projectData = this.state.projectData;
 
-    let detailsModalClose = () => this.setState({ detailsModalShow: false });
+    let detailsModalClose = () => this.setState({ detailsModalShow: false, showCommentUpdateForm: false });
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {
       var sectionName = this.props.resumeBasicInfo.section_name.projects;
       var projects = this.props.resumeProjects.map(function (projects, i) {
@@ -164,11 +180,16 @@ class Projects extends Component {
           <ProjectDetailsModal
             show={this.state.detailsModalShow}
             onHide={detailsModalClose}
+            showEditCommentForm={this.showEditCommentForm}
+            showCommentUpdateForm={this.state.showCommentUpdateForm}
             data={this.state.deps}
             currentProject={this.state.currentProject}
             updateProject={this.updateProject}
             comments={this.state.comments}
             postComment={this.postComment}
+            updateComment={this.updateComment}
+            commentData={this.state.commentData}
+            hideEditCommentForm={this.hideEditCommentForm}
           />
         </div>
       </section>

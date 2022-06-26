@@ -39,11 +39,31 @@ class ProjectDetailsModal extends Component {
       text: e.target.comment.value,
       updated: new Date(),
     };
+    // this.setState({
+    //   comments: this.props.comments,
+    // });
+
+    this.props.postComment(postedComment);
+  };
+
+  handleUpdateComment = (e) => {
+    e.preventDefault();
+    let postedComment = {
+      project: this.props.commentData.project,
+      user: this.props.commentData.user,
+      userEmail: this.props.commentData.userEmail,
+      text:  e.target.comment.value,
+      updated: new Date(),
+      _id: this.props.commentData._id,
+      __V: this.props.commentData.__v ,
+    };
     this.setState({
       comments: this.props.comments,
     });
 
-    this.props.postComment(postedComment);
+    this.props.updateComment(postedComment);
+
+    this.props.hideEditCommentForm()
   };
 
   componentDidMount() {
@@ -65,6 +85,44 @@ class ProjectDetailsModal extends Component {
         );
       } else {
         return <p>❤️{this.props.currentProject.likes}</p>;
+      }
+    };
+
+    let editCommentButton = (commentData) => {
+      if (this.props.auth0.isAuthenticated) {
+        console.log(commentData.user === this.props.auth0.user.name);
+        if (
+          commentData.user === this.props.auth0.user.name &&
+          this.props.showCommentUpdateForm === false
+        ) {
+          return (
+            <>
+              <button
+                onClick={() => this.props.showEditCommentForm(commentData)}
+                style={{ padding: 0, border: "none", background: "none" }}
+              >
+                <img
+                  alt="edit icon"
+                  src="https://img.icons8.com/nolan/64/edit--v1.png"
+                  width={20}
+                />
+              </button>
+            </>
+          );
+        }
+      }
+    };
+
+    let editCommentForm = (commentData) => {
+      if (this.props.showCommentUpdateForm === true) {
+        return (
+          <form onSubmit={this.handleUpdateComment}>
+            <input required placeholder={this.props.commentData.text} id="comment" type="text" className="w-100"></input>
+            <Button  className="w-100" variant="outline-primary" type="submit">
+              Comment
+            </Button>
+          </form>
+        );
       }
     };
     if (this.props.data) {
@@ -107,31 +165,25 @@ class ProjectDetailsModal extends Component {
     );
 
     let comments = filteredComments.map((commentData) => {
-      return (
-        <div key={commentData._id}>
-          <h2 className="font-weight-bold">{commentData.user}</h2>
-          <p>{new Date(commentData.updated).toLocaleString()}</p>
-          {commentData.user === this.props.auth0.user.name ? (
-            <button style={{ padding: 0, border: "none", background: "none" }}>
-              {" "}
-              <img
-                alt="edit icon"
-                src="https://img.icons8.com/nolan/64/edit--v1.png"
-                width={20}
-              />
-            </button>
-          ) : (
-            ""
-          )}
-          <p>{commentData.text}</p>
-        </div>
-      );
+      if (this.props.showCommentUpdateForm === false){
+        return (
+          <div key={commentData._id}>
+            <h2 className="font-weight-bold">{commentData.user}</h2>
+            <p>{new Date(commentData.updated).toLocaleString()}</p>
+            {editCommentButton(commentData)}
+            <p>{commentData.text}</p>
+          </div>
+        );}
     });
 
     // const filteredResources = this.props.currentProject.likedBy.filter(resource => this.props.auth0.user == resource)
 
+    console.log(
+      "props.showCommentUpdateForm: ",
+      this.props.showCommentUpdateForm
+    );
     console.log("PROPS.CURRENTPROJECT: ", this.props.currentProject);
-    console.log("FILTEREDDD: ", filteredComments);
+    // console.log("FILTEREDDD: ", filteredComments);
 
     return (
       <Modal
@@ -220,6 +272,8 @@ class ProjectDetailsModal extends Component {
               )}
               <p>Comments:</p>
               {comments}
+              {editCommentButton}
+              {editCommentForm()}
               <ul className="list-inline mx-auto">{tech}</ul>
             </div>
           </div>
