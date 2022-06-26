@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Home from "./components/Home";
+import { withAuth0 } from "@auth0/auth0-react";
 
 class App extends Component {
 
@@ -105,4 +106,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuth0(App);

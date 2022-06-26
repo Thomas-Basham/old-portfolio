@@ -4,6 +4,9 @@ import AwesomeSlider from "react-awesome-slider";
 import AwesomeSliderStyles from "../scss/light-slider.scss";
 import AwesomeSliderStyles2 from "../scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
+import { withAuth0 } from "@auth0/auth0-react";
+import LoginButtonAutho from "./LoginButtonAutho";
+import Button from "react-bootstrap/Button";
 
 class ProjectDetailsModal extends Component {
   constructor(props) {
@@ -17,10 +20,8 @@ class ProjectDetailsModal extends Component {
     let updatedProject = {
       // project: this.props.currentProject.project,
       likes: (this.props.currentProject.likes += 1),
-      likedBy: "TEST USER",
-      // comments: this.props.currentProject.comments,
+      likedBy: this.props.auth0.user.name,
       _id: this.props.currentProject._id,
-      // __v: this.props.currentProject.__v,
     };
     this.setState({
       counter: this.props.currentProject.likes,
@@ -28,13 +29,12 @@ class ProjectDetailsModal extends Component {
     });
     this.props.updateProject(updatedProject);
   };
-
   handleComments = (e) => {
     e.preventDefault();
     let postedComment = {
       project: this.props.currentProject.project,
-      user: "TEST USER",
-      userEmail: "TEST USER",
+      user: this.props.auth0.user.name,
+      userEmail: this.props.auth0.user.email,
       text: e.target.comment.value,
       updated: new Date(),
     };
@@ -50,10 +50,22 @@ class ProjectDetailsModal extends Component {
     this.setState({ comments: this.props.comments });
     this.setState({ likedBy: this.props.currentProject.likedBy });
   }
-
   render() {
-    console.log(this.props.currentProject.likes);
-    console.log(this.state.counter);
+    let likeButton = () => {
+      if (
+        this.props.auth0.isAuthenticated &&
+        this.props.currentProject.likedBy &&
+        !this.props.currentProject.likedBy.includes(this.props.auth0.user.name)
+      ) {
+        return (
+          <Button onClick={this.handleLikes}>
+            ❤️{this.props.currentProject.likes}
+          </Button>
+        );
+      } else {
+        return <p>❤️{this.props.currentProject.likes}</p>;
+      }
+    };
     if (this.props.data) {
       const technologies = this.props.data.technologies;
       const images = this.props.data.images;
@@ -99,7 +111,7 @@ class ProjectDetailsModal extends Component {
           <p>Commented By: {commentData.user}</p>
           <p>{commentData.text}</p>
           <p>{new Date(commentData.updated).toLocaleString()}</p>
-          {commentData.user === "TEST USER" ? (
+          {commentData.user === this.props.auth0.user ? (
             <button>EDIT COMMENT</button>
           ) : (
             ""
@@ -108,13 +120,11 @@ class ProjectDetailsModal extends Component {
       );
     });
 
+    // const filteredResources = this.props.currentProject.likedBy.filter(resource => this.props.auth0.user == resource)
+
     console.log("PROPS.CURRENTPROJECT: ", this.props.currentProject);
-    // console.log(this.state.comments)
     console.log("FILTEREDDD: ", filteredComments);
-    console.log(
-      "likedBy State: ",
-      this.props.currentProject.likedBy.includes("TEST USER")
-    );
+
     return (
       <Modal
         {...this.props}
@@ -177,31 +187,31 @@ class ProjectDetailsModal extends Component {
               ) : null}
             </h3>
 
-            {/* TODO: Add crud for user likes */}
-
             <p className="modal-description"> {description}</p>
+
             <div className="col-md-12 text-center">
-              <form>
-                {this.props.currentProject.likedBy.includes("TEST USER") ? (
-                  <p>❤️{this.props.currentProject.likes}</p>
-                ) : (
-                  <button onClick={this.handleLikes}>
-                    ❤️{this.props.currentProject.likes}
-                  </button>
-                )}
-              </form>
-              <form onSubmit={this.handleComments}>
-                <input
-                  required
-                  id="comment"
-                  type="text"
-                  className="w-100"
-                ></input>
-                <button type="submit">Comment</button>
-              </form>
+              <form>{likeButton()}</form>
+              {this.props.auth0.isAuthenticated ? (
+                <form onSubmit={this.handleComments}>
+                  <input
+                    required
+                    id="comment"
+                    type="text"
+                    className="w-100"
+                  ></input>
+                  <Button
+                    className="w-100"
+                    variant="outline-primary"
+                    type="submit"
+                  >
+                    Comment
+                  </Button>
+                </form>
+              ) : (
+                <LoginButtonAutho />
+              )}
               <p>Comments:</p>
               {comments}
-
               <ul className="list-inline mx-auto">{tech}</ul>
             </div>
           </div>
@@ -211,4 +221,4 @@ class ProjectDetailsModal extends Component {
   }
 }
 
-export default ProjectDetailsModal;
+export default withAuth0(ProjectDetailsModal);

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ProjectDetailsModal from "./ProjectDetailsModal";
 import axios from "axios";
+import { withAuth0 } from "@auth0/auth0-react";
 
 class Projects extends Component {
   constructor(props) {
@@ -175,4 +176,4 @@ class Projects extends Component {
   }
 }
 
-export default Projects;
+export default withAuth0(Projects);
