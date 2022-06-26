@@ -15,15 +15,16 @@ class ProjectDetailsModal extends Component {
   handleLikes = (e) => {
     e.preventDefault();
     let updatedProject = {
-      project: this.props.currentProject.project,
+      // project: this.props.currentProject.project,
       likes: (this.props.currentProject.likes += 1),
-      likedBy: this.props.currentProject.likedBy,
-      comments: this.props.currentProject.comments,
+      likedBy: "TEST USER",
+      // comments: this.props.currentProject.comments,
       _id: this.props.currentProject._id,
-      __v: this.props.currentProject.__v,
+      // __v: this.props.currentProject.__v,
     };
     this.setState({
-      counter: this.props.currentProject.likes + 1,
+      counter: this.props.currentProject.likes,
+      likedBy: this.props.currentProject.likedBy.push(updatedProject.likedBy),
     });
     this.props.updateProject(updatedProject);
   };
@@ -36,18 +37,18 @@ class ProjectDetailsModal extends Component {
       userEmail: "TEST USER",
       text: e.target.comment.value,
       updated: new Date(),
-
     };
     this.setState({
-      comments: this.props.comments
-    })
+      comments: this.props.comments,
+    });
 
     this.props.postComment(postedComment);
   };
 
   componentDidMount() {
     this.setState({ counter: this.props.currentProject.likes });
-    this.setState( { comments: this.props.comments})
+    this.setState({ comments: this.props.comments });
+    this.setState({ likedBy: this.props.currentProject.likedBy });
   }
 
   render() {
@@ -86,31 +87,34 @@ class ProjectDetailsModal extends Component {
             );
           });
         }
-
       }
     }
-    const filteredComments = this.props.comments.filter(comments => this.props.currentProject.project === comments.project)
+    const filteredComments = this.props.comments.filter(
+      (comments) => this.props.currentProject.project === comments.project
+    );
+
     let comments = filteredComments.map((commentData) => {
       return (
         <div key={commentData._id}>
-      <p >Commented By: {commentData.user}</p>
-      <p >{commentData.text}</p> 
-      <p >{new Date(commentData.updated).toLocaleString()}</p> 
-       { commentData.user === 'TEST USER'
-      ?
-       
-        <button>EDIT COMMENT</button>
-        :
-        ''
-       }
-      </div>
-      )
-    })
+          <p>Commented By: {commentData.user}</p>
+          <p>{commentData.text}</p>
+          <p>{new Date(commentData.updated).toLocaleString()}</p>
+          {commentData.user === "TEST USER" ? (
+            <button>EDIT COMMENT</button>
+          ) : (
+            ""
+          )}
+        </div>
+      );
+    });
 
-
-    console.log(this.props.currentProject);
-    console.log(this.state.comments)
-    console.log("FILTEREDDD: ",filteredComments)
+    console.log("PROPS.CURRENTPROJECT: ", this.props.currentProject);
+    // console.log(this.state.comments)
+    console.log("FILTEREDDD: ", filteredComments);
+    console.log(
+      "likedBy State: ",
+      this.props.currentProject.likedBy.includes("TEST USER")
+    );
     return (
       <Modal
         {...this.props}
@@ -178,18 +182,24 @@ class ProjectDetailsModal extends Component {
             <p className="modal-description"> {description}</p>
             <div className="col-md-12 text-center">
               <form>
-                <button onClick={this.handleLikes}>
-                  ❤️{this.props.currentProject.likes}
-                </button>
+                {this.props.currentProject.likedBy.includes("TEST USER") ? (
+                  <p>❤️{this.props.currentProject.likes}</p>
+                ) : (
+                  <button onClick={this.handleLikes}>
+                    ❤️{this.props.currentProject.likes}
+                  </button>
+                )}
               </form>
               <form onSubmit={this.handleComments}>
-                <input id="comment" type="text" className="w-100"></input>
+                <input
+                  required
+                  id="comment"
+                  type="text"
+                  className="w-100"
+                ></input>
                 <button type="submit">Comment</button>
               </form>
-              <p>
-                Comments:
-                
-              </p>
+              <p>Comments:</p>
               {comments}
 
               <ul className="list-inline mx-auto">{tech}</ul>
