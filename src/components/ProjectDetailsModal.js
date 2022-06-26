@@ -7,6 +7,7 @@ import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
 import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
 import Button from "react-bootstrap/Button";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class ProjectDetailsModal extends Component {
   constructor(props) {
@@ -108,14 +109,21 @@ class ProjectDetailsModal extends Component {
     let comments = filteredComments.map((commentData) => {
       return (
         <div key={commentData._id}>
-          <p>Commented By: {commentData.user}</p>
-          <p>{commentData.text}</p>
+          <h2 className="font-weight-bold">{commentData.user}</h2>
           <p>{new Date(commentData.updated).toLocaleString()}</p>
-          {commentData.user === this.props.auth0.user ? (
-            <button>EDIT COMMENT</button>
+          {commentData.user === this.props.auth0.user.name ? (
+            <button style={{ padding: 0, border: "none", background: "none" }}>
+              {" "}
+              <img
+                alt="edit icon"
+                src="https://img.icons8.com/nolan/64/edit--v1.png"
+                width={20}
+              />
+            </button>
           ) : (
             ""
           )}
+          <p>{commentData.text}</p>
         </div>
       );
     });
