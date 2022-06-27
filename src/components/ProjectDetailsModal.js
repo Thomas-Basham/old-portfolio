@@ -52,10 +52,10 @@ class ProjectDetailsModal extends Component {
       project: this.props.commentData.project,
       user: this.props.commentData.user,
       userEmail: this.props.commentData.userEmail,
-      text:  e.target.comment.value,
+      text: e.target.comment.value,
       updated: new Date(),
       _id: this.props.commentData._id,
-      __V: this.props.commentData.__v ,
+      __V: this.props.commentData.__v,
     };
     this.setState({
       comments: this.props.comments,
@@ -63,7 +63,59 @@ class ProjectDetailsModal extends Component {
 
     this.props.updateComment(postedComment);
 
-    this.props.hideEditCommentForm()
+    this.props.hideEditCommentForm();
+  };
+
+  handleReplyComment = (e) => {
+    e.preventDefault();
+    let postedComment = {
+      project:
+        this.props.currentProject.project + "." + this.props.commentData._id,
+      user: this.props.auth0.user.name,
+      userEmail: this.props.auth0.user.email,
+      text: e.target.reply.value,
+      updated: new Date(),
+    };
+    // this.setState({
+    //   comments: this.props.comments,
+    // });
+
+    this.props.postComment(postedComment);
+    this.props.hideReplyForm();
+  };
+
+  filteredReplies = (commentData) => {
+    if (commentData) {
+      console.log("COMMENTDATA HERRR: ", commentData);
+      let replyID =
+        this.props.currentProject.project + "." + commentData._id.toString();
+      let filtered = this.props.comments.filter(
+        (comments) => replyID === comments.project
+      );
+
+      return filtered.map((commentData) => {
+        return (
+          <div
+            className="border-bottom"
+            style={{ textAlign: "right" }}
+            key={commentData._id}
+          >
+            <h2 className="font-weight-bold">{commentData.user}</h2>
+            <p style={{ fontSize: "80%" }}>
+              {new Date(commentData.updated).toLocaleString()}
+            </p>
+            {/* {editCommentButton(commentData)} */}
+            <p>{commentData.text}</p>
+            {/* {this.props.auth0.isAuthenticated ? (
+              <Button onClick={() => this.props.showReplyForm(commentData)}>
+                Reply!
+              </Button>
+            ) : null} */}
+            {/* {replyCommentForm(commentData)} */}
+          </div>
+        );
+      });
+    }
   };
 
   componentDidMount() {
@@ -86,6 +138,27 @@ class ProjectDetailsModal extends Component {
       } else {
         return <p>❤️{this.props.currentProject.likes}</p>;
       }
+    };
+
+    let commentFormOrLoginButton = () => {
+      if (
+        this.props.auth0.isAuthenticated &&
+        this.props.showReplyFormState === false
+      )
+        return (
+          <form onSubmit={this.handleComments}>
+            <input required id="comment" type="text" className="w-100"></input>
+            <Button className="w-100" variant="outline-primary" type="submit">
+              Comment
+            </Button>
+          </form>
+        );
+      else if (
+        this.props.auth0.isAuthenticated &&
+        this.props.showReplyFormState === true
+      ) {
+        return "";
+      } else return <LoginButtonAutho />;
     };
 
     let editCommentButton = (commentData) => {
@@ -113,18 +186,77 @@ class ProjectDetailsModal extends Component {
       }
     };
 
-    let editCommentForm = (commentData) => {
+    let editCommentForm = () => {
       if (this.props.showCommentUpdateForm === true) {
         return (
           <form onSubmit={this.handleUpdateComment}>
-            <input required placeholder={this.props.commentData.text} id="comment" type="text" className="w-100"></input>
-            <Button  className="w-100" variant="outline-primary" type="submit">
+            <input
+              required
+              placeholder={this.props.commentData.text}
+              id={this.props.commentData._id}
+              type="text"
+              className="w-100"
+            ></input>
+            <Button className="w-100" variant="outline-primary" type="submit">
               Comment
             </Button>
           </form>
         );
       }
     };
+
+    let replyCommentForm = (commentData) => {
+      if (this.props.showReplyFormState === true) {
+        console.log("COMMENT DATA: ", commentData);
+        return (
+          <form onSubmit={this.handleReplyComment}>
+            <input required id="reply" type="text" className="w-100"></input>
+            <Button className="w-100" variant="outline-primary" type="submit">
+              Comment
+            </Button>
+          </form>
+        );
+      }
+    };
+
+    const filteredComments = this.props.comments.filter(
+      (comments) => this.props.currentProject.project === comments.project
+    );
+
+    let comments = filteredComments.map((commentData) => {
+      if (this.props.showCommentUpdateForm === false) {
+        console.log("FILTERED REPLIES: ", this.filteredReplies(commentData));
+
+        return (
+          <div
+            className="border-bottom"
+            style={{
+              textAlign: "left",
+              padding: 10,
+            }}
+            key={commentData._id}
+          >
+            <h2 className="font-weight-bold">{commentData.user}</h2>
+            <p style={{ fontSize: "80%" }}>
+              {new Date(commentData.updated).toLocaleString()}
+            </p>
+            {editCommentButton(commentData)}
+            <p>{commentData.text}</p>
+
+            {!this.props.showReplyFormState ? (
+              <Button onClick={() => this.props.showReplyForm(commentData)}>
+                Reply!
+              </Button>
+            ) : null}
+
+            {replyCommentForm(commentData)}
+
+            {this.filteredReplies(commentData)}
+          </div>
+        );
+      }
+    });
+
     if (this.props.data) {
       const technologies = this.props.data.technologies;
       const images = this.props.data.images;
@@ -160,30 +292,10 @@ class ProjectDetailsModal extends Component {
         }
       }
     }
-    const filteredComments = this.props.comments.filter(
-      (comments) => this.props.currentProject.project === comments.project
-    );
-
-    let comments = filteredComments.map((commentData) => {
-      if (this.props.showCommentUpdateForm === false){
-        return (
-          <div key={commentData._id}>
-            <h2 className="font-weight-bold">{commentData.user}</h2>
-            <p>{new Date(commentData.updated).toLocaleString()}</p>
-            {editCommentButton(commentData)}
-            <p>{commentData.text}</p>
-          </div>
-        );}
-    });
 
     // const filteredResources = this.props.currentProject.likedBy.filter(resource => this.props.auth0.user == resource)
 
-    console.log(
-      "props.showCommentUpdateForm: ",
-      this.props.showCommentUpdateForm
-    );
     console.log("PROPS.CURRENTPROJECT: ", this.props.currentProject);
-    // console.log("FILTEREDDD: ", filteredComments);
 
     return (
       <Modal
@@ -251,26 +363,8 @@ class ProjectDetailsModal extends Component {
 
             <div className="col-md-12 text-center">
               <form>{likeButton()}</form>
-              {this.props.auth0.isAuthenticated ? (
-                <form onSubmit={this.handleComments}>
-                  <input
-                    required
-                    id="comment"
-                    type="text"
-                    className="w-100"
-                  ></input>
-                  <Button
-                    className="w-100"
-                    variant="outline-primary"
-                    type="submit"
-                  >
-                    Comment
-                  </Button>
-                </form>
-              ) : (
-                <LoginButtonAutho />
-              )}
-              <p>Comments:</p>
+
+              {commentFormOrLoginButton()}
               {comments}
               {editCommentButton}
               {editCommentForm()}

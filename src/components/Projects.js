@@ -12,8 +12,8 @@ class Projects extends Component {
       projectData: [],
       currentProject: {},
       comments: [],
-      showCommentUpdateForm: false
-
+      showCommentUpdateForm: false,
+      showReplyForm: false,
     };
   }
 
@@ -81,6 +81,8 @@ class Projects extends Component {
       this.setState({
         comments: [...this.state.comments, createdComment.data],
       });
+      console.log("REQUEST:", createdComment);
+
     } catch (error) {
       console.log("we have an error:", error.response.data);
     }
@@ -102,22 +104,25 @@ class Projects extends Component {
       console.log("we have an error:", error);
     }
   };
-   showEditCommentForm = (commentData) => {
-    this.setState({commentData: commentData})
-    this.setState({showCommentUpdateForm: true})
+  showEditCommentForm = (commentData) => {
+    this.setState({ commentData: commentData });
+    this.setState({ showCommentUpdateForm: true });
   };
-   hideEditCommentForm = () => {
-
-    this.setState({showCommentUpdateForm: false})
+  hideEditCommentForm = () => {
+    this.setState({ showCommentUpdateForm: false });
   };
 
+  showReplyForm = (commentData) => {
+    this.setState({ commentData: commentData });
+    this.setState({ showReplyForm: true });
+    
+  };
+
+  hideReplyForm = () => {
+    this.setState({ showReplyForm: false });
+  };
 
   render() {
-
-
-
-
-    console.log("PROJECT COMMENTS STATE: ", this.state.comments)
 
     let detailsModalShow = (data, currentProject) => {
       this.setState({
@@ -128,7 +133,13 @@ class Projects extends Component {
     };
     let projectData = this.state.projectData;
 
-    let detailsModalClose = () => this.setState({ detailsModalShow: false, showCommentUpdateForm: false });
+    let detailsModalClose = () =>
+      this.setState({
+        detailsModalShow: false,
+        showCommentUpdateForm: false,
+        showReplyForm: false,
+      });
+
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {
       var sectionName = this.props.resumeBasicInfo.section_name.projects;
       var projects = this.props.resumeProjects.map(function (projects, i) {
@@ -167,7 +178,6 @@ class Projects extends Component {
       });
     }
 
-    console.log(JSON.stringify(projectData[0]));
     return (
       <section id="portfolio">
         <div className="col-md-12">
@@ -190,6 +200,9 @@ class Projects extends Component {
             updateComment={this.updateComment}
             commentData={this.state.commentData}
             hideEditCommentForm={this.hideEditCommentForm}
+            showReplyForm={this.showReplyForm}
+            hideReplyForm={this.hideReplyForm}
+            showReplyFormState={this.state.showReplyForm}
           />
         </div>
       </section>
