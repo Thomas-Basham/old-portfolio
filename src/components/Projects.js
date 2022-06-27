@@ -82,7 +82,6 @@ class Projects extends Component {
         comments: [...this.state.comments, createdComment.data],
       });
       console.log("REQUEST:", createdComment);
-
     } catch (error) {
       console.log("we have an error:", error.response.data);
     }
@@ -104,6 +103,22 @@ class Projects extends Component {
       console.log("we have an error:", error);
     }
   };
+
+  deleteComment = async (id) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/comment/${id}`;
+      await axios.delete(url);
+      let updatedComments = this.state.comments.filter(
+        (comment) => comment._id !== id
+      );
+      this.setState({
+        comments: updatedComments,
+      });
+    } catch (error) {
+      console.log("we have an error:", error.response.data);
+    }
+  };
+
   showEditCommentForm = (commentData) => {
     this.setState({ commentData: commentData });
     this.setState({ showCommentUpdateForm: true });
@@ -115,7 +130,6 @@ class Projects extends Component {
   showReplyForm = (commentData) => {
     this.setState({ commentData: commentData });
     this.setState({ showReplyForm: true });
-    
   };
 
   hideReplyForm = () => {
@@ -123,7 +137,6 @@ class Projects extends Component {
   };
 
   render() {
-
     let detailsModalShow = (data, currentProject) => {
       this.setState({
         detailsModalShow: true,
@@ -203,6 +216,7 @@ class Projects extends Component {
             showReplyForm={this.showReplyForm}
             hideReplyForm={this.hideReplyForm}
             showReplyFormState={this.state.showReplyForm}
+            deleteComment={this.deleteComment}
           />
         </div>
       </section>

@@ -48,7 +48,7 @@ class ProjectDetailsModal extends Component {
 
   handleUpdateComment = (e) => {
     e.preventDefault();
-    
+
     let postedComment = {
       project: this.props.commentData.project,
       user: this.props.commentData.user,
@@ -85,8 +85,6 @@ class ProjectDetailsModal extends Component {
     this.props.hideReplyForm();
   };
 
-
-
   componentDidMount() {
     this.setState({ counter: this.props.currentProject.likes });
     this.setState({ comments: this.props.comments });
@@ -114,8 +112,6 @@ class ProjectDetailsModal extends Component {
         this.props.auth0.isAuthenticated &&
         this.props.showReplyFormState === false &&
         this.props.showCommentUpdateForm === false
-        
-        
       )
         return (
           <form onSubmit={this.handleComments}>
@@ -125,22 +121,26 @@ class ProjectDetailsModal extends Component {
             </Button>
           </form>
         );
-
-       else if (!this.props.auth0.isAuthenticated) return <LoginButtonAutho />;
+      else if (!this.props.auth0.isAuthenticated) return <LoginButtonAutho />;
     };
 
-    let editCommentButton = (commentData) => {
+    let editCommentButton = (commentData, alignLeft) => {
       if (this.props.auth0.isAuthenticated) {
         console.log(commentData.user === this.props.auth0.user.name);
         if (
           commentData.user === this.props.auth0.user.name &&
           this.props.showCommentUpdateForm === false
         ) {
-          return (
-            <>
+          if (alignLeft === true) {
+            return (
               <button
                 onClick={() => this.props.showEditCommentForm(commentData)}
-                style={{ padding: 0, border: "none", background: "none" }}
+                style={{
+                  padding: 0,
+                  border: "none",
+                  background: "none",
+                  float: "left",
+                }}
               >
                 <img
                   alt="edit icon"
@@ -148,8 +148,95 @@ class ProjectDetailsModal extends Component {
                   width={20}
                 />
               </button>
-            </>
-          );
+            );
+          } else
+            return (
+              <button
+                onClick={() => this.props.showEditCommentForm(commentData)}
+                style={{
+                  padding: 0,
+                  border: "none",
+                  background: "none",
+                  textAlign: "right",
+                  float: "right",
+                }}
+              >
+                <img
+                  alt="edit icon"
+                  src="https://img.icons8.com/nolan/64/edit--v1.png"
+                  width={20}
+                />
+              </button>
+            );
+        }
+      }
+    };
+
+    let deleteCommentButton = (commentData, alignLeft) => {
+      if (this.props.auth0.isAuthenticated) {
+        // console.log(commentData.user === this.props.auth0.user.name);
+        if (
+          commentData.user === this.props.auth0.user.name
+          // this.props.showEditCommentForm === false
+        ) {
+          if (alignLeft === true) {
+            return (
+              <button
+                style={{
+                  padding: 0,
+                  border: "none",
+                  background: "none",
+                  textAlign: "left",
+                }}
+                onClick={() => this.props.deleteComment(commentData._id)}
+              >
+                {" "}
+                <svg
+                  style={{ width: "5%" }}
+                  xmlns="http://www.w3.org/2000/svg"
+                  // className="h-1 w-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  />
+                </svg>
+              </button>
+            );
+          } else
+            return (
+              <button
+                style={{
+                  padding: 0,
+                  border: "none",
+                  background: "none",
+                  textAlign: "right",
+                }}
+                onClick={() => this.props.deleteComment(commentData._id)}
+              >
+                {" "}
+                <svg
+                  style={{ width: "5%" }}
+                  xmlns="http://www.w3.org/2000/svg"
+                  // className="h-1 w-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  />
+                </svg>
+              </button>
+            );
         }
       }
     };
@@ -161,6 +248,7 @@ class ProjectDetailsModal extends Component {
             <input
               required
               placeholder={this.props.commentData.text}
+              defaultValue={this.props.commentData.text}
               id="comment"
               type="text"
               className="w-100"
@@ -207,13 +295,13 @@ class ProjectDetailsModal extends Component {
     );
     let filteredReplies = (commentData) => {
       if (commentData) {
-        console.log("COMMENTDATA HERRR: ", commentData);
         let replyID =
           this.props.currentProject.project + "." + commentData._id.toString();
+
         let filtered = this.props.comments.filter(
           (comments) => replyID === comments.project
         );
-  
+
         return filtered.map((commentData) => {
           return (
             <div
@@ -225,14 +313,9 @@ class ProjectDetailsModal extends Component {
               <p style={{ fontSize: "80%" }}>
                 {new Date(commentData.updated).toLocaleString()}
               </p>
-              {editCommentButton(commentData)}
               <p>{commentData.text}</p>
-              {/* {this.props.auth0.isAuthenticated ? (
-                <Button onClick={() => this.props.showReplyForm(commentData)}>
-                  Reply!
-                </Button>
-              ) : null} */}
-              {/* {replyCommentForm(commentData)} */}
+              {editCommentButton(commentData, false)}
+              {deleteCommentButton(commentData, false)}
             </div>
           );
         });
@@ -252,21 +335,17 @@ class ProjectDetailsModal extends Component {
             }}
             key={commentData._id}
           >
-            <h2 className="font-weight-bold">{commentData.user}</h2>
-            <p style={{ fontSize: "80%" }}>
+            <h2 style={{ marginBottom: 0 }} className="font-weight-bold">
+              {commentData.user}
+            </h2>
+            <p style={{ fontSize: "80%", marginTop: 0 }}>
               {new Date(commentData.updated).toLocaleString()}
             </p>
-            {editCommentButton(commentData)}
-            <p>{commentData.text}</p>
-
-            {/* {!this.props.showReplyFormState ? (
-              <Button onClick={() => this.props.showReplyForm(commentData)}>
-                Reply!
-              </Button>
-            ) : null} */}
+            {deleteCommentButton(commentData, true)}
+            {editCommentButton(commentData, true)}
+            <p className="margin-top">{commentData.text}</p>
             {replyButton(commentData)}
             {replyCommentForm(commentData)}
-
             {filteredReplies(commentData)}
           </div>
         );
