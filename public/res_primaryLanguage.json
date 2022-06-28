@@ -1,10 +1,10 @@
 {
     "basic_info": {
-      "description_header": "Greetings! 🖖👽💻🌲🏔",
-      "description": "My name is Thomas Basham, I’m a Software Developer based in the Seattle area and I’m also a US Army Veteran. Before I learned how to write code, I made houses and commercial buildings beautiful with my carpentry skills. I enjoy making things and I have a curious mind, which is why one day while looking for other options in life things pointed to Software Development. I love a good mental challenge, and I like to learn as fast as possible so that’s why I picked a bootcamp to start my journey into coding and the experience has been transformative. ",
+      "description_header": "Hello World! 👋💻🌲🏔",
+      "description": "Welcome to my portfolio! I’m a Full Stack Software Developer based in the Seattle area and I’m also a US Army Veteran. Before I learned how to program, I made houses and commercial buildings beautiful with my carpentry skills. I enjoy making things and I have a curious mind, which is why time flies when I'm developing websites. I love a good mental challenge and I like to learn new things everyday. Thank you for visiting. Feel free to poke around and join a discussion 🥳",
       
       "section_name": {
-        "about": "",
+        "about": "Feel free to check out my projects and leave a comment for discussion 😁😄😁",
         "projects": "Projects",
         "skills": "Skills",
         "experience": "Experience"
@@ -17,14 +17,11 @@
         "startDate": "May 2022",
         "description": "A full stack mobile-first React web app that allows users to sign in securely, manage their own digital bookshelf, and add books from Google Books™  API ",
         "images": [
-          "images/portfolio/digitalBookshelf/DigBooks1.png",
-          "images/portfolio/digitalBookshelf/DigBooks02.png",
-          "images/portfolio/digitalBookshelf/DigBooks2.png",
-          "images/portfolio/digitalBookshelf/DigBooks3.png",
-          "images/portfolio/digitalBookshelf/DigBooks4.png",
-          "images/portfolio/digitalBookshelf/DigBooks5.png",
-          "images/portfolio/digitalBookshelf/DigBooks6.png"
-
+          "images/portfolio/digitalBookshelf/digitalBookshelf1.png",
+          "images/portfolio/digitalBookshelf/digitalBookshelf2.png",
+          "images/portfolio/digitalBookshelf/digitalBookshelf3.png",
+          "images/portfolio/digitalBookshelf/digitalBookshelf4.png",
+          "images/portfolio/digitalBookshelf/digitalBookshelf5.png"
         ],
         "url": "https://digitalbookshelf.netlify.app",
         "technologies": [
@@ -273,9 +270,9 @@
       {
         "company": "Code Fellows",
         "title": "Student",
-        "years": "04.2022 - 06.2022",
+        "years": "04.2022 - 07.2022",
         "mainTech": [
-          "Certificate for Software Development in Python"
+          "Certificate for Advanced Software Development in Python"
         ],
         "technologies": [
 
@@ -305,7 +302,7 @@
         "title": "Student",
         "years": "02.2022 - 04.2022",
         "mainTech": [
-          "Certificate for Advanced Software Development in Javascript"
+          "Certificate for Software Development in Javascript"
         ],
         "technologies": [
 

@@ -41,46 +41,15 @@ header {
 	text-align: center;
 	overflow: hidden;
 		background-color: hsla(200,40%,30%,.4);
-	background-image:		
-		url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'), 
-		url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
-		url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
-		url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
-		url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
-	background-repeat: repeat-x;
-	background-position: 
-		0 20%,
-		0 100%,
-		0 50%,
-		0 100%,
-		0 0;
-	background-size: 
-		2500px,
-		800px,
-		500px 200px,
-		1000px,
-		400px 260px;
-	animation: 50s para infinite linear;
-	}
-
-@keyframes para {
-	100% {
-		background-position: 
-			-5000px 20%,
-			-800px 95%,
-			500px 50%,
-			1000px 100%,
-			400px 0;
-		}
-	}
-	// -webkit-background-size: cover;
-	// -moz-background-size: cover;
-	// -o-background-size: cover;
-	// background-size: cover;
-	// padding-top: 150px;
-	// padding-bottom: 0;
-
-
+	background-image:	url("../public/images/wallpaper.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-top: 4vh;
+	padding-bottom: 10vh;
+	
+}
 header .nav {
 	font: 18px/24px 'opensans-bold', sans-serif;
 	text-transform: uppercase;
@@ -140,7 +109,7 @@ header h1 {
 }
 
 .slider-tab {
-	background-color: #D7CAAA;
+	background-color: rgb(35, 34, 34);
 	height: 25px;
 }
 
@@ -154,12 +123,14 @@ header h1 {
 }
 
 #about {
-	background: #fff;
+	background: hsla(200,40%,30%,.4);
 	overflow: hidden;
+	padding-bottom: 20vh;
 }
 
 #about h1 {
 	padding-top: 5%;
+	padding-bottom: 2%;
 	font: 18px/24px 'opensans-bold', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 3px;
@@ -220,6 +191,11 @@ header h1 {
 }
 
 .polaroid img {
+	-moz-box-shadow: 0 0 6px rgb(132, 132, 132);
+-webkit-box-shadow: 0 0 6px rgb(132, 132, 132);
+box-shadow: 0 0 6px rgb(132, 132, 132);
+	border-radius: 50px;
+	box-shadow: 2px 2px 2px 2px 2px;
 	display: block;
 	max-width: 600px;
 }
@@ -476,6 +452,8 @@ footer {
 	color: white;
 	position: relative;
 	text-align: center;
+	padding: auto;
+	// margin: 0;
 }
 
 footer a,

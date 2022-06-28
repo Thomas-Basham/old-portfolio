@@ -309,8 +309,11 @@ class ProjectDetailsModal extends Component {
               style={{ textAlign: "right" }}
               key={commentData._id}
             >
-              <h2 className="font-weight-bold">{commentData.user}</h2>
-              <p style={{ fontSize: "80%" }}>
+              <h2 className="font-weight-bold m-0">{commentData.user}</h2>
+              <p
+                className="text-secondary"
+                style={{ fontSize: "70%", marginTop: 0 }}
+              >
                 {new Date(commentData.updated).toLocaleString()}
               </p>
               <p>{commentData.text}</p>
@@ -328,17 +331,18 @@ class ProjectDetailsModal extends Component {
         return (
           <div
             id={commentData._id}
-            className="border-bottom"
+            // className="border-bottom"
             style={{
               textAlign: "left",
               padding: 10,
             }}
             key={commentData._id}
           >
-            <h2 style={{ marginBottom: 0 }} className="font-weight-bold">
-              {commentData.user}
-            </h2>
-            <p style={{ fontSize: "80%", marginTop: 0 }}>
+            <h2 className="font-weight-bold m-0">{commentData.user}</h2>
+            <p
+              className="text-secondary"
+              style={{ fontSize: "70%", marginTop: 0 }}
+            >
               {new Date(commentData.updated).toLocaleString()}
             </p>
             {deleteCommentButton(commentData, true)}
@@ -436,7 +440,7 @@ class ProjectDetailsModal extends Component {
               {img}
             </AwesomeSlider>
           </div>
-          <div className="col-md-10 mx-auto">
+          <div className="col-md-10 mx-auto ">
             <h3 style={{ padding: "5px 5px 0 5px" }}>
               {title}
               {url ? (
