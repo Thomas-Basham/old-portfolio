@@ -250,7 +250,7 @@ class ProjectDetailsModal extends Component {
         this.props.commentData._id === commentData._id
       ) {
         return (
-          <form onSubmit={this.handleReplyComment}>
+          <form className="mt-2 w-50" onSubmit={this.handleReplyComment}>
             <input required id="reply" type="text" className="w-100"></input>
             <Button className="w-100" variant="outline-primary" type="submit">
               Comment
@@ -287,9 +287,11 @@ class ProjectDetailsModal extends Component {
         return filtered.map((commentData) => {
           return (
             <div
-              className="border-bottom"
-              style={{ textAlign: "right" }}
+              className="border-bottom w-50 text-right float-right"
               key={commentData._id}
+              style={{
+                padding: 10,
+              }}
             >
               <h2 className="font-weight-bold m-0">{commentData.user}</h2>
               <p
@@ -298,7 +300,7 @@ class ProjectDetailsModal extends Component {
               >
                 {new Date(commentData.updated).toLocaleString()}
               </p>
-              <p>{commentData.text}</p>
+              <p className="mt-2 " >{commentData.text}</p>
               {editCommentButton(commentData, false)}
               {deleteCommentButton(commentData, false)}
             </div>
