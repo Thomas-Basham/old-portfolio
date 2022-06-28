@@ -327,7 +327,7 @@ class ProjectDetailsModal extends Component {
               </p>
               {deleteCommentButton(commentData, true)}
               {editCommentButton(commentData, true)}
-              <p className="margin-top">{commentData.text}</p>
+              <p className="mt-2 w-50">{commentData.text}</p>
               {replyButton(commentData)}
               {replyCommentForm(commentData)}
               {filteredReplies(commentData)}
