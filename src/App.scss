@@ -147,7 +147,14 @@ header h1 {
 }
 
 #about {
-  background: hsla(200, 40%, 30%, 0.4);
+  background-image: linear-gradient(
+    to right top,
+    #061123,
+    #0c1a2d,
+    #122237,
+    #172a41,
+    #1d334c
+  );
   overflow: hidden;
   padding-bottom: 20vh;
 }
