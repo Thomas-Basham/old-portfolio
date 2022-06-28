@@ -306,7 +306,7 @@ class ProjectDetailsModal extends Component {
         });
       }
     };
-    let comments = filteredComments.map((commentData) => {
+    let comments = filteredComments.forEach((commentData) => {
       if (this.props.showCommentUpdateForm === false) {
         return (
           <div
