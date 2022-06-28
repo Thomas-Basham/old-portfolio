@@ -306,34 +306,36 @@ class ProjectDetailsModal extends Component {
         });
       }
     };
-    let comments = filteredComments.forEach((commentData) => {
+    let comments = () => {
       if (this.props.showCommentUpdateForm === false) {
-        return (
-          <div
-            id={commentData._id}
-            style={{
-              textAlign: "left",
-              padding: 10,
-            }}
-            key={commentData._id}
-          >
-            <h2 className="font-weight-bold m-0">{commentData.user}</h2>
-            <p
-              className="text-secondary"
-              style={{ fontSize: "70%", marginTop: 0 }}
+      return filteredComments.map((commentData) => {
+          return (
+            <div
+              id={commentData._id}
+              style={{
+                textAlign: "left",
+                padding: 10,
+              }}
+              key={commentData._id}
             >
-              {new Date(commentData.updated).toLocaleString()}
-            </p>
-            {deleteCommentButton(commentData, true)}
-            {editCommentButton(commentData, true)}
-            <p className="margin-top">{commentData.text}</p>
-            {replyButton(commentData)}
-            {replyCommentForm(commentData)}
-            {filteredReplies(commentData)}
-          </div>
-        );
-      }
-    });
+              <h2 className="font-weight-bold m-0">{commentData.user}</h2>
+              <p
+                className="text-secondary"
+                style={{ fontSize: "70%", marginTop: 0 }}
+              >
+                {new Date(commentData.updated).toLocaleString()}
+              </p>
+              {deleteCommentButton(commentData, true)}
+              {editCommentButton(commentData, true)}
+              <p className="margin-top">{commentData.text}</p>
+              {replyButton(commentData)}
+              {replyCommentForm(commentData)}
+              {filteredReplies(commentData)}
+            </div>
+          );
+        }
+      )};
+    };
 
     if (this.props.data) {
       const technologies = this.props.data.technologies;
@@ -454,7 +456,7 @@ class ProjectDetailsModal extends Component {
             <div className="col-md-12 text-center">
               {likeButton()}
               {commentFormOrLoginButton()}
-              {comments}
+              {comments()}
               {editCommentButton}
               {editCommentForm()}
             </div>
