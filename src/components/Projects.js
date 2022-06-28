@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ProjectDetailsModal from "./ProjectDetailsModal";
 import axios from "axios";
 import { withAuth0 } from "@auth0/auth0-react";
-
+import LoginButtonAutho from "./LoginButtonAutho";
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -144,7 +144,6 @@ class Projects extends Component {
         currentProject: currentProject,
       });
     };
-    let projectData = this.state.projectData;
 
     let detailsModalClose = () =>
       this.setState({
@@ -152,6 +151,7 @@ class Projects extends Component {
         showCommentUpdateForm: false,
         showReplyForm: false,
       });
+    let projectData = this.state.projectData;
 
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {
       var sectionName = this.props.resumeBasicInfo.section_name.projects;
@@ -190,16 +190,29 @@ class Projects extends Component {
         );
       });
     }
-
+    let welcomeMessage = () => {
+      if (this.props.auth0.isAuthenticated) {
+        return (
+          <p id="welcome-message" className="text-white text-center display-4">
+            Thanks for logging in, {this.props.auth0.user.given_name}
+          </p>
+        );
+      }
+    };
     return (
       <section id="portfolio">
+        {this.props.auth0.isAuthenticated && welcomeMessage()}
         <div className="col-md-12">
-          <h1 className="section-title" >
+          <h1 className="section-title">
             <span>{sectionName}</span>
           </h1>
           <div className="col-md-12 mx-auto">
             <div className="row mx-auto">{projects}</div>
           </div>
+          {!this.props.auth0.isAuthenticated && (
+            <LoginButtonAutho className="mt-5" style={{ paddingTop: 20 }} />
+          )}
+
           <ProjectDetailsModal
             show={this.state.detailsModalShow}
             onHide={detailsModalClose}

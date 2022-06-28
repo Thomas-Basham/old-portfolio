@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
-// import angularIcon from "@iconify/icons-logos/angular-icon";
 import reactIcon from "@iconify/icons-logos/react";
 import pythonIcon from "@iconify/icons-logos/python";
 import djangoIcon from "@iconify/icons-logos/django-icon";
 import javascriptIcon from "@iconify/icons-logos/javascript";
-
-// import linkedin from "/@iconify/icons-logos/linkedin"
 
 class About extends Component {
   render() {
@@ -30,7 +27,7 @@ class About extends Component {
               <div className="polaroid">
                 <span style={{ cursor: "auto" }}>
                   <img
-                    style={{ margin: "0 auto", }}
+                    style={{ margin: "0 auto" }}
                     height="100px"
                     src={profilepic}
                     alt="Avatar placeholder"

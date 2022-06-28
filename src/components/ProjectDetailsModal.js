@@ -6,20 +6,18 @@ import AwesomeSliderStyles2 from "../scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
 import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
+import LoginButtonAuthoRedIcon from "./LoginButtonAuthoRedIcon";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class ProjectDetailsModal extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      // counter: 0,
-    };
+    this.state = {};
   }
   handleLikes = (e) => {
     e.preventDefault();
     let updatedProject = {
-      // project: this.props.currentProject.project,
       likes: (this.props.currentProject.likes += 1),
       likedBy: this.props.auth0.user.name,
       _id: this.props.currentProject._id,
@@ -39,10 +37,6 @@ class ProjectDetailsModal extends Component {
       text: e.target.comment.value,
       updated: new Date(),
     };
-    // this.setState({
-    //   comments: this.props.comments,
-    // });
-
     this.props.postComment(postedComment);
   };
 
@@ -77,10 +71,6 @@ class ProjectDetailsModal extends Component {
       text: e.target.reply.value,
       updated: new Date(),
     };
-    // this.setState({
-    //   comments: this.props.comments,
-    // });
-
     this.props.postComment(postedComment);
     this.props.hideReplyForm();
   };
@@ -98,12 +88,12 @@ class ProjectDetailsModal extends Component {
         !this.props.currentProject.likedBy.includes(this.props.auth0.user.name)
       ) {
         return (
-          <Button onClick={this.handleLikes}>
+          <Button style={{ float: "left" }} onClick={this.handleLikes}>
             ❤️{this.props.currentProject.likes}
           </Button>
         );
       } else {
-        return <p>❤️{this.props.currentProject.likes}</p>;
+        return <p className="text-left">❤️{this.props.currentProject.likes}</p>;
       }
     };
 
@@ -126,7 +116,6 @@ class ProjectDetailsModal extends Component {
 
     let editCommentButton = (commentData, alignLeft) => {
       if (this.props.auth0.isAuthenticated) {
-        console.log(commentData.user === this.props.auth0.user.name);
         if (
           commentData.user === this.props.auth0.user.name &&
           this.props.showCommentUpdateForm === false
@@ -174,11 +163,7 @@ class ProjectDetailsModal extends Component {
 
     let deleteCommentButton = (commentData, alignLeft) => {
       if (this.props.auth0.isAuthenticated) {
-        // console.log(commentData.user === this.props.auth0.user.name);
-        if (
-          commentData.user === this.props.auth0.user.name
-          // this.props.showEditCommentForm === false
-        ) {
+        if (commentData.user === this.props.auth0.user.name) {
           if (alignLeft === true) {
             return (
               <button
@@ -194,7 +179,6 @@ class ProjectDetailsModal extends Component {
                 <svg
                   style={{ width: "5%" }}
                   xmlns="http://www.w3.org/2000/svg"
-                  // className="h-1 w-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -223,7 +207,6 @@ class ProjectDetailsModal extends Component {
                 <svg
                   style={{ width: "5%" }}
                   xmlns="http://www.w3.org/2000/svg"
-                  // className="h-1 w-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -266,7 +249,6 @@ class ProjectDetailsModal extends Component {
         this.props.showReplyFormState === true &&
         this.props.commentData._id === commentData._id
       ) {
-        console.log("COMMENT DATA: ", commentData);
         return (
           <form onSubmit={this.handleReplyComment}>
             <input required id="reply" type="text" className="w-100"></input>
@@ -285,7 +267,7 @@ class ProjectDetailsModal extends Component {
       )
         return (
           <Button onClick={() => this.props.showReplyForm(commentData)}>
-            Reply!
+            Reply
           </Button>
         );
     };
@@ -326,12 +308,9 @@ class ProjectDetailsModal extends Component {
     };
     let comments = filteredComments.map((commentData) => {
       if (this.props.showCommentUpdateForm === false) {
-        console.log("FILTERED REPLIES: ", filteredReplies(commentData));
-
         return (
           <div
             id={commentData._id}
-            // className="border-bottom"
             style={{
               textAlign: "left",
               padding: 10,
@@ -392,10 +371,6 @@ class ProjectDetailsModal extends Component {
       }
     }
 
-    // const filteredResources = this.props.currentProject.likedBy.filter(resource => this.props.auth0.user == resource)
-
-    console.log("PROPS.CURRENTPROJECT: ", this.props.currentProject);
-
     return (
       <Modal
         {...this.props}
@@ -413,24 +388,39 @@ class ProjectDetailsModal extends Component {
             style={{ paddingBottom: "50px", textAlign: "center" }}
           >
             <div className="slider-tab">
-              <span
-                className="iconify slider-iconfiy"
-                data-icon="emojione:red-circle"
-                data-inline="false"
-                style={{ marginLeft: "5px" }}
-              ></span>{" "}
+              <button
+                onClick={this.props.onHide}
+                style={{
+                  padding: 0,
+                  border: "none",
+                  background: "none",
+                  marginRight: 10,
+                }}
+              >
+                <span
+                  className="iconify slider-iconfiy"
+                  data-icon="emojione:red-circle"
+                  data-inline="false"
+                  style={{ marginLeft: "5px" }}
+                ></span>{" "}
+              </button>
               &nbsp;{" "}
-              <span
-                className="iconify slider-iconfiy"
-                data-icon="twemoji:yellow-circle"
-                data-inline="false"
-              ></span>{" "}
-              &nbsp;{" "}
-              <span
-                className="iconify slider-iconfiy"
-                data-icon="twemoji:green-circle"
-                data-inline="false"
-              ></span>
+              <button
+                onClick={this.props.onHide}
+                style={{
+                  padding: 0,
+                  border: "none",
+                  background: "none",
+                  marginRight: 10,
+                }}
+              >
+                <span
+                  className="iconify slider-iconfiy"
+                  data-icon="twemoji:yellow-circle"
+                  data-inline="false"
+                ></span>{" "}
+              </button>
+              &nbsp; <LoginButtonAuthoRedIcon />
             </div>
             <AwesomeSlider
               cssModule={[AwesomeSliderStyles, AwesomeSliderStyles2]}
@@ -459,15 +449,14 @@ class ProjectDetailsModal extends Component {
             </h3>
 
             <p className="modal-description"> {description}</p>
+            <ul className="list-inline mx-auto">{tech}</ul>
 
             <div className="col-md-12 text-center">
-              <form>{likeButton()}</form>
-
+              {likeButton()}
               {commentFormOrLoginButton()}
               {comments}
               {editCommentButton}
               {editCommentForm()}
-              <ul className="list-inline mx-auto">{tech}</ul>
             </div>
           </div>
         </div>

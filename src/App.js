@@ -96,6 +96,12 @@ class App extends Component {
               sharedBasicInfo={this.state.sharedData.basic_info}
             />
           </Route>
+          
+          <Route path="/project:id">
+            
+          </Route>
+          
+          
         </Switch>
         <Footer 
           sharedBasicInfo={this.state.sharedData.basic_info}
