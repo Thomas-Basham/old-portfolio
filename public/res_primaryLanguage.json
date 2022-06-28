@@ -12,6 +12,47 @@
   },
   "projects": [
     {
+      "title": "Washington Stocked Trout Finder",
+      "startDate": "June 2022",
+      "description": "A Full Stack Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State. Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
+      "images": [
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes1.png",
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes2.png",
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes3.png"
+      ],
+      "url": "https://wa-stocked-trout-finder.herokuapp.com",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-flask-plain",
+          "name": "Flask"
+        },
+        {
+          "class": "devicon-beautifulsoup-plain",
+          "name": "Beautiful Soup"
+        },
+        {
+          "class": "devicon-plain",
+          "name": "Pandas"
+        },
+        {
+          "class": "devicon-Folium-plain",
+          "name": "Folium"
+        },
+        {
+          "class": "devicon-html5-plain",
+          "name": "HTML5"
+        },
+        {
+          "class": "devicon-css3-plain",
+          "name": "CSS3"
+        }
+      ]
+    },
+    {
       "likes": "Digital Bookshelf",
       "title": "Digital Bookshelf",
       "startDate": "May 2022",
@@ -99,7 +140,7 @@
     },
     {
       "title": "Hiking Trails API",
-      "startDate": "2022",
+      "startDate": "May 2022",
       "description": "A Full Stack Django Restful Services API for storing favorite hiking trails, built with Django Rest Framework, PostgreSQL, Pandas, and Folium",
       "images": [
         "images/portfolio/HikingTrailsAPI/HikingTrailsAPI1.png",
@@ -143,7 +184,7 @@
     },
     {
       "title": "Music API",
-      "startDate": "2022",
+      "startDate": "May 2022",
       "description": "A Full Stack Django Restful Services API for storing favorite music, built with Django Rest Framework, PostgreSQL, Paginator, Wavesurfer, and AWS S3 bucket for user file uploads",
       "images": [
         "images/portfolio/MusicAPI/MusicAPI1.png",
@@ -181,7 +222,7 @@
     },
     {
       "title": "Puppy Pics API",
-      "startDate": "2022",
+      "startDate": "May 2022",
       "description": "A Full Stack Django Restful Services API for storing favorite family pet pics, built with Django Rest Framework, PostgreSQL, and Cloudinary for user file uploads",
       "images": [
         "images/portfolio/PuppyPicAPI/PuppyPicAPI1.png",
@@ -212,47 +253,6 @@
         {
           "class": "devicon-djangorestframework-plain",
           "name": "Django Rest framework"
-        },
-        {
-          "class": "devicon-html5-plain",
-          "name": "HTML5"
-        },
-        {
-          "class": "devicon-css3-plain",
-          "name": "CSS3"
-        }
-      ]
-    },
-    {
-      "title": "Washington Stocked Trout Finder",
-      "startDate": "2022",
-      "description": "A Full Stack Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State. Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
-      "images": [
-        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes1.png",
-        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes2.png",
-        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes3.png"
-      ],
-      "url": "https://wa-stocked-trout-finder.herokuapp.com",
-      "technologies": [
-        {
-          "class": "devicon-python-plain",
-          "name": "Python"
-        },
-        {
-          "class": "devicon-flask-plain",
-          "name": "Flask"
-        },
-        {
-          "class": "devicon-beautifulsoup-plain",
-          "name": "Beautiful Soup"
-        },
-        {
-          "class": "devicon-plain",
-          "name": "Pandas"
-        },
-        {
-          "class": "devicon-Folium-plain",
-          "name": "Folium"
         },
         {
           "class": "devicon-html5-plain",
