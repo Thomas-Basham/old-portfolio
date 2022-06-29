@@ -316,6 +316,7 @@ class ProjectDetailsModal extends Component {
     const filteredComments = this.props.comments.filter(
       (comments) => this.props.currentProject.project === comments.project
     );
+    console.log(this.props.currentProject)
     let filteredReplies = (commentData) => {
       if (commentData) {
         let replyID =
@@ -484,10 +485,11 @@ class ProjectDetailsModal extends Component {
                   rel="noopener noreferrer"
                   className="link-href"
                 >
-                  <i
+                 <p style={{fontSize: 11}}>{url}</p> 
+                  {/* <i
                     className="fas fa-external-link-alt"
                     style={{ marginLeft: "10px" }}
-                  ></i>
+                  ></i> */}
                 </a>
               ) : null}
             </h3>
