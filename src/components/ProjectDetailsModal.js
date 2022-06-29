@@ -29,7 +29,7 @@ class ProjectDetailsModal extends Component {
       likedBy: this.props.currentProject.likedBy.push(updatedProject.likedBy),
     });
     this.props.updateProject(updatedProject);
-    this.sendNotificationEmail(e, "like")
+    this.sendNotificationEmail(e, "like");
   };
 
   serverID = process.env.REACT_APP_EMAIL_JS_SERVER_ID;
@@ -38,21 +38,21 @@ class ProjectDetailsModal extends Component {
   publicKey = process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY;
   sendNotificationEmail = (e, commentOrLike) => {
     let templateParams = {};
-    let templateID = ''
+    let templateID = "";
     if (commentOrLike === "comment") {
       templateParams = {
         from_name: this.props.auth0.user.name,
         comment: e.target.comment.value,
         project: this.props.data.title,
       };
-      templateID = this.commentTemplateID
+      templateID = this.commentTemplateID;
     }
     if (commentOrLike === "like") {
       templateParams = {
         from_name: this.props.auth0.user.name,
         project: this.props.data.title,
       };
-      templateID = this.likeTemplateID
+      templateID = this.likeTemplateID;
     }
 
     emailjs
@@ -108,12 +108,12 @@ class ProjectDetailsModal extends Component {
         this.props.currentProject.project + "." + this.props.commentData._id,
       user: this.props.auth0.user.name,
       userEmail: this.props.auth0.user.email,
-      text: e.target.reply.value,
+      text: e.target.comment.value,
       updated: new Date(),
     };
     this.props.postComment(postedComment);
     this.props.hideReplyForm();
-    this.sendNotificationEmail(e, "comment")
+    this.sendNotificationEmail(e, "comment");
   };
 
   componentDidMount() {
@@ -292,7 +292,7 @@ class ProjectDetailsModal extends Component {
       ) {
         return (
           <form className="mt-2 w-50" onSubmit={this.handleReplyComment}>
-            <input required id="reply" type="text" className="w-100"></input>
+            <input required id="comment" type="text" className="w-100"></input>
             <Button className="w-100" variant="outline-primary" type="submit">
               Comment
             </Button>
