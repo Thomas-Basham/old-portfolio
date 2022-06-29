@@ -85,6 +85,7 @@
       "title": "Digital Bookshelf",
       "startDate": "May 2022",
       "description": "A full stack mobile-first React web app that allows users to sign in securely, manage their own digital bookshelf, and add books from Google Books™  API made with Cole Gibbs ",
+      "descriptionHTML": "<div class=\"made-with\"><p><strong>Team: </strong> </a><a href=\"https://github.com/colegibbs\" target=\"_blank\" rel=\"noreferrer\">Cole Gibbs</a></div>",
       "images": [
         "images/portfolio/digitalBookshelf/digitalBookshelf5.png",
         "images/portfolio/digitalBookshelf/digitalBookshelf4.png",
