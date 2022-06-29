@@ -50,7 +50,6 @@ class Projects extends Component {
       let id = updatedProject._id;
       let url = `${process.env.REACT_APP_SERVER}/project/${id}`;
       let request = await axios.put(url, updatedProject);
-      console.log("REQUEST:", request);
       let newProjects = this.state.project.map((element) => {
         return element._id === id ? request.data : element;
       });
@@ -81,7 +80,6 @@ class Projects extends Component {
       this.setState({
         comments: [...this.state.comments, createdComment.data],
       });
-      console.log("REQUEST:", createdComment);
     } catch (error) {
       console.log("we have an error:", error.response.data);
     }
@@ -92,7 +90,6 @@ class Projects extends Component {
       let id = updatedComment._id;
       let url = `${process.env.REACT_APP_SERVER}/comment/${id}`;
       let request = await axios.put(url, updatedComment);
-      console.log("REQUEST:", request);
       let newComments = this.state.comments.map((element) => {
         return element._id === id ? request.data : element;
       });
