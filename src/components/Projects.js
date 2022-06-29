@@ -191,7 +191,7 @@ class Projects extends Component {
     let welcomeMessage = () => {
       if (this.props.auth0.isAuthenticated) {
         return (
-          <p id="welcome-message" className="text-white text-center display-4">
+          <p id="welcome-message" className="text-white text-center display-4" style={{fontSize: "1.3vmax"}}>
             Thanks for logging in, {this.props.auth0.user.given_name}
           </p>
         );
@@ -203,6 +203,9 @@ class Projects extends Component {
         <div className="col-md-12">
           <h1 className="section-title">
             <span>{sectionName}</span>
+            <p id="welcome-message" className="text-white text-center display-4" style={{fontSize: "1vmax", marginTop: '1vmax'}}>
+            Click an image to view more details
+          </p>
           </h1>
           <div className="col-md-12 mx-auto">
             <div className="row mx-auto">{projects}</div>
