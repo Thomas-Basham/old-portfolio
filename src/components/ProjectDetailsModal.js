@@ -420,6 +420,12 @@ class ProjectDetailsModal extends Component {
         }
       }
     }
+    let descriptionHTML = () => {
+    if (this.props.data.descriptionHTML){
+      const descriptionHTML = this.props.data.descriptionHTML
+      return <p dangerouslySetInnerHTML={ {__html: descriptionHTML} }/>
+      
+    }}
     return (
       <Modal
         {...this.props}
@@ -490,15 +496,15 @@ class ProjectDetailsModal extends Component {
                   className="link-href"
                 >
                  <p style={{fontSize: 11}}>{url}</p> 
-                  {/* <i
-                    className="fas fa-external-link-alt"
-                    style={{ marginLeft: "10px" }}
-                  ></i> */}
+
                 </a>
               ) : null}
             </h3>
 
             <p className="modal-description"> {description}</p>
+            {descriptionHTML()}
+
+
             <ul className="list-inline mx-auto">{tech}</ul>
 
             <div className="col-md-12 text-center">

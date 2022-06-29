@@ -38,9 +38,10 @@ class Header extends Component {
     // );
 
     return (
+      
       <header
         id="home"
-        style={{ height: window.innerHeight - 100, display: "block" }}
+        style={{  display: "block" }}
       >
         <a
           href="https://github.com/bashamtg/Portfolio"
