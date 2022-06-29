@@ -28,6 +28,38 @@ class Projects extends Component {
       console.log(error);
     }
   };
+  componentDidMount() {
+    this.getProjects();
+    this.getComments();
+  }
+
+  postProject = async (newProject) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/project`;
+      let createdProject = await axios.post(url, newProject);
+      this.setState({
+        projectData: [...this.state.projectData, createdProject.data],
+      });
+    } catch (error) {
+      console.log("we have an error:", error.response.data);
+    }
+  };
+
+  updateProject = async (updatedProject) => {
+    try {
+      let id = updatedProject._id;
+      let url = `${process.env.REACT_APP_SERVER}/project/${id}`;
+      let request = await axios.put(url, updatedProject);
+      let newProjects = this.state.project.map((element) => {
+        return element._id === id ? request.data : element;
+      });
+      this.setState({
+        projectData: newProjects,
+      });
+    } catch (error) {
+      console.log("we have an error:", error);
+    }
+  };
 
   getComments = async () => {
     try {
@@ -40,11 +72,6 @@ class Projects extends Component {
       console.log(error);
     }
   };
-
-  componentDidMount() {
-    this.getProjects();
-    this.getComments();
-  }
 
   postComment = async (newComment) => {
     try {
@@ -107,6 +134,7 @@ class Projects extends Component {
   };
 
   render() {
+    console.log(this.state.projectData)
 
     let detailsModalShow = (data, currentProject) => {
       this.setState({
