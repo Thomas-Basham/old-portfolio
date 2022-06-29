@@ -4,11 +4,13 @@ import AwesomeSlider from "react-awesome-slider";
 import AwesomeSliderStyles from "../scss/light-slider.scss";
 import AwesomeSliderStyles2 from "../scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
 import LoginButtonAuthoRedIcon from "./LoginButtonAuthoRedIcon";
 import Button from "react-bootstrap/Button";
-import "bootstrap/dist/css/bootstrap.min.css";
+import emailjs from "@emailjs/browser";
 
 class ProjectDetailsModal extends Component {
   constructor(props) {
@@ -27,7 +29,44 @@ class ProjectDetailsModal extends Component {
       likedBy: this.props.currentProject.likedBy.push(updatedProject.likedBy),
     });
     this.props.updateProject(updatedProject);
+    this.sendNotificationEmail(e, "like")
   };
+
+  serverID = process.env.REACT_APP_EMAIL_JS_SERVER_ID;
+  commentTemplateID = process.env.REACT_APP_EMAIL_JS_COMMENT_TEMPLATE_ID;
+  likeTemplateID = process.env.REACT_APP_EMAIL_JS_LIKE_TEMPLATE_ID;
+  publicKey = process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY;
+  sendNotificationEmail = (e, commentOrLike) => {
+    let templateParams = {};
+    let templateID = ''
+    if (commentOrLike === "comment") {
+      templateParams = {
+        from_name: this.props.auth0.user.name,
+        comment: e.target.comment.value,
+        project: this.props.data.title,
+      };
+      templateID = this.commentTemplateID
+    }
+    if (commentOrLike === "like") {
+      templateParams = {
+        from_name: this.props.auth0.user.name,
+        project: this.props.data.title,
+      };
+      templateID = this.likeTemplateID
+    }
+
+    emailjs
+      .send(this.serverID, templateID, templateParams, this.publicKey)
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+  };
+
   handleComments = (e) => {
     e.preventDefault();
     let postedComment = {
@@ -38,6 +77,7 @@ class ProjectDetailsModal extends Component {
       updated: new Date(),
     };
     this.props.postComment(postedComment);
+    this.sendNotificationEmail(e, "comment");
   };
 
   handleUpdateComment = (e) => {
@@ -73,6 +113,7 @@ class ProjectDetailsModal extends Component {
     };
     this.props.postComment(postedComment);
     this.props.hideReplyForm();
+    this.sendNotificationEmail(e, "comment")
   };
 
   componentDidMount() {
@@ -300,7 +341,7 @@ class ProjectDetailsModal extends Component {
               >
                 {new Date(commentData.updated).toLocaleString()}
               </p>
-              <p className="mt-2 " >{commentData.text}</p>
+              <p className="mt-2 ">{commentData.text}</p>
               {editCommentButton(commentData, false)}
               {deleteCommentButton(commentData, false)}
             </div>
@@ -310,7 +351,7 @@ class ProjectDetailsModal extends Component {
     };
     let comments = () => {
       if (this.props.showCommentUpdateForm === false) {
-      return filteredComments.map((commentData) => {
+        return filteredComments.map((commentData) => {
           return (
             <div
               id={commentData._id}
@@ -335,8 +376,8 @@ class ProjectDetailsModal extends Component {
               {filteredReplies(commentData)}
             </div>
           );
-        }
-      )};
+        });
+      }
     };
 
     if (this.props.data) {
@@ -374,7 +415,6 @@ class ProjectDetailsModal extends Component {
         }
       }
     }
-
     return (
       <Modal
         {...this.props}
