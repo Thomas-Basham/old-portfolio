@@ -24,15 +24,21 @@ html {
   font-size: 250%;
 }
 
+.header-image {
+
+  width: 500px;
+}
+
 .header-icon {
   height: 150px;
   width: 150px;
 }
 
+
 header {
   font-size: 2rem;
   position: relative;
-  height: 520px;
+  height:fit-content;
   min-height: 450px;
   width: 100%;
   color: white;
@@ -53,6 +59,12 @@ header .nav {
   font: 18px/24px "opensans-bold", sans-serif;
   text-transform: uppercase;
   letter-spacing: 5px;
+}
+.nav-link{
+  font: 18px/24px "opensans-bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: rgb(237, 235, 235);
 }
 
 .github-corner:hover .octo-arm {
@@ -165,7 +177,7 @@ header h1 {
   font: 18px/24px "opensans-bold", sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: black;
+  color: whitesmoke;
   text-align: center;
 }
 
@@ -173,8 +185,8 @@ header h1 {
   display: block;
   width: 100%;
   margin: 0 auto;
-  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .foto div {

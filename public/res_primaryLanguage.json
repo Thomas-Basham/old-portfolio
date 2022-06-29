@@ -1,10 +1,10 @@
 {
   "basic_info": {
     "description_header": "Hello World! 👋💻🌲🏔",
-    "description": "Welcome to my portfolio! I’m a Full Stack Software Developer based in the Seattle area and I’m also a US Army Veteran. Before I learned how to program, I made houses and commercial buildings beautiful with my carpentry skills. I enjoy making things and I have a curious mind, which is why time flies when I'm developing websites. I love a good mental challenge and I like to learn new things everyday. Thank you for visiting. Feel free to poke around and join a discussion 🥳",
+    "description": "Welcome to my portfolio! I’m a Full Stack Software Developer based in the Seattle area and I’m also a US Army Veteran. Before I learned how to program, I made houses and commercial buildings beautiful with my carpentry skills. I enjoy making things and I have a curious mind, which is why time flies when I'm developing websites. I love a good mental challenge and I like to learn new things everyday. Thank you for visiting. Feel free to poke around a bit and leave a comment on a project 🥳",
 
     "section_name": {
-      "about": "Feel free to check out my projects and leave a comment for discussion 😁😄😁",
+      "about": "Feel free to check out my projects and start a discussion 😁😄😁",
       "projects": "Projects",
       "skills": "Skills",
       "experience": "Experience"
@@ -12,13 +12,49 @@
   },
   "projects": [
     {
+      "title": "Culinary Blog",
+      "startDate": "June 2022",
+      "description": "A Full Stack React Web App with user registration, user login, and blog posting capabilities with user image uploads. Created with Eden Brekke, Dwight Lindquist, Ella Svete, and Michelle Salazar",
+      "images": [
+        "images/portfolio/culinaryBlog/culinaryBlog1.png",
+        "images/portfolio/culinaryBlog/culinaryBlog2.png",
+        "images/portfolio/culinaryBlog/culinaryBlog3.png",
+        "images/portfolio/culinaryBlog/culinaryBlog4.png",
+        "images/portfolio/culinaryBlog/culinaryBlog5.png"
+
+      ],
+      "url": "https://smells-like-devs-cooking-frontend-rho.vercel.app",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-django-plain",
+          "name": "Django"
+        },
+        {
+          "class": "devicon-nextjs-plain",
+          "name": "NextJS"
+        },
+        {
+          "class": "devicon-html5-plain",
+          "name": "HTML5"
+        },
+        {
+          "class": "devicon-css3-plain",
+          "name": "CSS3"
+        }
+      ]
+    },
+    {
       "title": "Washington Stocked Trout Finder",
       "startDate": "June 2022",
       "description": "A Full Stack Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State. Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
       "images": [
-        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes1.png",
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes3.png",
         "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes2.png",
-        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes3.png"
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes1.png"
       ],
       "url": "https://wa-stocked-trout-finder.herokuapp.com",
       "technologies": [
@@ -27,20 +63,12 @@
           "name": "Python"
         },
         {
-          "class": "devicon-flask-plain",
+          "class": "devicon-flask-original",
           "name": "Flask"
         },
         {
-          "class": "devicon-beautifulsoup-plain",
-          "name": "Beautiful Soup"
-        },
-        {
-          "class": "devicon-plain",
+          "class": "devicon-pandas-original",
           "name": "Pandas"
-        },
-        {
-          "class": "devicon-Folium-plain",
-          "name": "Folium"
         },
         {
           "class": "devicon-html5-plain",
@@ -58,11 +86,11 @@
       "startDate": "May 2022",
       "description": "A full stack mobile-first React web app that allows users to sign in securely, manage their own digital bookshelf, and add books from Google Books™  API made with Cole Gibbs ",
       "images": [
-        "images/portfolio/digitalBookshelf/digitalBookshelf1.png",
-        "images/portfolio/digitalBookshelf/digitalBookshelf2.png",
-        "images/portfolio/digitalBookshelf/digitalBookshelf3.png",
+        "images/portfolio/digitalBookshelf/digitalBookshelf5.png",
         "images/portfolio/digitalBookshelf/digitalBookshelf4.png",
-        "images/portfolio/digitalBookshelf/digitalBookshelf5.png"
+        "images/portfolio/digitalBookshelf/digitalBookshelf3.png",
+        "images/portfolio/digitalBookshelf/digitalBookshelf2.png",
+        "images/portfolio/digitalBookshelf/digitalBookshelf1.png"
       ],
       "url": "https://digitalbookshelf.netlify.app",
       "technologies": [
@@ -101,7 +129,6 @@
       "startDate": "May 2022",
       "description": "A Full Stack React web application that compiles relevant fictional product sales so that the client can have more accurate stock and staff counts",
       "images": [
-        "images/portfolio/cityExplorer/cityExplorer3.png",
         "images/portfolio/cityExplorer/cityExplorer4.png",
         "images/portfolio/cityExplorer/cityExplorer5.png",
         "images/portfolio/cityExplorer/cityExplorer6.png"
@@ -165,13 +192,10 @@
           "name": "PostgreSQL"
         },
         {
-          "class": "devicon-plain",
+          "class": "devicon-pandas-original",
           "name": "Pandas"
         },
-        {
-          "class": "devicon-Folium-plain",
-          "name": "Folium"
-        },
+
         {
           "class": "devicon-html5-plain",
           "name": "HTML5"
@@ -187,10 +211,10 @@
       "startDate": "May 2022",
       "description": "A Full Stack Django Restful Services API for storing favorite music, built with Django Rest Framework, PostgreSQL, Paginator, Wavesurfer, and AWS S3 bucket for user file uploads",
       "images": [
-        "images/portfolio/MusicAPI/MusicAPI1.png",
-        "images/portfolio/MusicAPI/MusicAPI2.png",
+        "images/portfolio/MusicAPI/MusicAPI4.png",
         "images/portfolio/MusicAPI/MusicAPI3.png",
-        "images/portfolio/MusicAPI/MusicAPI4.png"
+        "images/portfolio/MusicAPI/MusicAPI2.png",
+        "images/portfolio/MusicAPI/MusicAPI1.png"
       ],
       "url": "https://music-api-thomas-basham.herokuapp.com/",
       "technologies": [
@@ -225,12 +249,10 @@
       "startDate": "May 2022",
       "description": "A Full Stack Django Restful Services API for storing favorite family pet pics, built with Django Rest Framework, PostgreSQL, and Cloudinary for user file uploads",
       "images": [
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI1.png",
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI2.png",
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI3.png",
         "images/portfolio/PuppyPicAPI/PuppyPicAPI4.png",
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI5.png",
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI6.png"
+        "images/portfolio/PuppyPicAPI/PuppyPicAPI3.png",
+        "images/portfolio/PuppyPicAPI/PuppyPicAPI2.png",
+        "images/portfolio/PuppyPicAPI/PuppyPicAPI1.png"
       ],
       "url": "https://puppy-pics-api-thomas-basham.herokuapp.com",
       "technologies": [
@@ -245,14 +267,6 @@
         {
           "class": "devicon-postgresql-plain",
           "name": "PostgreSQL"
-        },
-        {
-          "class": "devicon-cloudinary-plain",
-          "name": "Couldinary"
-        },
-        {
-          "class": "devicon-djangorestframework-plain",
-          "name": "Django Rest framework"
         },
         {
           "class": "devicon-html5-plain",

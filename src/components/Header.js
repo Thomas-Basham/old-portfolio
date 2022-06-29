@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
-
+import logo from './logo.png'
 class Header extends Component {
   titles = [];
 
@@ -84,9 +84,9 @@ class Header extends Component {
           fill
           style={{ position: "absolute", top: 10, right: 10 }}
         >
-          <Nav.Item>
+          <Nav.Item >
             <LinkContainer to="/">
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/" >Home</Nav.Link>
             </LinkContainer>
           </Nav.Item>
           <Nav.Item>
@@ -140,11 +140,12 @@ class Header extends Component {
         <div className="row aligner" style={{ height: "100%" }}>
           <div className="col-md-12">
             <div>
-              <span
+              <img className="header-image" alt="logo" src={logo}></img>
+              {/* <span
                 className="iconify header-icon"
                 data-icon="la:laptop-code"
                 data-inline="false"
-              ></span>
+              ></span> */}
               <br />
               <h1 className="mb-0">{name}</h1>
               <div className="title-container">
