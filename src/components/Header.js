@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
-import logo from './logo.png'
+import logo from "./logo.png";
 class Header extends Component {
   titles = [];
 
@@ -38,10 +38,7 @@ class Header extends Component {
     // );
 
     return (
-      <header
-        id="home"
-        style={{ height: window.innerHeight - 100, display: "block" }}
-      >
+      <header id="home" style={{ display: "block" }}>
         <a
           href="https://github.com/bashamtg/Portfolio"
           target="_blank"
@@ -84,9 +81,9 @@ class Header extends Component {
           fill
           style={{ position: "absolute", top: 10, right: 10 }}
         >
-          <Nav.Item >
+          <Nav.Item>
             <LinkContainer to="/">
-              <Nav.Link href="/" >Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
             </LinkContainer>
           </Nav.Item>
           <Nav.Item>
@@ -138,9 +135,7 @@ class Header extends Component {
           </Nav.Item>
         </Nav>
 
-
-              <img className="header-image" alt="logo" src={logo}></img>
-
+        <img className="header-image" alt="logo" src={logo}></img>
       </header>
     );
   }

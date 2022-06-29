@@ -134,7 +134,6 @@ class Projects extends Component {
   };
 
   render() {
-    console.log(this.state.projectData)
 
     let detailsModalShow = (data, currentProject) => {
       this.setState({

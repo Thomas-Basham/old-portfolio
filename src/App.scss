@@ -26,7 +26,7 @@ html {
 
 .header-image {
   margin-top: 2vh;
-  width: 50vw;
+  width: 35vw;
 }
 
 .header-icon {
@@ -34,18 +34,19 @@ html {
   width: 150px;
 }
 
-
 header {
+  display: flex;
+  justify-content: center;
   font-size: 2rem;
   position: relative;
-  height:100vh;
-  min-height: 100vh;
+  height: 100%;
+  min-height: 100%;
   width: 100%;
   color: white;
   background-size: contain;
   -webkit-background-size: cover;
   text-align: center;
-  overflow: hidden;
+
   background-color: hsla(200, 40%, 30%, 0.4);
   background-image: url("../public/images/wallpaper.jpg");
   -webkit-background-size: cover;
@@ -60,8 +61,8 @@ header .nav {
   text-transform: uppercase;
   letter-spacing: 5px;
 }
-.nav-link{
-  font: 4vmin/4vmin "Helvetica Neue";
+.nav-link {
+  font: 3vmin/4vmin "Helvetica Neue";
   text-transform: uppercase;
   letter-spacing: 5px;
   color: rgb(237, 235, 235);
@@ -168,7 +169,7 @@ header h1 {
     #1d334c
   );
   overflow: hidden;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
 }
 
 #about h1 {
@@ -346,9 +347,15 @@ header h1 {
 
 .modal-inside .modal-content {
   background: white;
-  padding-bottom: 5vh;
+  padding-bottom: 5px;
 }
 
+.made-with {
+  padding: 5px 5px 0;
+  margin-bottom: 5px;
+  position: relative;
+  display: inline-block;
+}
 .bars {
   width: 95%;
   float: left;
