@@ -25,17 +25,17 @@ class Header extends Component {
   }
 
   render() {
-    if (this.props.sharedData) {
-      var name = this.props.sharedData.name;
-      this.titles = this.props.sharedData.titles; //...map(x => [ x.toUpperCase(), 1500 ] ).flat();
-    }
+    // if (this.props.sharedData) {
+    //   var name = this.props.sharedData.name;
+    //   this.titles = this.props.sharedData.titles; //...map(x => [ x.toUpperCase(), 1500 ] ).flat();
+    // }
 
-    const HeaderTitleTypeAnimation = React.memo(
-      () => {
-        return this.titles;
-      },
-      (props, prevProp) => true
-    );
+    // const HeaderTitleTypeAnimation = React.memo(
+    //   () => {
+    //     return this.titles;
+    //   },
+    //   (props, prevProp) => true
+    // );
 
     return (
       <header
@@ -137,23 +137,10 @@ class Header extends Component {
             /> */}
           </Nav.Item>
         </Nav>
-        <div className="row aligner" style={{ height: "100%" }}>
-          <div className="col-md-12">
-            <div>
+
+
               <img className="header-image" alt="logo" src={logo}></img>
-              {/* <span
-                className="iconify header-icon"
-                data-icon="la:laptop-code"
-                data-inline="false"
-              ></span> */}
-              <br />
-              <h1 className="mb-0">{name}</h1>
-              <div className="title-container">
-                <HeaderTitleTypeAnimation />
-              </div>
-            </div>
-          </div>
-        </div>
+
       </header>
     );
   }

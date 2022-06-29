@@ -284,7 +284,7 @@
       "company": "Code Fellows",
       "title": "Student",
       "years": "04.2022 - 07.2022",
-      "mainTech": ["Certificate for Advanced Software Development in Python"],
+      "mainTech": ["Advanced Software Development in Python"],
       "technologies": [
         "Python",
         "Django",
@@ -309,14 +309,16 @@
       "company": "Code Fellows",
       "title": "Student",
       "years": "02.2022 - 04.2022",
-      "mainTech": ["Certificate for Software Development in Javascript"],
+      "mainTech": ["Software Development in Javascript"],
       "technologies": [
         "JavaScript",
         "MongoDB",
         "ExpressJS",
         "React",
+        "NextJS",
         "NodeJS",
         "VS Code",
+        "Docker",
         "Heroku",
         "Netlify",
         "HTML5",
@@ -326,10 +328,10 @@
     },
 
     {
-      "company": "Icon Collective College of Music",
+      "company": "Icon Collective College of Music, Los Angeles",
       "title": "Student",
       "years": "01.2020 - 01.2021",
-      "mainTech": ["Certificate in Music Production on campus, Los Angeles"],
+      "mainTech": ["Music Production "],
       "technologies": ["Ableton Live", "Serum", "Ozone Suite", "Logic Pro"]
     },
     {

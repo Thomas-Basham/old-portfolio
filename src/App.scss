@@ -25,8 +25,8 @@ html {
 }
 
 .header-image {
-
-  width: 500px;
+  margin-top: 2vh;
+  width: 50vw;
 }
 
 .header-icon {
@@ -38,8 +38,8 @@ html {
 header {
   font-size: 2rem;
   position: relative;
-  height:fit-content;
-  min-height: 450px;
+  height:100vh;
+  min-height: 100vh;
   width: 100%;
   color: white;
   background-size: contain;
@@ -53,15 +53,15 @@ header {
   -o-background-size: cover;
   background-size: cover;
   padding-top: 4vh;
-  padding-bottom: 10vh;
+  // padding-bottom: 10vh;
 }
 header .nav {
-  font: 18px/24px "opensans-bold", sans-serif;
+  font: 24px/32px "Helvetica Neue";
   text-transform: uppercase;
   letter-spacing: 5px;
 }
 .nav-link{
-  font: 18px/24px "opensans-bold", sans-serif;
+  font: 4vmin/4vmin "Helvetica Neue";
   text-transform: uppercase;
   letter-spacing: 5px;
   color: rgb(237, 235, 235);

@@ -99,6 +99,9 @@ class ProjectDetailsModal extends Component {
     this.props.updateComment(postedComment);
 
     this.props.hideEditCommentForm();
+    
+    // e.target.reset()
+
   };
 
   handleReplyComment = (e) => {
@@ -114,6 +117,7 @@ class ProjectDetailsModal extends Component {
     this.props.postComment(postedComment);
     this.props.hideReplyForm();
     this.sendNotificationEmail(e, "comment");
+    // e.target.reset()
   };
 
   componentDidMount() {
