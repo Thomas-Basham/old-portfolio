@@ -27,8 +27,6 @@ html {
 .header-image {
   margin-top: 2vh;
   width: 35vw;
-  
-
 }
 
 .header-icon {
@@ -349,12 +347,14 @@ header h1 {
 
 .modal-inside .modal-content {
   background: white;
-  padding-bottom: 5vh;
+  padding-bottom: 5px;
 }
 
-.made-with{
-  padding: 300px;
-  background-color: #061123;
+.made-with {
+  padding: 5px 5px 0;
+  margin-bottom: 5px;
+  position: relative;
+  display: inline-block;
 }
 .bars {
   width: 95%;

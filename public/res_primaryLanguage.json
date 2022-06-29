@@ -14,15 +14,14 @@
     {
       "title": "Culinary Blog",
       "startDate": "June 2022",
-      "description": "A Full Stack React Web App with user registration, user login, and blog posting capabilities with user image uploads. Created with Eden Brekke, Dwight Lindquist, Ella Svete, and Michelle Salazar",
-      "descriptionHTML": "<div class=\"made-with\"><p>Team: </p><a href=\"https://github.com/eden-brekke\" target=\"_blank\" rel=\"noreferrer\">Eden Breke, </a><a href=\"https://github.com/dlindqu3\" target=\"_blank\" rel=\"noreferrer\">Dwight Lindquist, </a><a href=\"https://github.com/EllaSvete\" target=\"_blank\" rel=\"noreferrer\">Ella Svete, and </a><a href=\"https://github.com/MISalz\" target=\"_blank\" rel=\"noreferrer\">Michelle Salazar</a></div>",
+      "description": "A Full Stack React Web App with user registration, user login, and blog posting capabilities with user image uploads.",
+      "descriptionHTML": "<div class=\"made-with\"><p><strong>Team: </strong> </p><a href=\"https://github.com/eden-brekke\" target=\"_blank\" rel=\"noreferrer\">Eden Breke, </a><a href=\"https://github.com/dlindqu3\" target=\"_blank\" rel=\"noreferrer\">Dwight Lindquist, </a><a href=\"https://github.com/EllaSvete\" target=\"_blank\" rel=\"noreferrer\">Ella Svete, and </a><a href=\"https://github.com/MISalz\" target=\"_blank\" rel=\"noreferrer\">Michelle Salazar</a></div>",
       "images": [
         "images/portfolio/culinaryBlog/culinaryBlog1.png",
         "images/portfolio/culinaryBlog/culinaryBlog2.png",
         "images/portfolio/culinaryBlog/culinaryBlog3.png",
         "images/portfolio/culinaryBlog/culinaryBlog4.png",
         "images/portfolio/culinaryBlog/culinaryBlog5.png"
-
       ],
       "url": "https://smells-like-devs-cooking-frontend-rho.vercel.app",
       "technologies": [

@@ -99,9 +99,8 @@ class ProjectDetailsModal extends Component {
     this.props.updateComment(postedComment);
 
     this.props.hideEditCommentForm();
-    
-    // e.target.reset()
 
+    // e.target.reset()
   };
 
   handleReplyComment = (e) => {
@@ -320,7 +319,7 @@ class ProjectDetailsModal extends Component {
     const filteredComments = this.props.comments.filter(
       (comments) => this.props.currentProject.project === comments.project
     );
-    console.log(this.props.currentProject)
+    console.log(this.props.currentProject);
     let filteredReplies = (commentData) => {
       if (commentData) {
         let replyID =
@@ -420,12 +419,12 @@ class ProjectDetailsModal extends Component {
         }
       }
     }
-    let descriptionHTML = () => {
-    if (this.props.data.descriptionHTML){
-      const descriptionHTML = this.props.data.descriptionHTML
-      return <p dangerouslySetInnerHTML={ {__html: descriptionHTML} }/>
-      
-    }}
+    let teamHTML = () => {
+      if (this.props.data.descriptionHTML) {
+        const descriptionHTML = this.props.data.descriptionHTML;
+        return <p dangerouslySetInnerHTML={{ __html: descriptionHTML }} />;
+      }
+    };
     return (
       <Modal
         {...this.props}
@@ -489,23 +488,17 @@ class ProjectDetailsModal extends Component {
             <h3 style={{ padding: "5px 5px 0 5px" }}>
               {title}
               {url ? (
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-href"
-                >
-                 <p style={{fontSize: 11}}>{url}</p> 
-
+                <a href={url} target="_blank" rel="noreferrer">
+                  <p style={{ fontSize: 11 }}>{url}</p>
                 </a>
               ) : null}
             </h3>
 
             <p className="modal-description"> {description}</p>
-            {descriptionHTML()}
-
 
             <ul className="list-inline mx-auto">{tech}</ul>
+
+            {teamHTML()}
 
             <div className="col-md-12 text-center">
               {likeButton()}
