@@ -4,8 +4,37 @@ import reactIcon from "@iconify/icons-logos/react";
 import pythonIcon from "@iconify/icons-logos/python";
 import djangoIcon from "@iconify/icons-logos/django-icon";
 import javascriptIcon from "@iconify/icons-logos/javascript";
-
+import AboutMeDetailsModal from "./AboutMeDetailsModal";
+import Fade from "react-bootstrap/Fade";
 class About extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      detailsModalShow: false,
+      exposeMusicPlayer: false,
+      fadeAbout: false,
+    };
+  }
+
+  detailsModalShow = () => {
+    this.setState({
+      detailsModalShow: true,
+    });
+  };
+
+  detailsModalClose = () =>
+    this.setState({
+      detailsModalShow: false,
+      showCommentUpdateForm: false,
+      showReplyForm: false,
+    });
+
+  exposeMusicPlayer = () => {
+    this.setState({
+      exposeMusicPlayer: true,
+    });
+  };
+
   render() {
     if (this.props.sharedBasicInfo) {
       var profilepic = "images/" + this.props.sharedBasicInfo.image;
@@ -15,7 +44,7 @@ class About extends Component {
       var hello = this.props.resumeBasicInfo.description_header;
       var about = this.props.resumeBasicInfo.description;
     }
-
+console.log(this.state.fadeAbout)
     return (
       <section id="about">
         <div className="col-md-12">
@@ -51,48 +80,91 @@ class About extends Component {
                 </span>
               </div>
             </div>
+            {!this.state.exposeMusicPlayer ? (
+              <div className="col-md-8 center {this.state.fadeAbout ? 'fade' : ''}">
+                <div className="col-md-10">
+                  <div className="card">
+                    <div className="card-header">
+                      <button
+                        style={{
+                          padding: "0",
+                          margin: "0",
+                          border: "none",
+                          textDecoration: "none",
+                        }}
+                        onClick={this.exposeMusicPlayer}
+                      >
+                        <span
+                          className="iconify"
+                          data-icon="emojione:red-circle"
+                          data-inline="false"
+                        ></span>
+                      </button>
+                      &nbsp;{" "}
+                      <button
+                        style={{
+                          padding: "0",
+                          margin: "0",
+                          border: "none",
+                          textDecoration: "none",
+                        }}
+                        onClick={() => this.setState({ fadeAbout: !this.state.fadeAbout })}
 
-            <div className="col-md-8 center">
-              <div className="col-md-10">
-                <div className="card">
-                  <div className="card-header">
-                    <span
-                      className="iconify"
-                      data-icon="emojione:red-circle"
-                      data-inline="false"
-                    ></span>{" "}
-                    &nbsp;{" "}
-                    <span
-                      className="iconify"
-                      data-icon="twemoji:yellow-circle"
-                      data-inline="false"
-                    ></span>{" "}
-                    &nbsp;{" "}
-                    <span
-                      className="iconify"
-                      data-icon="twemoji:green-circle"
-                      data-inline="false"
-                    ></span>
-                  </div>
-                  <div
-                    className="card-text font-trebuchet  ml-3 mr-3"
-                    style={{
-                      height: "auto",
-                      fontSize: "150%",
-                      lineHeight: "230%",
-                    }}
-                  >
-                    <br />
-                    <span className="wave">{hello} </span>
-                    <br />
-                    <br />
-                    {about}
+                      >
+                        <span
+                          className="iconify"
+                          data-icon="twemoji:yellow-circle"
+                          data-inline="false"
+                        ></span>{" "}
+                      </button>
+                      &nbsp;{" "}
+                      <button
+                        style={{
+                          padding: "0",
+                          margin: "0",
+                          border: "none",
+                          textDecoration: "none",
+                        }}
+                        onClick={this.detailsModalShow}
+                      >
+                        <span
+                          className="iconify"
+                          data-icon="twemoji:green-circle"
+                          data-inline="false"
+                        ></span>
+                      </button>
+                    </div>
+                    <Fade in={!this.state.fadeAbout} dimension="width">
+                      <div
+                        className="card-text font-trebuchet  ml-3 mr-3"
+                        style={{
+                          height: "auto",
+                          fontSize: "150%",
+                          lineHeight: "230%",
+                        }}
+                        id="example-fade-text"
+                      >
+                        <br />
+                        <span className="wave">{hello} </span>
+                        <br />
+                        <br />
+                        {about}
+                      </div>
+                    </Fade>
                   </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <h1>MUSIC PLAYER COMING SOON</h1>
+            )}
           </div>
         </div>
+        <AboutMeDetailsModal
+          show={this.state.detailsModalShow}
+          onHide={this.detailsModalClose}
+          about={about}
+          hello={hello}
+        />
       </section>
     );
   }

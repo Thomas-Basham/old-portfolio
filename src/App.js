@@ -80,6 +80,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.resumeData.basic_info)
     return (
       <Router>
         <Header sharedData={this.state.sharedData.basic_info} />
