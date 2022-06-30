@@ -5,7 +5,7 @@ import pythonIcon from "@iconify/icons-logos/python";
 import djangoIcon from "@iconify/icons-logos/django-icon";
 import javascriptIcon from "@iconify/icons-logos/javascript";
 import AboutMeDetailsModal from "./AboutMeDetailsModal";
-import Fade from "react-bootstrap/Fade";
+import Collapse from 'react-bootstrap/Collapse'
 import ReactPlayer from "react-player";
 
 class About extends Component {
@@ -21,8 +21,11 @@ class About extends Component {
 
   detailsModalShow = () => {
     this.setState({
+      fadeAbout: false,
       detailsModalShow: true,
+
     });
+
   };
 
   detailsModalClose = () =>
@@ -38,6 +41,12 @@ class About extends Component {
     });
   };
 
+  fadeAbout = () => {
+    this.setState({
+      fadeAbout: !this.state.fadeAbout
+    })
+  }
+
   render() {
     if (this.props.sharedBasicInfo) {
       var profilepic = "images/" + this.props.sharedBasicInfo.image;
@@ -47,7 +56,6 @@ class About extends Component {
       var hello = this.props.resumeBasicInfo.description_header;
       var about = this.props.resumeBasicInfo.description;
     }
-    console.log(this.state.fadeAbout);
     return (
       <section id="about">
         <div className="col-md-12">
@@ -63,6 +71,7 @@ class About extends Component {
                     height="100px"
                     src={profilepic}
                     alt="Avatar placeholder"
+                    onClick={this.detailsModalShow}
                   />
                   <Icon
                     icon={pythonIcon}
@@ -111,8 +120,8 @@ class About extends Component {
                           border: "none",
                           textDecoration: "none",
                         }}
-                        onClick={() =>
-                          this.setState({ fadeAbout: !this.state.fadeAbout })
+                        
+                        onClick={this.fadeAbout
                         }
                       >
                         <span
@@ -138,7 +147,7 @@ class About extends Component {
                         ></span>
                       </button>
                     </div>
-                    <Fade in={!this.state.fadeAbout}>
+                    <Collapse in={!this.state.fadeAbout}>
                       <div
                         className="card-text font-trebuchet  ml-3 mr-3"
                         style={{
@@ -157,7 +166,7 @@ class About extends Component {
 
                         <br />
                       </div>
-                    </Fade>
+                    </Collapse>
                   </div>
                 </div>
               </div>
@@ -169,6 +178,7 @@ class About extends Component {
         <AboutMeDetailsModal
           show={this.state.detailsModalShow}
           onHide={this.detailsModalClose}
+          fadeAbout={this.fadeAbout}
           about={about}
           hello={hello}
         />

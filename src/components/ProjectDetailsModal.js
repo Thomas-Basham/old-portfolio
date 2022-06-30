@@ -11,11 +11,15 @@ import LoginButtonAutho from "./LoginButtonAutho";
 import LoginButtonAuthoRedIcon from "./LoginButtonAuthoRedIcon";
 import Button from "react-bootstrap/Button";
 import emailjs from "@emailjs/browser";
+import Collapse from 'react-bootstrap/Collapse'
 
 class ProjectDetailsModal extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      fadeAbout: false,
+
+    };
   }
   componentDidMount() {
     this.setState({ counter: this.props.currentProject.likes });
@@ -414,6 +418,7 @@ class ProjectDetailsModal extends Component {
                 style={{ marginInline: "auto", position: "relative" }}
                 key={i}
                 data-src={elem}
+                onClick={() => this.props.detailsModalCloseAndImageModalShow(elem)}
               />
             );
           });
@@ -426,6 +431,12 @@ class ProjectDetailsModal extends Component {
         return <p dangerouslySetInnerHTML={{ __html: descriptionHTML }} />;
       }
     };
+
+    let fadeAbout = () => {
+      this.setState({
+        fadeAbout: !this.state.fadeAbout
+      })
+    }
     return (
       <Modal
         {...this.props}
@@ -461,7 +472,7 @@ class ProjectDetailsModal extends Component {
               </button>
               &nbsp;{" "}
               <button
-                onClick={this.props.onHide}
+                onClick={fadeAbout}
                 style={{
                   padding: 0,
                   border: "none",
@@ -477,6 +488,8 @@ class ProjectDetailsModal extends Component {
               </button>
               &nbsp; <LoginButtonAuthoRedIcon />
             </div>
+            <Collapse in={this.state.fadeAbout}>
+
             <AwesomeSlider
               cssModule={[AwesomeSliderStyles, AwesomeSliderStyles2]}
               animation="scaleOutAnimation"
@@ -484,6 +497,7 @@ class ProjectDetailsModal extends Component {
             >
               {img}
             </AwesomeSlider>
+          </Collapse>
           </div>
 
           <div className="col-md-10 mx-auto ">

@@ -3,6 +3,7 @@ import ProjectDetailsModal from "./ProjectDetailsModal";
 import axios from "axios";
 import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
+import { Lightbox } from "react-modal-image";
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +15,8 @@ class Projects extends Component {
       comments: [],
       showCommentUpdateForm: false,
       showReplyForm: false,
+      imageModalShow: false,
+      imageUrl: ''
     };
   }
 
@@ -134,6 +137,7 @@ class Projects extends Component {
     this.setState({ showReplyForm: false });
   };
 
+
   render() {
     let detailsModalShow = (data, currentProject) => {
       this.setState({
@@ -148,6 +152,17 @@ class Projects extends Component {
         detailsModalShow: false,
         showCommentUpdateForm: false,
         showReplyForm: false,
+      });
+
+    let detailsModalCloseAndImageModalShow = (imageUrl, data, currentProject) =>
+      this.setState({
+        detailsModalShow: !this.state.detailsModalShow,
+        showCommentUpdateForm: false,
+        showReplyForm: false,
+        imageModalShow: !this.state.imageModalShow,
+        imageUrl: imageUrl,
+        deps: this.state.deps || data,
+        currentProject: this.state.currentProject || currentProject,
       });
     let projectData = this.state.projectData;
 
@@ -239,8 +254,23 @@ class Projects extends Component {
             hideReplyForm={this.hideReplyForm}
             showReplyFormState={this.state.showReplyForm}
             deleteComment={this.deleteComment}
+            detailsModalCloseAndImageModalShow={detailsModalCloseAndImageModalShow}
+            imageUrl={this.state.imageUrl}
           />
+          
+          {
+            this.state.imageModalShow &&
+
+            <Lightbox
+            medium=''
+            large={this.state.imageUrl}
+            alt="Full Screen Image"
+            onClose={detailsModalCloseAndImageModalShow}
+          />
+          }
+
         </div>
+        
       </section>
     );
   }
