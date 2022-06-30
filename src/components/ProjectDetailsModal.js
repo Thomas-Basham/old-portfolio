@@ -17,6 +17,12 @@ class ProjectDetailsModal extends Component {
     super(props);
     this.state = {};
   }
+  componentDidMount() {
+    this.setState({ counter: this.props.currentProject.likes });
+    this.setState({ comments: this.props.comments });
+    this.setState({ likedBy: this.props.currentProject.likedBy });
+  }
+
   handleLikes = (e) => {
     e.preventDefault();
     let updatedProject = {
@@ -30,41 +36,6 @@ class ProjectDetailsModal extends Component {
     });
     this.props.updateProject(updatedProject);
     this.sendNotificationEmail(e, "like");
-  };
-
-  serverID = process.env.REACT_APP_EMAIL_JS_SERVER_ID;
-  commentTemplateID = process.env.REACT_APP_EMAIL_JS_COMMENT_TEMPLATE_ID;
-  likeTemplateID = process.env.REACT_APP_EMAIL_JS_LIKE_TEMPLATE_ID;
-  publicKey = process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY;
-  sendNotificationEmail = (e, commentOrLike) => {
-    let templateParams = {};
-    let templateID = "";
-    if (commentOrLike === "comment") {
-      templateParams = {
-        from_name: this.props.auth0.user.name,
-        comment: e.target.comment.value,
-        project: this.props.data.title,
-      };
-      templateID = this.commentTemplateID;
-    }
-    if (commentOrLike === "like") {
-      templateParams = {
-        from_name: this.props.auth0.user.name,
-        project: this.props.data.title,
-      };
-      templateID = this.likeTemplateID;
-    }
-
-    emailjs
-      .send(this.serverID, templateID, templateParams, this.publicKey)
-      .then(
-        function (response) {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        function (error) {
-          console.log("FAILED...", error);
-        }
-      );
   };
 
   handleComments = (e) => {
@@ -119,11 +90,41 @@ class ProjectDetailsModal extends Component {
     // e.target.reset()
   };
 
-  componentDidMount() {
-    this.setState({ counter: this.props.currentProject.likes });
-    this.setState({ comments: this.props.comments });
-    this.setState({ likedBy: this.props.currentProject.likedBy });
-  }
+  serverID = process.env.REACT_APP_EMAIL_JS_SERVER_ID;
+  commentTemplateID = process.env.REACT_APP_EMAIL_JS_COMMENT_TEMPLATE_ID;
+  likeTemplateID = process.env.REACT_APP_EMAIL_JS_LIKE_TEMPLATE_ID;
+  publicKey = process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY;
+  sendNotificationEmail = (e, commentOrLike) => {
+    let templateParams = {};
+    let templateID = "";
+    if (commentOrLike === "comment") {
+      templateParams = {
+        from_name: this.props.auth0.user.name,
+        comment: e.target.comment.value,
+        project: this.props.data.title,
+      };
+      templateID = this.commentTemplateID;
+    }
+    if (commentOrLike === "like") {
+      templateParams = {
+        from_name: this.props.auth0.user.name,
+        project: this.props.data.title,
+      };
+      templateID = this.likeTemplateID;
+    }
+
+    emailjs
+      .send(this.serverID, templateID, templateParams, this.publicKey)
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+  };
+
   render() {
     let likeButton = () => {
       if (
@@ -484,9 +485,11 @@ class ProjectDetailsModal extends Component {
               {img}
             </AwesomeSlider>
           </div>
+
           <div className="col-md-10 mx-auto ">
             <h3 style={{ padding: "5px 5px 0 5px" }}>
               {title}
+
               {url ? (
                 <a href={url} target="_blank" rel="noreferrer">
                   <p style={{ fontSize: 11 }}>{url}</p>

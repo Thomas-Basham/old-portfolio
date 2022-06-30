@@ -9,7 +9,6 @@ import Home from "./components/Home";
 import { withAuth0 } from "@auth0/auth0-react";
 
 class App extends Component {
-
   constructor(props) {
     super();
     this.state = {
@@ -27,7 +26,7 @@ class App extends Component {
         ? `res_primaryLanguage.json`
         : `res_secondaryLanguage.json`;
     this.loadResumeFromPath(resumePath);
-  }
+  };
 
   swapCurrentlyActiveLanguage = (oppositeLangIconId) => {
     var pickedLangIconId =
@@ -40,7 +39,7 @@ class App extends Component {
     document
       .getElementById(pickedLangIconId)
       .setAttribute("filter", "brightness(40%)");
-  }
+  };
 
   componentDidMount = () => {
     this.loadSharedData();
@@ -48,7 +47,7 @@ class App extends Component {
       window.$primaryLanguage,
       window.$secondaryLanguageIconId
     );
-  }
+  };
 
   loadResumeFromPath = (path) => {
     $.ajax({
@@ -62,7 +61,7 @@ class App extends Component {
         alert(err);
       },
     });
-  }
+  };
 
   loadSharedData = () => {
     $.ajax({
@@ -77,10 +76,10 @@ class App extends Component {
         alert(err);
       },
     });
-  }
+  };
 
   render() {
-    console.log(this.state.resumeData.basic_info)
+    console.log(this.state.resumeData.basic_info);
     return (
       <Router>
         <Header sharedData={this.state.sharedData.basic_info} />
@@ -97,17 +96,13 @@ class App extends Component {
               sharedBasicInfo={this.state.sharedData.basic_info}
             />
           </Route>
-          
-          <Route path="/project:id">
-            
-          </Route>
-          
-          
+
+          <Route path="/project:id"></Route>
         </Switch>
-        <Footer 
+        <Footer
           sharedBasicInfo={this.state.sharedData.basic_info}
-          applyPickedLanguage={this.applyPickedLanguage} 
-        />  
+          applyPickedLanguage={this.applyPickedLanguage}
+        />
       </Router>
     );
   }
