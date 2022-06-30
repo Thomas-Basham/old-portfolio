@@ -2,7 +2,16 @@ import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 
 class AboutMeDetailsModal extends Component {
+
+
+  
+      closeModalAndFade = () => {
+        this.props.onHide();
+        this.props.fadeAbout();
+      }
+
   render() {
+
     return (
       <Modal {...this.props}>
         <div className="center w-100  w-100 h-100">
@@ -16,7 +25,7 @@ class AboutMeDetailsModal extends Component {
                     border: "none",
                     textDecoration: "none",
                   }}
-                  onClick={this.props.onHide}
+                  onClick={this.closeModalAndFade}
                 >
                   <span
                     className="iconify"
