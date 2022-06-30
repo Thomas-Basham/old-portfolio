@@ -11,14 +11,13 @@ import LoginButtonAutho from "./LoginButtonAutho";
 import LoginButtonAuthoRedIcon from "./LoginButtonAuthoRedIcon";
 import Button from "react-bootstrap/Button";
 import emailjs from "@emailjs/browser";
-import Collapse from 'react-bootstrap/Collapse'
+import Collapse from "react-bootstrap/Collapse";
 
 class ProjectDetailsModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
       fadeAbout: false,
-
     };
   }
   componentDidMount() {
@@ -412,13 +411,15 @@ class ProjectDetailsModal extends Component {
           );
         });
         if (this.props.data.images) {
-          var img = images.map((elem, i) => {
+          var sliderImgs = images.map((elem, i) => {
             return (
               <div
                 style={{ marginInline: "auto", position: "relative" }}
                 key={i}
                 data-src={elem}
-                onClick={() => this.props.detailsModalCloseAndImageModalShow(elem)}
+                onClick={() =>
+                  this.props.detailsModalCloseAndImageModalShow(elem)
+                }
               />
             );
           });
@@ -434,9 +435,9 @@ class ProjectDetailsModal extends Component {
 
     let fadeAbout = () => {
       this.setState({
-        fadeAbout: !this.state.fadeAbout
-      })
-    }
+        fadeAbout: !this.state.fadeAbout,
+      });
+    };
     return (
       <Modal
         {...this.props}
@@ -486,7 +487,23 @@ class ProjectDetailsModal extends Component {
                   data-inline="false"
                 ></span>{" "}
               </button>
-              &nbsp; <LoginButtonAuthoRedIcon />
+              &nbsp;
+              <button
+                onClick={() =>
+                  this.props.detailsModalCloseAndImageGalleryShow()
+                }
+                style={{
+                  padding: 0,
+                  border: "none",
+                  background: "none",
+                }}
+              >
+                <span
+                  className="iconify slider-iconfiy"
+                  data-icon="twemoji:green-circle"
+                  data-inline="false"
+                ></span>
+              </button>
             </div>
 
             <AwesomeSlider
@@ -494,37 +511,37 @@ class ProjectDetailsModal extends Component {
               animation="scaleOutAnimation"
               className="slider-image"
             >
-              {img}
+              {sliderImgs}
             </AwesomeSlider>
           </div>
 
-              <Collapse in={!this.state.fadeAbout}>
-          <div className="col-md-10 mx-auto ">
-            <h3 style={{ padding: "5px 5px 0 5px" }}>
-              {title}
+          <Collapse in={!this.state.fadeAbout}>
+            <div className="col-md-10 mx-auto ">
+              <h3 style={{ padding: "5px 5px 0 5px" }}>
+                {title}
 
-              {url ? (
-                <a href={url} target="_blank" rel="noreferrer">
-                  <p style={{ fontSize: 11 }}>{url}</p>
-                </a>
-              ) : null}
-            </h3>
+                {url ? (
+                  <a href={url} target="_blank" rel="noreferrer">
+                    <p style={{ fontSize: 11 }}>{url}</p>
+                  </a>
+                ) : null}
+              </h3>
 
-            <p className="modal-description"> {description}</p>
+              <p className="modal-description"> {description}</p>
 
-            <ul className="list-inline mx-auto">{tech}</ul>
+              <ul className="list-inline mx-auto">{tech}</ul>
 
-            {teamHTML()}
+              {teamHTML()}
 
-            <div className="col-md-12 text-center">
-              {likeButton()}
-              {commentFormOrLoginButton()}
-              {comments()}
-              {editCommentButton}
-              {editCommentForm()}
+              <div className="col-md-12 text-center">
+                {likeButton()}
+                {commentFormOrLoginButton()}
+                {comments()}
+                {editCommentButton}
+                {editCommentForm()}
+              </div>
             </div>
-          </div>
-              </Collapse>
+          </Collapse>
         </div>
       </Modal>
     );
