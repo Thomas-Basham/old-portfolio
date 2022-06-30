@@ -8,6 +8,7 @@
     "axios": "^0.27.2",
     "bootstrap": "^4.6.1",
     "emailjs-com": "^3.2.0",
+    "eslint": "^8.18.0",
     "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-awesome-slider": "^4.1.0",
@@ -16,6 +17,7 @@
     "react-datetime": "^3.1.1",
     "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
+    "react-image-gallery": "^1.2.8",
     "react-jinke-music-player": "^4.24.2",
     "react-modal-image": "^2.5.0",
     "react-player": "^2.10.1",
@@ -51,11 +53,23 @@
       "last 1 safari version"
     ]
   },
-  "homepage": ".",
+  "homepage": "http://.",
   "devDependencies": {
     "@iconify/icons-logos": "^1.2.4",
     "@iconify/react": "^1.1.4",
     "gh-pages": "^3.2.3",
     "mini-css-extract-plugin": "^2.4.5"
+  },
+  "description": "Created with a Create React App Starter Template by **Thomas Basham**",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bashamtg/Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bashamtg/Portfolio/issues"
   }
 }

@@ -4,6 +4,8 @@ import axios from "axios";
 import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
 import { Lightbox } from "react-modal-image";
+
+import ImageGallery from "react-image-gallery";
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,8 @@ class Projects extends Component {
       showCommentUpdateForm: false,
       showReplyForm: false,
       imageModalShow: false,
-      imageUrl: ''
+      imageGalleryShow: false,
+      imageUrl: "",
     };
   }
 
@@ -137,13 +140,19 @@ class Projects extends Component {
     this.setState({ showReplyForm: false });
   };
 
-
+  imageGalleryData = () => {
+    return this.state.deps.images.map((image) => {
+      return { original: image };
+    });
+  };
   render() {
     let detailsModalShow = (data, currentProject) => {
       this.setState({
         detailsModalShow: true,
         deps: data,
         currentProject: currentProject,
+        imageModalShow: false,
+        imageGalleryShow: false,
       });
     };
 
@@ -164,6 +173,22 @@ class Projects extends Component {
         deps: this.state.deps || data,
         currentProject: this.state.currentProject || currentProject,
       });
+
+    let detailsModalCloseAndImageGalleryShow = (
+      imageUrl,
+      data,
+      currentProject
+    ) =>
+      this.setState({
+        detailsModalShow: !this.state.detailsModalShow,
+        showCommentUpdateForm: false,
+        showReplyForm: false,
+        imageGalleryShow: !this.state.imageGalleryShow,
+        imageUrl: imageUrl,
+        deps: this.state.deps || data,
+        currentProject: this.state.currentProject || currentProject,
+      });
+
     let projectData = this.state.projectData;
 
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {
@@ -216,6 +241,7 @@ class Projects extends Component {
         );
       }
     };
+    console.log("IMG URL ON PROJECT.js", this.state.imageUrl);
     return (
       <section id="portfolio">
         {this.props.auth0.isAuthenticated && welcomeMessage()}
@@ -229,6 +255,21 @@ class Projects extends Component {
             >
               Click an image to view more details
             </p>
+            {this.state.imageModalShow && (
+              <Lightbox
+                medium=""
+                large={this.state.imageUrl}
+                alt="Full Screen Image"
+                onClose={detailsModalCloseAndImageModalShow}
+              />
+            )}
+            {this.state.imageGalleryShow && (
+              <ImageGallery
+                items={this.imageGalleryData()}
+                onClick={detailsModalCloseAndImageGalleryShow}
+                onImageLoad="fullscreen"
+              />
+            )}
           </h1>
           <div className="col-md-12 mx-auto">
             <div className="row mx-auto">{projects}</div>
@@ -254,23 +295,15 @@ class Projects extends Component {
             hideReplyForm={this.hideReplyForm}
             showReplyFormState={this.state.showReplyForm}
             deleteComment={this.deleteComment}
-            detailsModalCloseAndImageModalShow={detailsModalCloseAndImageModalShow}
+            detailsModalCloseAndImageModalShow={
+              detailsModalCloseAndImageModalShow
+            }
+            detailsModalCloseAndImageGalleryShow={
+              detailsModalCloseAndImageGalleryShow
+            }
             imageUrl={this.state.imageUrl}
           />
-          
-          {
-            this.state.imageModalShow &&
-
-            <Lightbox
-            medium=''
-            large={this.state.imageUrl}
-            alt="Full Screen Image"
-            onClose={detailsModalCloseAndImageModalShow}
-          />
-          }
-
         </div>
-        
       </section>
     );
   }
