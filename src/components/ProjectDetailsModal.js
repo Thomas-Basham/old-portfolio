@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
-import LoginButtonAuthoRedIcon from "./LoginButtonAuthoRedIcon";
 import Button from "react-bootstrap/Button";
 import emailjs from "@emailjs/browser";
 import Collapse from "react-bootstrap/Collapse";
