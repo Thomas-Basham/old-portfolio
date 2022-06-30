@@ -5,13 +5,11 @@ class AboutMeDetailsModal extends Component {
   render() {
     return (
       <Modal {...this.props}>
-        <div className="center w-100  w-100 h-100"
-
-        >
+        <div className="center w-100  w-100 h-100">
           <div className="center  w-100 h-100">
             <div className="card w-100 h-100">
               <div className="card-header">
-              <button
+                <button
                   style={{
                     padding: "0",
                     margin: "0",
@@ -20,14 +18,13 @@ class AboutMeDetailsModal extends Component {
                   }}
                   onClick={this.props.onHide}
                 >
-                <span
-                  className="iconify"
-                  data-icon="emojione:red-circle"
-                  data-inline="false"
-                ></span>{" "}
-                &nbsp;{" "}
+                  <span
+                    className="iconify"
+                    data-icon="emojione:red-circle"
+                    data-inline="false"
+                  ></span>{" "}
+                  &nbsp;{" "}
                 </button>
-
                 <button
                   style={{
                     padding: "0",

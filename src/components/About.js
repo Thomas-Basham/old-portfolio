@@ -6,7 +6,7 @@ import djangoIcon from "@iconify/icons-logos/django-icon";
 import javascriptIcon from "@iconify/icons-logos/javascript";
 import AboutMeDetailsModal from "./AboutMeDetailsModal";
 import Fade from "react-bootstrap/Fade";
-import ReactPlayer from 'react-player'
+import ReactPlayer from "react-player";
 
 class About extends Component {
   constructor(props) {
@@ -47,7 +47,7 @@ class About extends Component {
       var hello = this.props.resumeBasicInfo.description_header;
       var about = this.props.resumeBasicInfo.description;
     }
-console.log(this.state.fadeAbout)
+    console.log(this.state.fadeAbout);
     return (
       <section id="about">
         <div className="col-md-12">
@@ -111,8 +111,9 @@ console.log(this.state.fadeAbout)
                           border: "none",
                           textDecoration: "none",
                         }}
-                        onClick={() => this.setState({ fadeAbout: !this.state.fadeAbout })}
-
+                        onClick={() =>
+                          this.setState({ fadeAbout: !this.state.fadeAbout })
+                        }
                       >
                         <span
                           className="iconify"
@@ -151,9 +152,9 @@ console.log(this.state.fadeAbout)
                         <span className="wave">{hello} </span>
                         <br />
                         <br />
-    
+
                         {about}
-           
+
                         <br />
                       </div>
                     </Fade>
@@ -161,9 +162,7 @@ console.log(this.state.fadeAbout)
                 </div>
               </div>
             ) : (
-
-              
-             < ReactPlayer url="https://soundcloud.com/theheadandtheheart/lost-in-my-mind"/>
+              <ReactPlayer url="https://soundcloud.com/theheadandtheheart/lost-in-my-mind" />
             )}
           </div>
         </div>

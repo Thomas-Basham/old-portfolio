@@ -22,12 +22,25 @@ class Projects extends Component {
       let url = `${process.env.REACT_APP_SERVER}/project`;
       let projects = await axios.get(url);
       this.setState({
-        projectData: projects.data.reverse(),
+        projectData: projects.data.reverse(), // reversed so that when I add JSON data and mongodb data the indexes align
       });
     } catch (error) {
       console.log(error);
     }
   };
+
+  getComments = async () => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/Comment`;
+      let comments = await axios.get(url);
+      this.setState({
+        comments: comments.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   componentDidMount() {
     this.getProjects();
     this.getComments();
@@ -36,9 +49,9 @@ class Projects extends Component {
   postProject = async (newProject) => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/project`;
-      let createdProject = await axios.post(url, newProject);
+      let request = await axios.post(url, newProject);
       this.setState({
-        projectData: [...this.state.projectData, createdProject.data],
+        projectData: [...this.state.projectData, request.data],
       });
     } catch (error) {
       console.log("we have an error:", error.response.data);
@@ -61,24 +74,12 @@ class Projects extends Component {
     }
   };
 
-  getComments = async () => {
-    try {
-      let url = `${process.env.REACT_APP_SERVER}/Comment`;
-      let comments = await axios.get(url);
-      this.setState({
-        comments: comments.data,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   postComment = async (newComment) => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/comment`;
-      let createdComment = await axios.post(url, newComment);
+      let request = await axios.post(url, newComment);
       this.setState({
-        comments: [...this.state.comments, createdComment.data],
+        comments: [...this.state.comments, request.data],
       });
     } catch (error) {
       console.log("we have an error:", error.response.data);
@@ -134,7 +135,6 @@ class Projects extends Component {
   };
 
   render() {
-
     let detailsModalShow = (data, currentProject) => {
       this.setState({
         detailsModalShow: true,
@@ -191,7 +191,11 @@ class Projects extends Component {
     let welcomeMessage = () => {
       if (this.props.auth0.isAuthenticated) {
         return (
-          <p id="welcome-message" className="text-white text-center display-4" style={{fontSize: "1.3vmax"}}>
+          <p
+            id="welcome-message"
+            className="text-white text-center display-4"
+            style={{ fontSize: "1.3vmax" }}
+          >
             Thanks for logging in, {this.props.auth0.user.given_name}
           </p>
         );
@@ -203,9 +207,13 @@ class Projects extends Component {
         <div className="col-md-12">
           <h1 className="section-title">
             <span>{sectionName}</span>
-            <p id="welcome-message" className="text-white text-center display-4" style={{fontSize: "1vmax", marginTop: '1vmax'}}>
-            Click an image to view more details
-          </p>
+            <p
+              id="welcome-message"
+              className="text-white text-center display-4"
+              style={{ fontSize: "1vmax", marginTop: "1vmax" }}
+            >
+              Click an image to view more details
+            </p>
           </h1>
           <div className="col-md-12 mx-auto">
             <div className="row mx-auto">{projects}</div>
