@@ -73,6 +73,7 @@ class AboutMeDetailsModal extends Component {
                 <br />
                 <br />
                 {this.props.about}
+                <br />
               </div>
             </div>
           </div>
