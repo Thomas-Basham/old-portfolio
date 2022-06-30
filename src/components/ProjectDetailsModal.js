@@ -488,7 +488,6 @@ class ProjectDetailsModal extends Component {
               </button>
               &nbsp; <LoginButtonAuthoRedIcon />
             </div>
-            <Collapse in={this.state.fadeAbout}>
 
             <AwesomeSlider
               cssModule={[AwesomeSliderStyles, AwesomeSliderStyles2]}
@@ -497,9 +496,9 @@ class ProjectDetailsModal extends Component {
             >
               {img}
             </AwesomeSlider>
-          </Collapse>
           </div>
 
+              <Collapse in={!this.state.fadeAbout}>
           <div className="col-md-10 mx-auto ">
             <h3 style={{ padding: "5px 5px 0 5px" }}>
               {title}
@@ -525,6 +524,7 @@ class ProjectDetailsModal extends Component {
               {editCommentForm()}
             </div>
           </div>
+              </Collapse>
         </div>
       </Modal>
     );
