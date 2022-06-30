@@ -6,8 +6,11 @@ import djangoIcon from "@iconify/icons-logos/django-icon";
 import javascriptIcon from "@iconify/icons-logos/javascript";
 import AboutMeDetailsModal from "./AboutMeDetailsModal";
 import Fade from "react-bootstrap/Fade";
+import ReactPlayer from 'react-player'
+
 class About extends Component {
   constructor(props) {
+    // this.audioInstance = null
     super(props);
     this.state = {
       detailsModalShow: false,
@@ -134,7 +137,7 @@ console.log(this.state.fadeAbout)
                         ></span>
                       </button>
                     </div>
-                    <Fade in={!this.state.fadeAbout} dimension="width">
+                    <Fade in={!this.state.fadeAbout}>
                       <div
                         className="card-text font-trebuchet  ml-3 mr-3"
                         style={{
@@ -148,14 +151,19 @@ console.log(this.state.fadeAbout)
                         <span className="wave">{hello} </span>
                         <br />
                         <br />
+    
                         {about}
+           
+                        <br />
                       </div>
                     </Fade>
                   </div>
                 </div>
               </div>
             ) : (
-              <h1>MUSIC PLAYER COMING SOON</h1>
+
+              
+             < ReactPlayer url="https://soundcloud.com/theheadandtheheart/lost-in-my-mind"/>
             )}
           </div>
         </div>
