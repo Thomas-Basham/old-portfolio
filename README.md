@@ -1,8 +1,8 @@
 # Welcome to my Portfolio
 
-Created with a CRA Starter Template by **Thomas Basham**
+Created with a Create React App Starter Template by **Thomas Basham**
 
-## [httpss://thomasbashamportfolio.net](https://thomasbashamportfolio.net)
+## [https://thomasbashamportfolio.net](https://thomasbashamportfolio.net)
 
 I took this simple/not-so-simple template and made it a full-stack webpage
 

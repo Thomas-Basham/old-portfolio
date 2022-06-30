@@ -4,6 +4,8 @@ import axios from "axios";
 import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
 import { Lightbox } from "react-modal-image";
+
+import ImageGallery from 'react-image-gallery';
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -216,12 +218,31 @@ class Projects extends Component {
         );
       }
     };
+    console.log("IMG URL ON PROJECT.js", this.state.imageUrl)
     return (
       <section id="portfolio">
         {this.props.auth0.isAuthenticated && welcomeMessage()}
         <div className="col-md-12">
           <h1 className="section-title">
             <span>{sectionName}</span>
+            {
+            this.state.imageModalShow &&
+              <>
+            <Lightbox
+            medium=''
+            large={this.state.imageUrl}
+            alt="Full Screen Image"
+            onClose={detailsModalCloseAndImageModalShow}
+          />
+
+          <ImageGallery
+           items={[{ original: this.state.imageUrl}]} 
+           onClick={detailsModalCloseAndImageModalShow}  
+           onImageLoad="fullscreen"
+           />
+           </>
+           
+          }
             <p
               id="welcome-message"
               className="text-white text-center display-4"
@@ -258,16 +279,7 @@ class Projects extends Component {
             imageUrl={this.state.imageUrl}
           />
           
-          {
-            this.state.imageModalShow &&
 
-            <Lightbox
-            medium=''
-            large={this.state.imageUrl}
-            alt="Full Screen Image"
-            onClose={detailsModalCloseAndImageModalShow}
-          />
-          }
 
         </div>
         
