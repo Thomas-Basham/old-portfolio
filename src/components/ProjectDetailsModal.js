@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
-import AwesomeSlider from "react-awesome-slider";
-import AwesomeSliderStyles from "../scss/light-slider.scss";
-import AwesomeSliderStyles2 from "../scss/dark-slider.scss";
-import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ImageGallery from "react-image-gallery";
 
 import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
@@ -208,6 +205,14 @@ class ProjectDetailsModal extends Component {
       }
     };
 
+    let imageGalleryData = () => {
+      if (this.props.data.images) {
+        return this.props.data.images.map((image) => {
+          return { original: image };
+        });
+      }
+    };
+
     let deleteCommentButton = (commentData, alignLeft) => {
       if (this.props.auth0.isAuthenticated) {
         if (commentData.user === this.props.auth0.user.name) {
@@ -389,7 +394,6 @@ class ProjectDetailsModal extends Component {
 
     if (this.props.data) {
       const technologies = this.props.data.technologies;
-      const images = this.props.data.images;
       var title = this.props.data.title;
       var description = this.props.data.description;
       var url = this.props.data.url;
@@ -409,20 +413,6 @@ class ProjectDetailsModal extends Component {
             </li>
           );
         });
-        if (this.props.data.images) {
-          var sliderImgs = images.map((elem, i) => {
-            return (
-              <div
-                style={{ marginInline: "auto", position: "relative" }}
-                key={i}
-                data-src={elem}
-                onClick={() =>
-                  this.props.detailsModalCloseAndImageModalShow(elem)
-                }
-              />
-            );
-          });
-        }
       }
     }
     let teamHTML = () => {
@@ -432,11 +422,6 @@ class ProjectDetailsModal extends Component {
       }
     };
 
-    let fadeAbout = () => {
-      this.setState({
-        fadeAbout: !this.state.fadeAbout,
-      });
-    };
     return (
       <Modal
         {...this.props}
@@ -472,7 +457,7 @@ class ProjectDetailsModal extends Component {
               </button>
               &nbsp;{" "}
               <button
-                onClick={fadeAbout}
+                onClick={this.props.fadeAbout}
                 style={{
                   padding: 0,
                   border: "none",
@@ -488,9 +473,6 @@ class ProjectDetailsModal extends Component {
               </button>
               &nbsp;
               <button
-                onClick={() =>
-                  this.props.detailsModalCloseAndImageGalleryShow()
-                }
                 style={{
                   padding: 0,
                   border: "none",
@@ -505,16 +487,10 @@ class ProjectDetailsModal extends Component {
               </button>
             </div>
 
-            <AwesomeSlider
-              cssModule={[AwesomeSliderStyles, AwesomeSliderStyles2]}
-              animation="scaleOutAnimation"
-              className="slider-image"
-            >
-              {sliderImgs}
-            </AwesomeSlider>
+            <ImageGallery items={imageGalleryData()} />
           </div>
 
-          <Collapse in={!this.state.fadeAbout}>
+          <Collapse in={!this.props.fadeAboutState}>
             <div className="col-md-10 mx-auto ">
               <h3 style={{ padding: "5px 5px 0 5px" }}>
                 {title}
