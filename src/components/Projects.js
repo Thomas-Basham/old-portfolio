@@ -3,7 +3,6 @@ import ProjectDetailsModal from "./ProjectDetailsModal";
 import axios from "axios";
 import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
-import { Lightbox } from "react-modal-image";
 
 class Projects extends Component {
   constructor(props) {
@@ -20,6 +19,7 @@ class Projects extends Component {
       imageGalleryShow: false,
       imageUrl: "",
       fadeAbout: false,
+      showIframe: false,
     };
   }
 
@@ -151,6 +151,16 @@ class Projects extends Component {
         fadeAbout: !this.state.fadeAbout,
       });
     };
+    let showAbout = () => {
+      this.setState({
+        fadeAbout: false,
+      });
+    };
+    let showIframe = () => {
+      this.setState({
+        showIframe: !this.state.showIframe,
+      });
+    };
     let detailsModalShow = (data, currentProject) => {
       this.setState({
         detailsModalShow: true,
@@ -260,14 +270,8 @@ class Projects extends Component {
             >
               Click an image to view more details
             </p>
-            {this.state.imageModalShow && (
-              <Lightbox
-                medium=""
-                large={this.state.imageUrl}
-                alt="Full Screen Image"
-                onClose={detailsModalCloseAndImageModalShow}
-              />
-            )}
+
+
           </h1>
           <div className="col-md-12 mx-auto">
             <div className="row mx-auto">{projects}</div>
@@ -302,6 +306,9 @@ class Projects extends Component {
             imageUrl={this.state.imageUrl}
             fadeAbout={fadeAbout}
             fadeAboutState={this.state.fadeAbout}
+            showAbout={showAbout}
+            showIframe={showIframe}
+            showIframeState={this.state.showIframe}
           />
         </div>
       </section>
