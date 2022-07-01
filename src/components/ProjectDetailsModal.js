@@ -10,12 +10,6 @@ import emailjs from "@emailjs/browser";
 import Collapse from "react-bootstrap/Collapse";
 
 class ProjectDetailsModal extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showIframe: false,
-    };
-  }
   componentDidMount() {
     this.setState({ counter: this.props.currentProject.likes });
     this.setState({ comments: this.props.comments });
@@ -133,7 +127,7 @@ class ProjectDetailsModal extends Component {
       ) {
         return (
           <Button style={{ float: "left" }} onClick={this.handleLikes}>
-            ❤️{this.props.currentProject.likes}
+            ❤️ {this.props.currentProject.likes}
           </Button>
         );
       } else {
@@ -148,7 +142,7 @@ class ProjectDetailsModal extends Component {
         this.props.showCommentUpdateForm === false
       )
         return (
-          <form onSubmit={this.handleComments}>
+          <form className="w-50" onSubmit={this.handleComments}>
             <input required id="comment" type="text" className="w-100"></input>
             <Button className="w-100" variant="outline-primary" type="submit">
               Comment
@@ -172,7 +166,6 @@ class ProjectDetailsModal extends Component {
                   padding: 0,
                   border: "none",
                   background: "none",
-                  float: "left",
                 }}
               >
                 <img
@@ -190,8 +183,9 @@ class ProjectDetailsModal extends Component {
                   padding: 0,
                   border: "none",
                   background: "none",
-                  textAlign: "right",
-                  float: "right",
+                  textAlign: "left",
+                  whiteSpace: " nowrap",
+                  overflow: "hidden",
                 }}
               >
                 <img
@@ -218,59 +212,39 @@ class ProjectDetailsModal extends Component {
         if (commentData.user === this.props.auth0.user.name) {
           if (alignLeft === true) {
             return (
-              <button
-                style={{
-                  padding: 0,
-                  border: "none",
-                  background: "none",
-                  textAlign: "left",
-                }}
+              <svg
+                style={{ width: "2%", cursor: "pointer" }}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
                 onClick={() => this.props.deleteComment(commentData._id)}
               >
-                {" "}
-                <svg
-                  style={{ width: "5%" }}
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                  />
-                </svg>
-              </button>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
+              </svg>
             );
           } else
             return (
-              <button
-                style={{
-                  padding: 0,
-                  border: "none",
-                  background: "none",
-                  textAlign: "right",
-                }}
+              <svg
+                style={{ width: "4%", cursor: "pointer" }}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
                 onClick={() => this.props.deleteComment(commentData._id)}
               >
-                {" "}
-                <svg
-                  style={{ width: "5%" }}
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                  />
-                </svg>
-              </button>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
+              </svg>
             );
         }
       }
@@ -327,7 +301,9 @@ class ProjectDetailsModal extends Component {
     const filteredComments = this.props.comments.filter(
       (comments) => this.props.currentProject.project === comments.project
     );
+
     console.log(this.props.currentProject);
+
     let filteredReplies = (commentData) => {
       if (commentData) {
         let replyID =
@@ -344,18 +320,25 @@ class ProjectDetailsModal extends Component {
               key={commentData._id}
               style={{
                 padding: 10,
+                textAlign: "right",
               }}
             >
               <h2 className="font-weight-bold m-0">{commentData.user}</h2>
-              <p
-                className="text-secondary"
-                style={{ fontSize: "70%", marginTop: 0 }}
+              <div
+                className="d-inline-block float-right "
+                style={{ float: "right" }}
               >
-                {new Date(commentData.updated).toLocaleString()}
-              </p>
+                {editCommentButton(commentData, false)}
+                {deleteCommentButton(commentData, false)}
+                <p
+                  className="text-secondary text-right"
+                  style={{ fontSize: "70%", marginTop: 0 }}
+                >
+                  {new Date(commentData.updated).toLocaleString()}
+                </p>
+              </div>
+
               <p className="mt-2 ">{commentData.text}</p>
-              {editCommentButton(commentData, false)}
-              {deleteCommentButton(commentData, false)}
             </div>
           );
         });
@@ -372,16 +355,22 @@ class ProjectDetailsModal extends Component {
                 padding: 10,
               }}
               key={commentData._id}
+              className="col-md-10"
             >
               <h2 className="font-weight-bold m-0">{commentData.user}</h2>
-              <p
-                className="text-secondary"
-                style={{ fontSize: "70%", marginTop: 0 }}
-              >
-                {new Date(commentData.updated).toLocaleString()}
-              </p>
-              {deleteCommentButton(commentData, true)}
-              {editCommentButton(commentData, true)}
+
+              <div className="d-flex flex-row ">
+                <p
+                  className="text-secondary"
+                  style={{ fontSize: "70%", marginTop: 0 }}
+                >
+                  {new Date(commentData.updated).toLocaleString()}
+                </p>
+
+                {deleteCommentButton(commentData, true)}
+                {editCommentButton(commentData, true)}
+              </div>
+
               <p className="mt-2 w-50">{commentData.text}</p>
               {replyButton(commentData)}
               {replyCommentForm(commentData)}
@@ -422,8 +411,6 @@ class ProjectDetailsModal extends Component {
       }
     };
 
-
-
     return (
       <Modal
         {...this.props}
@@ -432,76 +419,68 @@ class ProjectDetailsModal extends Component {
         centered
         className="modal-inside"
       >
-        <span onClick={this.props.onHide} className="modal-close">
-          <i className="fas fa-times fa-3x close-icon"></i>
-        </span>
-
-       <div className="col-md-12">
-          <div
-            className="col-md-10 mx-auto"
-            style={{ paddingBottom: "50px", textAlign: "center" }}
-          >
-            <div className="slider-tab">
-              <button
-                onClick={this.props.onHide}
-                style={{
-                  padding: 0,
-                  border: "none",
-                  background: "none",
-                  marginRight: 10,
-                }}
-              >
-                <span
-                  className="iconify slider-iconfiy"
-                  data-icon="emojione:red-circle"
-                  data-inline="false"
-                  style={{ marginLeft: "5px" }}
-                ></span>{" "}
-              </button>
-              &nbsp;{" "}
-              <button
-                onClick={this.props.fadeAbout}
-                style={{
-                  padding: 0,
-                  border: "none",
-                  background: "none",
-                  marginRight: 10,
-                }}
-              >
-                <span
-                  className="iconify slider-iconfiy"
-                  data-icon="twemoji:yellow-circle"
-                  data-inline="false"
-                ></span>{" "}
-              </button>
-              &nbsp;
-              <button
-               onClick={this.props.showIframe}
-                style={{
-                  padding: 0,
-                  border: "none",
-                  background: "none",
-                }}
-              >
-                <span
-                  className="iconify slider-iconfiy"
-                  data-icon="twemoji:green-circle"
-                  data-inline="false"
-                ></span>
-              </button>
-            </div>
-            {!this.props.showIframeState
-       ?
+        <div
+          className=" modal-buttons "
+          style={{ paddingBottom: "50px", textAlign: "left", maxWidth: "150%" }}
+        >
+          <div className="slider-tab">
+            <button
+              onClick={this.props.onHide}
+              style={{
+                padding: 0,
+                border: "none",
+                background: "none",
+                marginRight: 10,
+              }}
+            >
+              <span
+                className="iconify slider-iconfiy"
+                data-icon="emojione:red-circle"
+                data-inline="false"
+                style={{ marginLeft: "5px" }}
+              ></span>
+            </button>
+            &nbsp;
+            <button
+              onClick={this.props.fadeAbout}
+              style={{
+                padding: 0,
+                border: "none",
+                background: "none",
+                marginRight: 10,
+              }}
+            >
+              <span
+                className="iconify slider-iconfiy"
+                data-icon="twemoji:yellow-circle"
+                data-inline="false"
+              ></span>{" "}
+            </button>
+            &nbsp;
+            <button
+              onClick={this.props.showIframe}
+              style={{
+                padding: 0,
+                border: "none",
+                background: "none",
+              }}
+            >
+              <span
+                className="iconify slider-iconfiy"
+                data-icon="twemoji:green-circle"
+                data-inline="false"
+              ></span>
+            </button>
+          </div>
+          {this.props.showIframeState ? (
+            <iframe title={title} src={url} class="modal-iframe"></iframe>
+          ) : (
             <ImageGallery items={imageGalleryData()} />
-            :
-            
-          <iframe title={title} src={url} class="modal-iframe"></iframe>
-          
-        }
+          )}
         </div>
-
+        <div className="col-md-12">
           <Collapse in={!this.props.fadeAboutState}>
-            <div className="col-md-10 mx-auto ">
+            <div className="col-md-12">
               <h3 style={{ padding: "5px 5px 0 5px" }}>
                 {title}
 
@@ -514,9 +493,9 @@ class ProjectDetailsModal extends Component {
 
               <p className="modal-description"> {description}</p>
 
-              <ul className="list-inline mx-auto">{tech}</ul>
-
               {teamHTML()}
+
+              <ul className="list-inline mx-auto">{tech}</ul>
 
               <div className="col-md-12 text-center">
                 {likeButton()}

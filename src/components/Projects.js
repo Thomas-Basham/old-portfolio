@@ -271,8 +271,6 @@ class Projects extends Component {
             >
               Click an image to view more details
             </p>
-
-
           </h1>
           <div className="col-md-12 mx-auto">
             <div className="row mx-auto">{projects}</div>

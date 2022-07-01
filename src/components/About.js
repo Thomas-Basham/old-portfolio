@@ -5,7 +5,7 @@ import pythonIcon from "@iconify/icons-logos/python";
 import djangoIcon from "@iconify/icons-logos/django-icon";
 import javascriptIcon from "@iconify/icons-logos/javascript";
 import AboutMeDetailsModal from "./AboutMeDetailsModal";
-import Collapse from 'react-bootstrap/Collapse'
+import Collapse from "react-bootstrap/Collapse";
 import ReactPlayer from "react-player";
 
 class About extends Component {
@@ -23,9 +23,7 @@ class About extends Component {
     this.setState({
       fadeAbout: false,
       detailsModalShow: true,
-
     });
-
   };
 
   detailsModalClose = () =>
@@ -43,9 +41,9 @@ class About extends Component {
 
   fadeAbout = () => {
     this.setState({
-      fadeAbout: !this.state.fadeAbout
-    })
-  }
+      fadeAbout: !this.state.fadeAbout,
+    });
+  };
 
   render() {
     if (this.props.sharedBasicInfo) {
@@ -120,9 +118,7 @@ class About extends Component {
                           border: "none",
                           textDecoration: "none",
                         }}
-                        
-                        onClick={this.fadeAbout
-                        }
+                        onClick={this.fadeAbout}
                       >
                         <span
                           className="iconify"
