@@ -168,6 +168,7 @@ class Projects extends Component {
         currentProject: currentProject,
         imageModalShow: false,
         imageGalleryShow: false,
+        showIframe: false,
       });
     };
 

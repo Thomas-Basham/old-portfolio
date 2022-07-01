@@ -490,7 +490,7 @@ class ProjectDetailsModal extends Component {
                 ></span>
               </button>
             </div>
-            {this.props.showIframeState
+            {!this.props.showIframeState
        ?
             <ImageGallery items={imageGalleryData()} />
             :
