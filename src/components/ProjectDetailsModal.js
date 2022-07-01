@@ -13,7 +13,7 @@ class ProjectDetailsModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fadeAbout: false,
+      showIframe: false,
     };
   }
   componentDidMount() {
@@ -422,6 +422,8 @@ class ProjectDetailsModal extends Component {
       }
     };
 
+
+
     return (
       <Modal
         {...this.props}
@@ -433,7 +435,8 @@ class ProjectDetailsModal extends Component {
         <span onClick={this.props.onHide} className="modal-close">
           <i className="fas fa-times fa-3x close-icon"></i>
         </span>
-        <div className="col-md-12">
+
+       <div className="col-md-12">
           <div
             className="col-md-10 mx-auto"
             style={{ paddingBottom: "50px", textAlign: "center" }}
@@ -473,6 +476,7 @@ class ProjectDetailsModal extends Component {
               </button>
               &nbsp;
               <button
+               onClick={this.props.showIframe}
                 style={{
                   padding: 0,
                   border: "none",
@@ -486,9 +490,15 @@ class ProjectDetailsModal extends Component {
                 ></span>
               </button>
             </div>
-
+            {!this.props.showIframeState
+       ?
             <ImageGallery items={imageGalleryData()} />
-          </div>
+            :
+            
+          <iframe title={title} src={url} class="modal-iframe"></iframe>
+          
+        }
+        </div>
 
           <Collapse in={!this.props.fadeAboutState}>
             <div className="col-md-10 mx-auto ">
