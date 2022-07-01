@@ -5,7 +5,6 @@ import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
 import { Lightbox } from "react-modal-image";
 
-import ImageGallery from "react-image-gallery";
 class Projects extends Component {
   constructor(props) {
     super(props);
