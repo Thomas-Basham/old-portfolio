@@ -5,7 +5,6 @@ import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
 import { Lightbox } from "react-modal-image";
 
-import ImageGallery from "react-image-gallery";
 class Projects extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +19,7 @@ class Projects extends Component {
       imageModalShow: false,
       imageGalleryShow: false,
       imageUrl: "",
+      fadeAbout: false,
     };
   }
 
@@ -146,6 +146,11 @@ class Projects extends Component {
     });
   };
   render() {
+    let fadeAbout = () => {
+      this.setState({
+        fadeAbout: !this.state.fadeAbout,
+      });
+    };
     let detailsModalShow = (data, currentProject) => {
       this.setState({
         detailsModalShow: true,
@@ -161,6 +166,7 @@ class Projects extends Component {
         detailsModalShow: false,
         showCommentUpdateForm: false,
         showReplyForm: false,
+        fadeAbout: false,
       });
 
     let detailsModalCloseAndImageModalShow = (imageUrl, data, currentProject) =>
@@ -241,7 +247,6 @@ class Projects extends Component {
         );
       }
     };
-    console.log("IMG URL ON PROJECT.js", this.state.imageUrl);
     return (
       <section id="portfolio">
         {this.props.auth0.isAuthenticated && welcomeMessage()}
@@ -261,13 +266,6 @@ class Projects extends Component {
                 large={this.state.imageUrl}
                 alt="Full Screen Image"
                 onClose={detailsModalCloseAndImageModalShow}
-              />
-            )}
-            {this.state.imageGalleryShow && (
-              <ImageGallery
-                items={this.imageGalleryData()}
-                onClick={detailsModalCloseAndImageGalleryShow}
-                onImageLoad="fullscreen"
               />
             )}
           </h1>
@@ -302,6 +300,8 @@ class Projects extends Component {
               detailsModalCloseAndImageGalleryShow
             }
             imageUrl={this.state.imageUrl}
+            fadeAbout={fadeAbout}
+            fadeAboutState={this.state.fadeAbout}
           />
         </div>
       </section>
