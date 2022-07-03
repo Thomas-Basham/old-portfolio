@@ -122,6 +122,7 @@ class ProjectDetailsModal extends Component {
     let likeButton = () => {
       if (
         this.props.auth0.isAuthenticated &&
+        this.props.currentProject &&
         this.props.currentProject.likedBy &&
         !this.props.currentProject.likedBy.includes(this.props.auth0.user.name)
       ) {
@@ -130,14 +131,15 @@ class ProjectDetailsModal extends Component {
             ❤️ {this.props.currentProject.likes}
           </Button>
         );
-      } else {
-        return <p className="text-left">❤️{this.props.currentProject.likes}</p>;
+      } else if (this.props.currentProject) {
+        return <p className="text-left">❤️ {this.props.currentProject.likes}</p>;
       }
     };
 
     let commentFormOrLoginButton = () => {
       if (
         this.props.auth0.isAuthenticated &&
+        this.props.currentProject &&
         this.props.showReplyFormState === false &&
         this.props.showCommentUpdateForm === false
       )
@@ -149,7 +151,8 @@ class ProjectDetailsModal extends Component {
             </Button>
           </form>
         );
-      else if (!this.props.auth0.isAuthenticated) return <LoginButtonAutho />;
+      else if (!this.props.auth0.isAuthenticated && this.props.currentProject)
+        return <LoginButtonAutho />;
     };
 
     let editCommentButton = (commentData, alignLeft) => {
@@ -421,7 +424,12 @@ class ProjectDetailsModal extends Component {
       >
         <div
           className=" modal-buttons "
-          style={{ paddingBottom: "50px", textAlign: "left", maxWidth: "150%" }}
+          style={{
+            paddingBottom: "50px",
+            textAlign: "left",
+            maxWidth: "95%",
+            margin: "0 auto",
+          }}
         >
           <div className="slider-tab">
             <button
@@ -472,11 +480,13 @@ class ProjectDetailsModal extends Component {
               ></span>
             </button>
           </div>
+
           {this.props.showIframeState ? (
-            <iframe title={title} src={url} class="modal-iframe"></iframe>
+            <iframe title={title} src={url} className="modal-iframe "></iframe>
           ) : (
-            <ImageGallery items={imageGalleryData()} />
+            <ImageGallery items={imageGalleryData()}  />
           )}
+
         </div>
         <div className="col-md-12">
           <Collapse in={!this.props.fadeAboutState}>

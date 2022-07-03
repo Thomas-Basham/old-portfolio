@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
+import Collapse from "react-bootstrap/Collapse";
 
 class AboutMeDetailsModal extends Component {
 
@@ -14,18 +15,19 @@ class AboutMeDetailsModal extends Component {
 
     return (
       <Modal {...this.props}>
-        <div className="center w-100  w-100 h-100">
-          <div className="center  w-100 h-100">
-            <div className="card w-100 h-100">
-              <div className="card-header">
+       
+
+            <div className="card w-100 h-100 rounded ">
+              <div className="card-header slider-tab">
                 <button
                   style={{
-                    padding: "0",
-                    margin: "0",
+                    padding: 0,
                     border: "none",
-                    textDecoration: "none",
+                    background: "none",
+                    marginRight: 10,
+
                   }}
-                  onClick={this.closeModalAndFade}
+                  onClick={this.props.onHide}
                 >
                   <span
                     className="iconify"
@@ -36,12 +38,12 @@ class AboutMeDetailsModal extends Component {
                 </button>
                 <button
                   style={{
-                    padding: "0",
-                    margin: "0",
+                    padding: 0,
                     border: "none",
-                    textDecoration: "none",
+                    background: "none",
+
                   }}
-                  onClick={this.props.onHide}
+                  onClick={this.props.fadeAbout}
                 >
                   <span
                     className="iconify"
@@ -52,10 +54,11 @@ class AboutMeDetailsModal extends Component {
                 &nbsp;{" "}
                 <button
                   style={{
-                    padding: "0",
-                    margin: "0",
+                    padding: 0,
                     border: "none",
-                    textDecoration: "none",
+                    background: "none",
+                    marginLeft: 10,
+
                   }}
                   onClick={this.props.detailsModalShow}
                 >
@@ -66,6 +69,8 @@ class AboutMeDetailsModal extends Component {
                   ></span>
                 </button>
               </div>
+
+              <Collapse in={!this.props.fadeAboutState}>
               <div
                 className="card-text font-trebuchet  ml-3 mr-3"
                 style={{
@@ -81,9 +86,11 @@ class AboutMeDetailsModal extends Component {
                 {this.props.about}
                 <br />
               </div>
+              </Collapse>
+
             </div>
-          </div>
-        </div>
+
+
       </Modal>
     );
   }

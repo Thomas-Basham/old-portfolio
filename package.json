@@ -16,6 +16,7 @@
     "react-datetime": "^3.1.1",
     "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
+    "react-github-corner": "^2.5.0",
     "react-image-gallery": "^1.2.8",
     "react-jinke-music-player": "^4.24.2",
     "react-modal-image": "^2.5.0",
