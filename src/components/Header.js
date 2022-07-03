@@ -28,9 +28,9 @@ class Header extends Component {
   render() {
     return (
       <header id="home" style={{ display: "block" }}>
-        <GithubCorner 
-        href="https://github.com/bashamtg/Portfolio"
-        ariaLabel="View Project on Github" 
+        <GithubCorner
+          href="https://github.com/bashamtg/Portfolio"
+          ariaLabel="View Project on Github"
         />
 
         <Nav

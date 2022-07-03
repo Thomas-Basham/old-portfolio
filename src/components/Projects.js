@@ -260,12 +260,13 @@ class Projects extends Component {
     };
 
     let loginButton = () => {
-      if (!this.props.auth0.isAuthenticated && 
-       ( this.state.projectData.length > 3)
-        ){
-          return <LoginButtonAutho className="mt-5" style={{ paddingTop: 20 }} />
+      if (
+        !this.props.auth0.isAuthenticated &&
+        this.state.projectData.length > 3
+      ) {
+        return <LoginButtonAutho className="mt-5" style={{ paddingTop: 20 }} />;
       }
-    }
+    };
     return (
       <section id="portfolio">
         {this.props.auth0.isAuthenticated && welcomeMessage()}

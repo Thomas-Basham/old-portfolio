@@ -239,7 +239,6 @@ header h1 {
 .polaroid {
   background-color: #061123;
   border-radius: 5px;
-
 }
 
 .polaroid img {
@@ -260,7 +259,8 @@ header h1 {
     #122237,
     #172a41,
     #1d334c
-  );  display: inline-block;
+  );
+  display: inline-block;
   margin: 55px 75px 60px;
   padding: 15px 15px 30px;
   text-align: center;
@@ -373,7 +373,6 @@ header h1 {
   );
   color: rgb(198, 211, 231);
   max-width: 100%;
-
 }
 .modal-content {
   background-image: linear-gradient(
@@ -475,7 +474,6 @@ input {
   border-radius: 5px;
   color: white;
 }
-
 
 .awssld__next {
   outline: none !important;
@@ -596,8 +594,7 @@ footer a:focus {
   font-size: 22px;
 }
 
-
-.card{
+.card {
   background-image: linear-gradient(
     to right top,
     #061123,
@@ -608,9 +605,8 @@ footer a:focus {
   );
   color: rgb(198, 211, 231);
   max-width: 100%;
-
 }
 
-.image-gallery-image{
+.image-gallery-image {
   border-radius: 5px;
 }

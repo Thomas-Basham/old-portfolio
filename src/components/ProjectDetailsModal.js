@@ -132,7 +132,9 @@ class ProjectDetailsModal extends Component {
           </Button>
         );
       } else if (this.props.currentProject) {
-        return <p className="text-left">❤️ {this.props.currentProject.likes}</p>;
+        return (
+          <p className="text-left">❤️ {this.props.currentProject.likes}</p>
+        );
       }
     };
 
@@ -484,9 +486,8 @@ class ProjectDetailsModal extends Component {
           {this.props.showIframeState ? (
             <iframe title={title} src={url} className="modal-iframe "></iframe>
           ) : (
-            <ImageGallery items={imageGalleryData()}  />
+            <ImageGallery items={imageGalleryData()} />
           )}
-
         </div>
         <div className="col-md-12">
           <Collapse in={!this.props.fadeAboutState}>
