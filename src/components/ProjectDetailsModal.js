@@ -188,7 +188,7 @@ class ProjectDetailsModal extends Component {
                   padding: 0,
                   border: "none",
                   background: "none",
-                  textAlign: "left",
+                  textAlign: "right",
                   whiteSpace: " nowrap",
                   overflow: "hidden",
                 }}
@@ -325,25 +325,26 @@ class ProjectDetailsModal extends Component {
               key={commentData._id}
               style={{
                 padding: 10,
-                textAlign: "right",
               }}
             >
               <h2 className="font-weight-bold m-0">{commentData.user}</h2>
-              <div
-                className="d-inline-block float-right "
-                style={{ float: "right" }}
-              >
-                {editCommentButton(commentData, false)}
-                {deleteCommentButton(commentData, false)}
+              <div className="d-flex flex-row-reverse ">
                 <p
-                  className="text-secondary text-right"
+                  className="text-secondary float-right text-right"
                   style={{ fontSize: "70%", marginTop: 0 }}
                 >
+                  {editCommentButton(commentData, false)}
+                  {deleteCommentButton(commentData, false)}
                   {new Date(commentData.updated).toLocaleString()}
                 </p>
               </div>
 
-              <p className="mt-2 ">{commentData.text}</p>
+              <p
+                className="mt-2 w-50 float-right text-right 
+              "
+              >
+                {commentData.text}
+              </p>
             </div>
           );
         });
