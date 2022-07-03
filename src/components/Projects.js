@@ -8,18 +8,15 @@ class Projects extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      deps: {},
-      detailsModalShow: false,
-      projectData: [].reverse(),
-      currentProject: {},
+      currentProjectLocal: {},
+      projectDataMongo: [].reverse(),
+      currentProjectMongo: {},
       comments: [],
       showCommentUpdateForm: false,
       showReplyForm: false,
-      imageModalShow: false,
-      imageGalleryShow: false,
-      imageUrl: "",
-      fadeAbout: false,
       showIframe: false,
+      showDetailsModal: false,
+      fadeAbout: false,
     };
   }
 
@@ -28,7 +25,7 @@ class Projects extends Component {
       let url = `${process.env.REACT_APP_SERVER}/project`;
       let projects = await axios.get(url);
       this.setState({
-        projectData: projects.data.reverse(), // reversed so that when I add JSON data and mongodb data the indexes align
+        projectDataMongo: projects.data.reverse(), // reversed so that when I add JSON data and mongodb data the indexes align
       });
     } catch (error) {
       console.log(error);
@@ -57,7 +54,7 @@ class Projects extends Component {
       let url = `${process.env.REACT_APP_SERVER}/project`;
       let request = await axios.post(url, newProject);
       this.setState({
-        projectData: [...this.state.projectData, request.data],
+        projectDataMongo: [...this.state.projectDataMongo, request.data],
       });
     } catch (error) {
       console.log("we have an error:", error.response.data);
@@ -73,7 +70,7 @@ class Projects extends Component {
         return element._id === id ? request.data : element;
       });
       this.setState({
-        projectData: newProjects,
+        projectDataMongo: newProjects,
       });
     } catch (error) {
       console.log("we have an error:", error);
@@ -141,7 +138,7 @@ class Projects extends Component {
   };
 
   imageGalleryData = () => {
-    return this.state.deps.images.map((image) => {
+    return this.state.currentProjectLocal.images.map((image) => {
       return { original: image };
     });
   };
@@ -161,52 +158,25 @@ class Projects extends Component {
         showIframe: !this.state.showIframe,
       });
     };
-    let detailsModalShow = (data, currentProject) => {
+    let showDetailsModal = (data, currentProjectMongo) => {
       this.setState({
-        detailsModalShow: true,
-        deps: data,
-        currentProject: currentProject,
-        imageModalShow: false,
-        imageGalleryShow: false,
+        showDetailsModal: true,
+        currentProjectLocal: data,
+        currentProjectMongo: currentProjectMongo,
+
         showIframe: false,
       });
     };
 
     let detailsModalClose = () =>
       this.setState({
-        detailsModalShow: false,
+        showDetailsModal: false,
         showCommentUpdateForm: false,
         showReplyForm: false,
         fadeAbout: false,
       });
 
-    let detailsModalCloseAndImageModalShow = (imageUrl, data, currentProject) =>
-      this.setState({
-        detailsModalShow: !this.state.detailsModalShow,
-        showCommentUpdateForm: false,
-        showReplyForm: false,
-        imageModalShow: !this.state.imageModalShow,
-        imageUrl: imageUrl,
-        deps: this.state.deps || data,
-        currentProject: this.state.currentProject || currentProject,
-      });
-
-    let detailsModalCloseAndImageGalleryShow = (
-      imageUrl,
-      data,
-      currentProject
-    ) =>
-      this.setState({
-        detailsModalShow: !this.state.detailsModalShow,
-        showCommentUpdateForm: false,
-        showReplyForm: false,
-        imageGalleryShow: !this.state.imageGalleryShow,
-        imageUrl: imageUrl,
-        deps: this.state.deps || data,
-        currentProject: this.state.currentProject || currentProject,
-      });
-
-    let projectData = this.state.projectData;
+    let projectDataMongo = this.state.projectDataMongo;
 
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {
       var sectionName = this.props.resumeBasicInfo.section_name.projects;
@@ -220,7 +190,7 @@ class Projects extends Component {
             <span className="portfolio-item d-block">
               <div
                 className="foto"
-                onClick={() => detailsModalShow(projects, projectData[i])}
+                onClick={() => showDetailsModal(projects, projectDataMongo[i])}
               >
                 <div>
                   <img
@@ -261,7 +231,7 @@ class Projects extends Component {
     let loginButton = () => {
       if (
         !this.props.auth0.isAuthenticated &&
-        this.state.projectData.length > 3
+        this.state.projectDataMongo.length > 3
       ) {
         return <LoginButtonAutho className="mt-5" style={{ paddingTop: 20 }} />;
       }
@@ -287,12 +257,12 @@ class Projects extends Component {
           {loginButton()}
 
           <ProjectDetailsModal
-            show={this.state.detailsModalShow}
+            show={this.state.showDetailsModal}
             onHide={detailsModalClose}
             showEditCommentForm={this.showEditCommentForm}
             showCommentUpdateForm={this.state.showCommentUpdateForm}
-            data={this.state.deps}
-            currentProject={this.state.currentProject}
+            currentProjectLocal={this.state.currentProjectLocal}
+            currentProjectMongo={this.state.currentProjectMongo}
             updateProject={this.updateProject}
             comments={this.state.comments}
             postComment={this.postComment}
@@ -303,13 +273,6 @@ class Projects extends Component {
             hideReplyForm={this.hideReplyForm}
             showReplyFormState={this.state.showReplyForm}
             deleteComment={this.deleteComment}
-            detailsModalCloseAndImageModalShow={
-              detailsModalCloseAndImageModalShow
-            }
-            detailsModalCloseAndImageGalleryShow={
-              detailsModalCloseAndImageGalleryShow
-            }
-            imageUrl={this.state.imageUrl}
             fadeAbout={fadeAbout}
             fadeAboutState={this.state.fadeAbout}
             showAbout={showAbout}

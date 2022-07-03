@@ -1,20 +1,19 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { withAuth0 } from "@auth0/auth0-react";
 import $ from "jquery";
 import "./App.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Home from "./components/Home";
-import { withAuth0 } from "@auth0/auth0-react";
 
 class App extends Component {
   constructor(props) {
     super();
     this.state = {
-      foo: "bar",
       resumeData: {},
-      sharedData: {},
+      basicInfoAndSkills: {},
     };
   }
 
@@ -23,7 +22,7 @@ class App extends Component {
     document.documentElement.lang = pickedLanguage;
     var resumePath =
       document.documentElement.lang === window.$primaryLanguage
-        ? `res_primaryLanguage.json`
+        ? `aboutMeAndProjects.json`
         : `res_secondaryLanguage.json`;
     this.loadResumeFromPath(resumePath);
   };
@@ -42,7 +41,7 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    this.loadSharedData();
+    this.loadBasicInfoAndSkills();
     this.applyPickedLanguage(
       window.$primaryLanguage,
       window.$secondaryLanguageIconId
@@ -63,14 +62,14 @@ class App extends Component {
     });
   };
 
-  loadSharedData = () => {
+  loadBasicInfoAndSkills = () => {
     $.ajax({
-      url: `portfolio_shared_data.json`,
+      url: `basicInfoAndSkills.json`,
       dataType: "json",
       cache: false,
       success: function (data) {
-        this.setState({ sharedData: data });
-        document.title = `${this.state.sharedData.basic_info.name}`;
+        this.setState({ basicInfoAndSkills: data });
+        document.title = `${this.state.basicInfoAndSkills.basic_info.name}`;
       }.bind(this),
       error: function (xhr, status, err) {
         alert(err);
@@ -81,25 +80,26 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Header sharedData={this.state.sharedData.basic_info} />
+        <Header sharedData={this.state.basicInfoAndSkills.basic_info} />
+
         <Switch>
           <Route exact path="/">
             <Home
               resumeData={this.state.resumeData}
-              sharedData={this.state.sharedData}
-            />
-          </Route>
-          <Route path="/about">
-            <About
-              resumeBasicInfo={this.state.resumeData.basic_info}
-              sharedBasicInfo={this.state.sharedData.basic_info}
+              sharedData={this.state.basicInfoAndSkills}
             />
           </Route>
 
-          <Route path="/project:id"></Route>
+          <Route path="/about">
+            <About
+              resumeBasicInfo={this.state.resumeData.basic_info}
+              sharedBasicInfo={this.state.basicInfoAndSkills.basic_info}
+            />
+          </Route>
         </Switch>
+
         <Footer
-          sharedBasicInfo={this.state.sharedData.basic_info}
+          sharedBasicInfo={this.state.basicInfoAndSkills.basic_info}
           applyPickedLanguage={this.applyPickedLanguage}
         />
       </Router>

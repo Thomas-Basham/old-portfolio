@@ -10,22 +10,25 @@ import emailjs from "@emailjs/browser";
 import Collapse from "react-bootstrap/Collapse";
 
 class ProjectDetailsModal extends Component {
+  
   componentDidMount() {
-    this.setState({ counter: this.props.currentProject.likes });
+    this.setState({ counter: this.props.currentProjectMongo.likes });
     this.setState({ comments: this.props.comments });
-    this.setState({ likedBy: this.props.currentProject.likedBy });
+    this.setState({ likedBy: this.props.currentProjectMongo.likedBy });
   }
 
   handleLikes = (e) => {
     e.preventDefault();
     let updatedProject = {
-      likes: (this.props.currentProject.likes += 1),
+      likes: (this.props.currentProjectMongo.likes += 1),
       likedBy: this.props.auth0.user.name,
-      _id: this.props.currentProject._id,
+      _id: this.props.currentProjectMongo._id,
     };
     this.setState({
-      counter: this.props.currentProject.likes,
-      likedBy: this.props.currentProject.likedBy.push(updatedProject.likedBy),
+      counter: this.props.currentProjectMongo.likes,
+      likedBy: this.props.currentProjectMongo.likedBy.push(
+        updatedProject.likedBy
+      ),
     });
     this.props.updateProject(updatedProject);
     this.sendNotificationEmail(e, "like");
@@ -34,7 +37,7 @@ class ProjectDetailsModal extends Component {
   handleComments = (e) => {
     e.preventDefault();
     let postedComment = {
-      project: this.props.currentProject.project,
+      project: this.props.currentProjectMongo.project,
       user: this.props.auth0.user.name,
       userEmail: this.props.auth0.user.email,
       text: e.target.comment.value,
@@ -71,7 +74,9 @@ class ProjectDetailsModal extends Component {
     e.preventDefault();
     let postedComment = {
       project:
-        this.props.currentProject.project + "." + this.props.commentData._id,
+        this.props.currentProjectMongo.project +
+        "." +
+        this.props.commentData._id,
       user: this.props.auth0.user.name,
       userEmail: this.props.auth0.user.email,
       text: e.target.comment.value,
@@ -94,14 +99,14 @@ class ProjectDetailsModal extends Component {
       templateParams = {
         from_name: this.props.auth0.user.name,
         comment: e.target.comment.value,
-        project: this.props.data.title,
+        project: this.props.currentProjectLocal.title,
       };
       templateID = this.commentTemplateID;
     }
     if (commentOrLike === "like") {
       templateParams = {
         from_name: this.props.auth0.user.name,
-        project: this.props.data.title,
+        project: this.props.currentProjectLocal.title,
       };
       templateID = this.likeTemplateID;
     }
@@ -122,18 +127,20 @@ class ProjectDetailsModal extends Component {
     let likeButton = () => {
       if (
         this.props.auth0.isAuthenticated &&
-        this.props.currentProject &&
-        this.props.currentProject.likedBy &&
-        !this.props.currentProject.likedBy.includes(this.props.auth0.user.name)
+        this.props.currentProjectMongo &&
+        this.props.currentProjectMongo.likedBy &&
+        !this.props.currentProjectMongo.likedBy.includes(
+          this.props.auth0.user.name
+        )
       ) {
         return (
           <Button style={{ float: "left" }} onClick={this.handleLikes}>
-            ❤️ {this.props.currentProject.likes}
+            ❤️ {this.props.currentProjectMongo.likes}
           </Button>
         );
-      } else if (this.props.currentProject) {
+      } else if (this.props.currentProjectMongo) {
         return (
-          <p className="text-left">❤️ {this.props.currentProject.likes}</p>
+          <p className="text-left">❤️ {this.props.currentProjectMongo.likes}</p>
         );
       }
     };
@@ -141,7 +148,7 @@ class ProjectDetailsModal extends Component {
     let commentFormOrLoginButton = () => {
       if (
         this.props.auth0.isAuthenticated &&
-        this.props.currentProject &&
+        this.props.currentProjectMongo &&
         this.props.showReplyFormState === false &&
         this.props.showCommentUpdateForm === false
       )
@@ -153,7 +160,10 @@ class ProjectDetailsModal extends Component {
             </Button>
           </form>
         );
-      else if (!this.props.auth0.isAuthenticated && this.props.currentProject)
+      else if (
+        !this.props.auth0.isAuthenticated &&
+        this.props.currentProjectMongo
+      )
         return <LoginButtonAutho />;
     };
 
@@ -205,8 +215,8 @@ class ProjectDetailsModal extends Component {
     };
 
     let imageGalleryData = () => {
-      if (this.props.data.images) {
-        return this.props.data.images.map((image) => {
+      if (this.props.currentProjectLocal.images) {
+        return this.props.currentProjectLocal.images.map((image) => {
           return { original: image };
         });
       }
@@ -304,15 +314,17 @@ class ProjectDetailsModal extends Component {
     };
 
     const filteredComments = this.props.comments.filter(
-      (comments) => this.props.currentProject.project === comments.project
+      (comments) => this.props.currentProjectMongo.project === comments.project
     );
 
-    console.log(this.props.currentProject);
+    console.log(this.props.currentProjectMongo);
 
     let filteredReplies = (commentData) => {
       if (commentData) {
         let replyID =
-          this.props.currentProject.project + "." + commentData._id.toString();
+          this.props.currentProjectMongo.project +
+          "." +
+          commentData._id.toString();
 
         let filtered = this.props.comments.filter(
           (comments) => replyID === comments.project
@@ -387,12 +399,12 @@ class ProjectDetailsModal extends Component {
       }
     };
 
-    if (this.props.data) {
-      const technologies = this.props.data.technologies;
-      var title = this.props.data.title;
-      var description = this.props.data.description;
-      var url = this.props.data.url;
-      if (this.props.data.technologies) {
+    if (this.props.currentProjectLocal) {
+      const technologies = this.props.currentProjectLocal.technologies;
+      var title = this.props.currentProjectLocal.title;
+      var description = this.props.currentProjectLocal.description;
+      var url = this.props.currentProjectLocal.url;
+      if (this.props.currentProjectLocal.technologies) {
         var tech = technologies.map((icons, i) => {
           return (
             <li className="list-inline-item mx-3" key={i}>
@@ -411,8 +423,8 @@ class ProjectDetailsModal extends Component {
       }
     }
     let teamHTML = () => {
-      if (this.props.data.descriptionHTML) {
-        const descriptionHTML = this.props.data.descriptionHTML;
+      if (this.props.currentProjectLocal.descriptionHTML) {
+        const descriptionHTML = this.props.currentProjectLocal.descriptionHTML;
         return <p dangerouslySetInnerHTML={{ __html: descriptionHTML }} />;
       }
     };
