@@ -156,6 +156,7 @@ class Projects extends Component {
     let showIframe = () => {
       this.setState({
         showIframe: !this.state.showIframe,
+        fadeAbout: false,
       });
     };
     let showDetailsModal = (data, currentProjectMongo) => {
