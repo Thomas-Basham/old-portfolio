@@ -57,7 +57,7 @@ class About extends Component {
     return (
       <section id="about">
         <div className="col-md-12">
-          <h1>
+          <h1 className="section-title">
             <span>{sectionName}</span>
           </h1>
           <div className="row center mx-auto padding-bottom-10">
