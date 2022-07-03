@@ -258,6 +258,15 @@ class Projects extends Component {
         );
       }
     };
+
+    let loginButton = () => {
+      if (
+        !this.props.auth0.isAuthenticated &&
+        this.state.projectData.length > 3
+      ) {
+        return <LoginButtonAutho className="mt-5" style={{ paddingTop: 20 }} />;
+      }
+    };
     return (
       <section id="portfolio">
         {this.props.auth0.isAuthenticated && welcomeMessage()}
@@ -275,9 +284,10 @@ class Projects extends Component {
           <div className="col-md-12 mx-auto">
             <div className="row mx-auto">{projects}</div>
           </div>
-          {!this.props.auth0.isAuthenticated && (
+          {/* {!this.props.auth0.isAuthenticated && (
             <LoginButtonAutho className="mt-5" style={{ paddingTop: 20 }} />
-          )}
+          )} */}
+          {loginButton()}
 
           <ProjectDetailsModal
             show={this.state.detailsModalShow}

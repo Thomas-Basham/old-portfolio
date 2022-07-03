@@ -11,7 +11,7 @@ const LoginButtonAutho = () => {
       variant="outline-primary"
       onClick={() => loginWithRedirect()}
     >
-      Log In to Comment!
+      Log In to Comment
     </Button>
   );
 };

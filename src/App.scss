@@ -145,7 +145,7 @@ header h1 {
 
 .slider-tab {
   background-color: rgb(53, 53, 53);
-
+  border-radius: 5px;
   height: 30px;
   margin-bottom: 5px;
 }
@@ -236,6 +236,10 @@ header h1 {
   color: black;
   text-align: center;
 }
+.polaroid {
+  background-color: #061123;
+  border-radius: 5px;
+}
 
 .polaroid img {
   -moz-box-shadow: 0 0 6px rgb(132, 132, 132);
@@ -248,9 +252,16 @@ header h1 {
 }
 
 .polaroid span {
-  background: #ffffff;
+  background-image: linear-gradient(
+    to right top,
+    #061123,
+    #0c1a2d,
+    #122237,
+    #172a41,
+    #1d334c
+  );
   display: inline-block;
-  margin: 55px 75px 30px;
+  margin: 55px 75px 60px;
   padding: 15px 15px 30px;
   text-align: center;
   border-radius: 3px;
@@ -351,13 +362,55 @@ header h1 {
 }
 
 .modal-inside .modal-content {
-  background-color: #1f1f1f;
-
+  // background-color: #1f1f1f;
+  background-image: linear-gradient(
+    to right top,
+    #061123,
+    #0c1a2d,
+    #122237,
+    #172a41,
+    #1d334c
+  );
   color: rgb(198, 211, 231);
+  max-width: 100%;
 }
 .modal-content {
-  padding: 0 10px 10px 10px;
+  background-image: linear-gradient(
+    to right top,
+    #061123,
+    #0c1a2d,
+    #122237,
+    #172a41,
+    #1d334c
+  );
+  padding: 10px 20px 20px 20px;
 }
+
+.modal-description {
+  text-align: justify;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  background-image: linear-gradient(
+    to right top,
+    #061123,
+    #0c1a2d,
+    #122237,
+    #172a41,
+    #1d334c
+  );
+}
+.modal-iframe {
+  width: 100vw;
+  max-width: 100%;
+  height: 85vh;
+  background-color: white;
+  border-radius: 5px;
+  padding-bottom: 20px;
+  border-bottom: 5px solid #061123;
+}
+
 .made-with {
   padding: 5px;
   width: 100%;
@@ -420,22 +473,6 @@ input {
   background-color: #333;
   border-radius: 5px;
   color: white;
-}
-
-.modal-description {
-  text-align: justify;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  font-size: 1rem;
-  background-image: linear-gradient(
-    to right top,
-    #061123,
-    #0c1a2d,
-    #122237,
-    #172a41,
-    #1d334c
-  );
 }
 
 .awssld__next {
@@ -557,11 +594,19 @@ footer a:focus {
   font-size: 22px;
 }
 
-.modal-iframe {
-  width: 100%;
-  height: 100vw;
-  background-color: white;
+.card {
+  background-image: linear-gradient(
+    to right top,
+    #061123,
+    #0c1a2d,
+    #122237,
+    #172a41,
+    #1d334c
+  );
+  color: rgb(198, 211, 231);
+  max-width: 100%;
+}
+
+.image-gallery-image {
   border-radius: 5px;
-  padding-bottom: 20px;
-  border-bottom: 5px solid #061123;
 }

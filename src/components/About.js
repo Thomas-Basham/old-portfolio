@@ -91,16 +91,25 @@ class About extends Component {
               </div>
             </div>
             {!this.state.exposeMusicPlayer ? (
-              <div className="col-md-8 center {this.state.fadeAbout ? 'fade' : ''}">
-                <div className="col-md-10">
-                  <div className="card">
-                    <div className="card-header">
+              <div className="col-md-8 center rounded ">
+                <div className="col-md-10 rounded">
+                  <div
+                    className="card rounded"
+                    style={{
+                      paddingBottom: "50px",
+                      textAlign: "left",
+                      maxWidth: "100%",
+                      margin: "0 auto",
+                      borderRadius: 5,
+                    }}
+                  >
+                    <div className="card-header slider-tab rounded">
                       <button
                         style={{
-                          padding: "0",
-                          margin: "0",
+                          padding: 0,
                           border: "none",
-                          textDecoration: "none",
+                          background: "none",
+                          marginRight: 10,
                         }}
                         onClick={this.exposeMusicPlayer}
                       >
@@ -108,15 +117,15 @@ class About extends Component {
                           className="iconify"
                           data-icon="emojione:red-circle"
                           data-inline="false"
+                          onClick={this.exposeMusicPlayer}
                         ></span>
                       </button>
                       &nbsp;{" "}
                       <button
                         style={{
-                          padding: "0",
-                          margin: "0",
+                          padding: 0,
                           border: "none",
-                          textDecoration: "none",
+                          background: "none",
                         }}
                         onClick={this.fadeAbout}
                       >
@@ -129,10 +138,10 @@ class About extends Component {
                       &nbsp;{" "}
                       <button
                         style={{
-                          padding: "0",
-                          margin: "0",
+                          padding: 0,
                           border: "none",
-                          textDecoration: "none",
+                          background: "none",
+                          marginLeft: 10,
                         }}
                         onClick={this.detailsModalShow}
                       >
@@ -145,7 +154,7 @@ class About extends Component {
                     </div>
                     <Collapse in={!this.state.fadeAbout}>
                       <div
-                        className="card-text font-trebuchet  ml-3 mr-3"
+                        className="font-trebuchet  ml-3 mr-3 rounded"
                         style={{
                           height: "auto",
                           fontSize: "150%",
@@ -175,6 +184,7 @@ class About extends Component {
           show={this.state.detailsModalShow}
           onHide={this.detailsModalClose}
           fadeAbout={this.fadeAbout}
+          fadeAboutState={this.state.fadeAbout}
           about={about}
           hello={hello}
         />
