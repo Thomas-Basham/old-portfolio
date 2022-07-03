@@ -173,16 +173,7 @@ header h1 {
   padding-bottom: 10vh;
 }
 
-#about h1 {
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-  font-family: Ubuntu, Arial, Helvetica, sans-serif;
-  font: 18px/24px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: whitesmoke;
-  text-align: center;
-}
+
 
 .foto img {
   display: block;
@@ -499,9 +490,9 @@ input {
   padding-bottom: 5%;
 }
 
-#portfolio h1 {
-  font-size: 1.5vmax;
-}
+// #portfolio h1 {
+//   font-size: 1.5vmax;
+// }
 
 .portfolio-item {
   max-width: 100%;
@@ -552,7 +543,7 @@ input {
 .section-title {
   padding-top: 5%;
   padding-bottom: 5%;
-  font: 18px/24px "opensans-bold", sans-serif;
+  font: 22px "opensans-bold", sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #fff;

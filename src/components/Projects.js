@@ -226,7 +226,6 @@ class Projects extends Component {
                   <img
                     src={projects.images[0]}
                     alt="projectImages"
-                    height="230"
                     style={{
                       marginBottom: 0,
                       paddingBottom: 0,
@@ -284,9 +283,7 @@ class Projects extends Component {
           <div className="col-md-12 mx-auto">
             <div className="row mx-auto">{projects}</div>
           </div>
-          {/* {!this.props.auth0.isAuthenticated && (
-            <LoginButtonAutho className="mt-5" style={{ paddingTop: 20 }} />
-          )} */}
+
           {loginButton()}
 
           <ProjectDetailsModal
