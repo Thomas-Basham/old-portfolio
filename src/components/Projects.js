@@ -23,9 +23,9 @@ class Projects extends Component {
   getProjects = async () => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/project`;
-      let projects = await axios.get(url);
+      let request = await axios.get(url);
       this.setState({
-        projectDataMongo: projects.data.reverse(), // reversed so that when I add JSON data and mongodb data the indexes align
+        projectDataMongo: request.data.reverse(), // reversed so that when I add JSON data and mongodb data the indexes align
       });
     } catch (error) {
       console.log(error);
@@ -35,9 +35,9 @@ class Projects extends Component {
   getComments = async () => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/Comment`;
-      let comments = await axios.get(url);
+      let request = await axios.get(url);
       this.setState({
-        comments: comments.data,
+        comments: request.data,
       });
     } catch (error) {
       console.log(error);
