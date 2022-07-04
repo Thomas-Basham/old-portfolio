@@ -12,7 +12,15 @@ class AboutMeDetailsModal extends Component {
     return (
       <Modal {...this.props}>
         <div className="card w-100 h-100 rounded ">
-          <div className="card-header slider-tab">
+          <div
+            className="card-header modal-buttons"
+            style={{
+              paddingBottom: "10px",
+              textAlign: "left",
+              maxWidth: "100%",
+              backgroundColor: "#1f1f1f",
+            }}
+          >
             <button
               style={{
                 padding: 0,

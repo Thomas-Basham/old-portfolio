@@ -17,14 +17,28 @@ class Experience extends Component {
         var mainTech = mainTechnologies.map((technology, i) => {
           return (
             <Badge pill className="main-badge mr-2 mb-2" key={i}>
+                                        <a
+              href={"https://www.google.com/search?q=" + technology}
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "inherit" }}
+            >
               {technology}
+              </a>
             </Badge>
           );
         });
         var tech = technologies.map((technology, i) => {
           return (
             <Badge pill className="experience-badge mr-2 mb-2" key={i}>
+                                        <a
+              href={"https://www.google.com/search?q=" + technology}
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "inherit" }}
+            >
               {technology}
+              </a>
             </Badge>
           );
         });
@@ -50,12 +64,19 @@ class Experience extends Component {
             >
               {work.title}
             </h3>
-            <h4
-              className="vertical-timeline-element-subtitle"
-              style={{ textAlign: "left" }}
+            <a
+              href={"https://www.google.com/search?q=" + work.company}
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "inherit" }}
             >
-              {work.company}
-            </h4>
+              <h4
+                className="vertical-timeline-element-subtitle"
+                style={{ textAlign: "left" }}
+              >
+                {work.company}
+              </h4>
+            </a>
             <div style={{ textAlign: "left", marginTop: "15px" }}>{tech}</div>
           </VerticalTimelineElement>
         );
@@ -66,7 +87,7 @@ class Experience extends Component {
       <section id="resume" className="pb-5">
         <div className="col-md-12 mx-auto">
           <div className="col-md-12">
-            <h1 className="section-title" >
+            <h1 className="section-title">
               <span className="text-black" style={{ textAlign: "center" }}>
                 {sectionName}
               </span>

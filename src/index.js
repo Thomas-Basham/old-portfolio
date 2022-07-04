@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+// import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Auth0Provider } from "@auth0/auth0-react";
 
@@ -24,4 +24,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-serviceWorker.register();
+// serviceWorker.register();
