@@ -204,6 +204,7 @@ header h1 {
   box-shadow: 2px 2px 2px 2px 2px;
   display: block;
   max-width: 600px;
+  cursor: pointer;
 }
 
 .polaroid span {
@@ -544,6 +545,10 @@ footer a:focus {
   );
   color: rgb(198, 211, 231);
   max-width: 100%;
+}
+
+.card-header{
+  background-color: #1f1f1f;
 }
 
 .image-gallery-image {

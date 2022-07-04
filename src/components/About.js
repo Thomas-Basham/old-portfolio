@@ -31,6 +31,7 @@ class About extends Component {
       detailsModalShow: false,
       showCommentUpdateForm: false,
       showReplyForm: false,
+      fadeAbout: false,
     });
 
   exposeMusicPlayer = () => {
@@ -71,22 +72,30 @@ class About extends Component {
                     alt="Avatar placeholder"
                     onClick={this.detailsModalShow}
                   />
-                  <Icon
-                    icon={pythonIcon}
-                    style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                  />
-                  <Icon
-                    icon={javascriptIcon}
-                    style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                  />
-                  <Icon
-                    icon={djangoIcon}
-                    style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                  />
-                  <Icon
-                    icon={reactIcon}
-                    style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                  />
+                  <a href="https://www.python.org/" target="blank_">
+                    <Icon
+                      icon={pythonIcon}
+                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
+                    />
+                  </a>
+                  <a href="https://www.javascript.com/" target="blank_">
+                    <Icon
+                      icon={javascriptIcon}
+                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
+                    />
+                  </a>
+                  <a href="https://www.djangoproject.com/" target="blank_">
+                    <Icon
+                      icon={djangoIcon}
+                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
+                    />
+                  </a>
+                  <a href="https://reactjs.org/" target="blank_">
+                    <Icon
+                      icon={reactIcon}
+                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
+                    />
+                  </a>
                 </span>
               </div>
             </div>
@@ -103,7 +112,15 @@ class About extends Component {
                       borderRadius: 5,
                     }}
                   >
-                    <div className="card-header slider-tab rounded">
+                    <div
+                      className="card-header modal-buttons  rounded"
+                      style={{
+                        paddingBottom: "10px",
+                        textAlign: "left",
+                        maxWidth: "100%",
+                        backgroundColor: "#1f1f1f",
+                      }}
+                    >
                       <button
                         style={{
                           padding: 0,
