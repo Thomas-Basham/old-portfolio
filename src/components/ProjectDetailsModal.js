@@ -10,13 +10,6 @@ import emailjs from "@emailjs/browser";
 import Collapse from "react-bootstrap/Collapse";
 
 class ProjectDetailsModal extends Component {
-  
-  componentDidMount() {
-    this.setState({ counter: this.props.currentProjectMongo.likes });
-    this.setState({ comments: this.props.comments });
-    this.setState({ likedBy: this.props.currentProjectMongo.likedBy });
-  }
-
   handleLikes = (e) => {
     e.preventDefault();
     let updatedProject = {
@@ -24,12 +17,7 @@ class ProjectDetailsModal extends Component {
       likedBy: this.props.auth0.user.name,
       _id: this.props.currentProjectMongo._id,
     };
-    this.setState({
-      counter: this.props.currentProjectMongo.likes,
-      likedBy: this.props.currentProjectMongo.likedBy.push(
-        updatedProject.likedBy
-      ),
-    });
+
     this.props.updateProject(updatedProject);
     this.sendNotificationEmail(e, "like");
   };
@@ -45,6 +33,7 @@ class ProjectDetailsModal extends Component {
     };
     this.props.postComment(postedComment);
     this.sendNotificationEmail(e, "comment");
+    e.target.reset();
   };
 
   handleUpdateComment = (e) => {
@@ -59,15 +48,11 @@ class ProjectDetailsModal extends Component {
       _id: this.props.commentData._id,
       __V: this.props.commentData.__v,
     };
-    this.setState({
-      comments: this.props.comments,
-    });
 
     this.props.updateComment(postedComment);
-
     this.props.hideEditCommentForm();
 
-    // e.target.reset()
+    e.target.reset();
   };
 
   handleReplyComment = (e) => {
@@ -85,7 +70,7 @@ class ProjectDetailsModal extends Component {
     this.props.postComment(postedComment);
     this.props.hideReplyForm();
     this.sendNotificationEmail(e, "comment");
-    // e.target.reset()
+    e.target.reset();
   };
 
   serverID = process.env.REACT_APP_EMAIL_JS_SERVER_ID;
@@ -312,14 +297,16 @@ class ProjectDetailsModal extends Component {
           </Button>
         );
     };
+    let projectComments = () => {
+      if (this.props.currentProjectMongo) {
+        return this.props.comments.filter(
+          (comments) =>
+            this.props.currentProjectMongo.project === comments.project
+        );
+      }
+    };
 
-    const filteredComments = this.props.comments.filter(
-      (comments) => this.props.currentProjectMongo.project === comments.project
-    );
-
-    console.log(this.props.currentProjectMongo);
-
-    let filteredReplies = (commentData) => {
+    let replyComments = (commentData) => {
       if (commentData) {
         let replyID =
           this.props.currentProjectMongo.project +
@@ -364,7 +351,7 @@ class ProjectDetailsModal extends Component {
     };
     let comments = () => {
       if (this.props.showCommentUpdateForm === false) {
-        return filteredComments.map((commentData) => {
+        return projectComments().map((commentData) => {
           return (
             <div
               id={commentData._id}
@@ -392,7 +379,7 @@ class ProjectDetailsModal extends Component {
               <p className="mt-2 w-50">{commentData.text}</p>
               {replyButton(commentData)}
               {replyCommentForm(commentData)}
-              {filteredReplies(commentData)}
+              {replyComments(commentData)}
             </div>
           );
         });
