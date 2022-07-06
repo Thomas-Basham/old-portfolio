@@ -14,7 +14,7 @@
     {
       "title": "Culinary Blog",
       "startDate": "June 2022",
-      "description": "A Full Stack React Web App with user registration, user login, and blog posting capabilities with user image uploads.",
+      "description": "A Full Stack Django/React Blog website \n\n Features include user registration, user login, and blog posting capabilities with user image uploads.",
       "descriptionHTML": "<div class=\"made-with\"><p><strong>Team: </strong> </p><a href=\"https://github.com/eden-brekke\" target=\"_blank\" rel=\"noreferrer\">Eden Breke, </a><a href=\"https://github.com/dlindqu3\" target=\"_blank\" rel=\"noreferrer\">Dwight Lindquist, </a><a href=\"https://github.com/EllaSvete\" target=\"_blank\" rel=\"noreferrer\">Ella Svete, and </a><a href=\"https://github.com/MISalz\" target=\"_blank\" rel=\"noreferrer\">Michelle Salazar</a></div>",
       "images": [
         "images/portfolio/culinaryBlog/culinaryBlog1.png",
@@ -50,7 +50,7 @@
     {
       "title": "Washington Stocked Trout Finder",
       "startDate": "June 2022",
-      "description": "A Full Stack Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State. Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
+      "description": "A Full Stack Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State.\n\n Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
       "images": [
         "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes3.png",
         "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes2.png",
@@ -84,8 +84,8 @@
       "likes": "Digital Bookshelf",
       "title": "Digital Bookshelf",
       "startDate": "May 2022",
-      "description": "A full stack mobile-first React web app that allows users to sign in securely, manage their own digital bookshelf, and add books from Google Books™  API made with Cole Gibbs ",
-      "descriptionHTML": "<div class=\"made-with\"><p><strong>Team: </strong> </a><a href=\"https://github.com/colegibbs\" target=\"_blank\" rel=\"noreferrer\">Cole Gibbs</a></div>",
+      "description": "A full stack React/Node web app that allows users to manage their own digital bookshelf, and add books from the Google Books™ API \n\n Made with MongoDb, Express, React, and Node. User Authentication with Auth0",
+      "descriptionHTML": "<div class=\"made-with\"><p><strong>Team: </strong> </p><a href=\"https://github.com/colegibbs\" target=\"_blank\" rel=\"noreferrer\">Cole Gibbs</a></div>",
       "images": [
         "images/portfolio/digitalBookshelf/digitalBookshelf5.png",
         "images/portfolio/digitalBookshelf/digitalBookshelf4.png",
@@ -128,7 +128,7 @@
     {
       "title": "City explorer",
       "startDate": "May 2022",
-      "description": "A Full Stack React web application that compiles relevant fictional product sales so that the client can have more accurate stock and staff counts",
+      "description": "A Full Stack React/Node web app that let's the user search a city name and then displays images, songs, weather info, movie posters, and a map of the city \n\n Search powered by WeatherBit™ API, LocationIQ™ API, ImSea™ API, Itunes™ API, and IMDB™ API",
       "images": [
         "images/portfolio/cityExplorer/cityExplorer4.png",
         "images/portfolio/cityExplorer/cityExplorer5.png",
@@ -169,7 +169,7 @@
     {
       "title": "Hiking Trails API",
       "startDate": "May 2022",
-      "description": "A Full Stack Django Restful Services API for storing favorite hiking trails, built with Django Rest Framework, PostgreSQL, Pandas, and Folium",
+      "description": "A Full Stack API for storing favorite hiking trails \n\n Built with Django Rest Framework, PostgreSQL, Pandas, and Folium",
       "images": [
         "images/portfolio/HikingTrailsAPI/HikingTrailsAPI1.png",
         "images/portfolio/HikingTrailsAPI/HikingTrailsAPI2.png",
@@ -210,7 +210,7 @@
     {
       "title": "Music API",
       "startDate": "May 2022",
-      "description": "A Full Stack Django Restful Services API for storing favorite music, built with Django Rest Framework, PostgreSQL, Paginator, Wavesurfer, and AWS S3 bucket for user file uploads",
+      "description": "A Full Stack API for storing favorite music \n\n Built with Django Rest Framework, PostgreSQL, Paginator, Wavesurfer, and AWS S3 bucket for user file uploads",
       "images": [
         "images/portfolio/MusicAPI/MusicAPI4.png",
         "images/portfolio/MusicAPI/MusicAPI3.png",
@@ -248,7 +248,7 @@
     {
       "title": "Puppy Pics API",
       "startDate": "May 2022",
-      "description": "A Full Stack Django Restful Services API for storing favorite family pet pics, built with Django Rest Framework, PostgreSQL, and Cloudinary for user file uploads",
+      "description": "A Full Stack API for storing favorite family pet pics \n\n Built with Django Rest Framework, PostgreSQL, and Cloudinary for user file uploads",
       "images": [
         "images/portfolio/PuppyPicAPI/PuppyPicAPI4.png",
         "images/portfolio/PuppyPicAPI/PuppyPicAPI3.png",

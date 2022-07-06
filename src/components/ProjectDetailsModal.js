@@ -350,7 +350,7 @@ class ProjectDetailsModal extends Component {
       }
     };
     let comments = () => {
-      if (this.props.showCommentUpdateForm === false) {
+      if (this.props.showCommentUpdateForm === false && projectComments()) {
         return projectComments().map((commentData) => {
           return (
             <div
@@ -492,17 +492,23 @@ class ProjectDetailsModal extends Component {
         <div className="col-md-12">
           <Collapse in={!this.props.fadeAboutState}>
             <div className="col-md-12">
-              <h3 style={{ padding: "5px 5px 0 5px" }}>
+              <h1 className="display-4" style={{ padding: "5px 5px 0 5px" }}>
                 {title}
 
                 {url ? (
                   <a href={url} target="_blank" rel="noreferrer">
-                    <p style={{ fontSize: 11 }}>{url}</p>
+                    <p style={{ fontSize: 12 }}>{url}</p>
                   </a>
                 ) : null}
-              </h3>
+              </h1>
 
-              <p className="modal-description"> {description}</p>
+              <p
+                className="modal-description"
+                style={{ whiteSpace: "pre-line" }}
+              >
+                {" "}
+                {description}
+              </p>
 
               {teamHTML()}
 
