@@ -24,6 +24,7 @@
         "images/portfolio/culinaryBlog/culinaryBlog5.png"
       ],
       "url": "https://smells-like-devs-cooking-frontend-rho.vercel.app",
+      "githubUrl": "https://github.com/The-Spice-Devs/Smells-Like-Devs-Cooking-Frontend#readme",
       "technologies": [
         {
           "class": "devicon-python-plain",
@@ -57,6 +58,7 @@
         "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes1.png"
       ],
       "url": "https://wa-stocked-trout-finder.herokuapp.com",
+      "githubUrl": "https://github.com/Thomas-Basham/wa-stocked-trout-finder#readme",
       "technologies": [
         {
           "class": "devicon-python-plain",
@@ -94,6 +96,7 @@
         "images/portfolio/digitalBookshelf/digitalBookshelf1.png"
       ],
       "url": "https://digitalbookshelf.netlify.app",
+      "githubUrl": "https://github.com/Thomas-Basham/digital-bookshelf#readme",
       "technologies": [
         {
           "class": "devicon-javascript-plain",
@@ -135,6 +138,7 @@
         "images/portfolio/cityExplorer/cityExplorer6.png"
       ],
       "url": "https://city-explorer-thomas-basham.netlify.app",
+      "githubUrl": "https://github.com/Thomas-Basham/city-explorer#readme",
       "technologies": [
         {
           "class": "devicon-javascript-plain",
@@ -181,6 +185,7 @@
         "images/portfolio/HikingTrailsAPI/HikingTrailsAPI6.png"
       ],
       "url": "https://trails-api-thomas-basham.herokuapp.com",
+      "githubUrl": "https://github.com/Thomas-Basham/hiking-trails-api#readme",
       "technologies": [
         {
           "class": "devicon-python-plain",
@@ -224,6 +229,7 @@
         "images/portfolio/MusicAPI/MusicAPI1.png"
       ],
       "url": "https://music-api-thomas-basham.herokuapp.com/",
+      "githubUrl": "https://github.com/Thomas-Basham/Music-API#readme",
       "technologies": [
         {
           "class": "devicon-python-plain",
@@ -265,6 +271,7 @@
         "images/portfolio/PuppyPicAPI/PuppyPicAPI1.png"
       ],
       "url": "https://puppy-pics-api-thomas-basham.herokuapp.com",
+      "githubUrl": "https://github.com/Thomas-Basham/puppy-pics-api#readme",
       "technologies": [
         {
           "class": "devicon-python-plain",
@@ -294,7 +301,7 @@
       "company": "Code Fellows",
       "title": "Student",
       "years": "04.2022 - 07.2022",
-      "mainTech": ["Advanced Software Development in Python"],
+      "mainTech": ["Software Development in Python"],
       "technologies": [
         "Python",
         "Django",
@@ -303,16 +310,10 @@
         "PostgreSQL",
         "Folium",
         "JavaScript",
-        "MongoDB",
-        "ExpressJS",
-        "React",
-        "NodeJS",
-        "VS Code",
+        "NextJS",
         "Heroku",
-        "Netlify",
-        "HTML5",
-        "CSS3",
-        "Bootstrap"
+        "Vercel",
+        "Netlify"
       ]
     },
     {

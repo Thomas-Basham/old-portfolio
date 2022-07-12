@@ -391,6 +391,7 @@ class ProjectDetailsModal extends Component {
       var title = this.props.currentProjectLocal.title;
       var description = this.props.currentProjectLocal.description;
       var url = this.props.currentProjectLocal.url;
+      var githubUrl = this.props.currentProjectLocal.githubUrl;
       if (this.props.currentProjectLocal.technologies) {
         var tech = technologies.map((icons, i) => {
           return (
@@ -500,6 +501,13 @@ class ProjectDetailsModal extends Component {
                     <p style={{ fontSize: 12 }}>{url}</p>
                   </a>
                 ) : null}
+
+                {githubUrl ? (
+                  <a href={githubUrl} target="_blank" rel="noreferrer">
+                    <p style={{ fontSize: 12 }}>View Source on Github</p>
+                  </a>
+                ) : null}
+
               </h1>
 
               <p
