@@ -9,7 +9,7 @@ class Projects extends Component {
     super(props);
     this.state = {
       currentProjectLocal: {},
-      projectDataMongo: [].reverse(),
+      projectDataMongo: [],
       currentProjectMongo: {},
       comments: [],
       showCommentUpdateForm: false,
