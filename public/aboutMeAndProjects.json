@@ -212,12 +212,13 @@
     {
       "title": "Music API",
       "startDate": "May 2022",
-      "description": "A Full Stack API for storing favorite music \n\n Built with Django Rest Framework, PostgreSQL, Paginator, Wavesurfer, and AWS S3 bucket for user file uploads",
+      "description": "A Full Stack API for storing favorite music \n\n Built with Django Rest Framework, PostgreSQL, Paginator, and Cloudinary bucket for user file uploads",
       "images": [
         "images/portfolio/MusicAPI/MusicAPI4.png",
         "images/portfolio/MusicAPI/MusicAPI5.png",
         "images/portfolio/MusicAPI/MusicAPI6.png",
         "images/portfolio/MusicAPI/MusicAPI7.png",
+        "images/portfolio/MusicAPI/MusicAPI8.png",
         "images/portfolio/MusicAPI/MusicAPI3.png",
         "images/portfolio/MusicAPI/MusicAPI2.png",
         "images/portfolio/MusicAPI/MusicAPI1.png"
