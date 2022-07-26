@@ -10,6 +10,17 @@ import emailjs from "@emailjs/browser";
 import Collapse from "react-bootstrap/Collapse";
 
 class ProjectDetailsModal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showLikeButton: true,
+    };
+  }
+  componentDidMount() {
+    this.setState({
+      showLikeButton: true,
+    });
+  }
   handleLikes = (e) => {
     e.preventDefault();
     let updatedProject = {
@@ -18,7 +29,7 @@ class ProjectDetailsModal extends Component {
       _id: this.props.currentProjectMongo._id,
     };
 
-    this.props.updateProject(updatedProject);
+    this.props.updateProjectLikes(updatedProject);
     this.sendNotificationEmail(e, "like");
   };
 
@@ -100,7 +111,7 @@ class ProjectDetailsModal extends Component {
       .send(this.serverID, templateID, templateParams, this.publicKey)
       .then(
         function (response) {
-          console.log("SUCCESS!", response.status, response.text);
+          console.log("EMAIL SUCCESS!", response.status, response.text);
         },
         function (error) {
           console.log("FAILED...", error);
@@ -116,7 +127,8 @@ class ProjectDetailsModal extends Component {
         this.props.currentProjectMongo.likedBy &&
         !this.props.currentProjectMongo.likedBy.includes(
           this.props.auth0.user.name
-        )
+        ) &&
+        this.props.showLikeButton
       ) {
         return (
           <Button style={{ float: "left" }} onClick={this.handleLikes}>
@@ -507,7 +519,6 @@ class ProjectDetailsModal extends Component {
                     <p style={{ fontSize: 12 }}>View Source on Github</p>
                   </a>
                 ) : null}
-
               </h1>
 
               <p
