@@ -12,6 +12,128 @@
   },
   "projects": [
     {
+      "title": "Hiking Trails API",
+      "startDate": "May 2022",
+      "description": "A Full Stack API for storing favorite hiking trails \n\n Built with Django Rest Framework, PostgreSQL, Pandas, and Folium",
+      "images": [
+        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI7.png",
+        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI8.png",
+        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI9.png",
+        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI10.png",
+        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI11.png",
+        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI4.png",
+        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI5.png",
+        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI6.png"
+      ],
+      "url": "https://trails-api-thomas-basham.herokuapp.com",
+      "githubUrl": "https://github.com/Thomas-Basham/hiking-trails-api#readme",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-django-plain",
+          "name": "Django"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
+        },
+        {
+          "class": "devicon-pandas-original",
+          "name": "Pandas"
+        },
+
+        {
+          "class": "devicon-html5-plain",
+          "name": "HTML5"
+        },
+        {
+          "class": "devicon-css3-plain",
+          "name": "CSS3"
+        }
+      ]
+    },    
+
+    {
+      "title": "Washington Stocked Trout Finder",
+      "startDate": "June 2022",
+      "description": "A Full Stack Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State.\n\n Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
+      "images": [
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes3.png",
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes2.png",
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes1.png"
+      ],
+      "url": "https://wa-stocked-trout-finder.herokuapp.com",
+      "githubUrl": "https://github.com/Thomas-Basham/wa-stocked-trout-finder#readme",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-flask-original",
+          "name": "Flask"
+        },
+        {
+          "class": "devicon-pandas-original",
+          "name": "Pandas"
+        },
+        {
+          "class": "devicon-html5-plain",
+          "name": "HTML5"
+        },
+        {
+          "class": "devicon-css3-plain",
+          "name": "CSS3"
+        }
+      ]
+    },
+    {
+      "title": "Music API",
+      "startDate": "May 2022",
+      "description": "A Full Stack API for storing favorite music \n\n Built with Django Rest Framework, PostgreSQL, Paginator, and Cloudinary bucket for user file uploads",
+      "images": [
+        "images/portfolio/MusicAPI/MusicAPI4.png",
+        "images/portfolio/MusicAPI/MusicAPI5.png",
+        "images/portfolio/MusicAPI/MusicAPI6.png",
+        "images/portfolio/MusicAPI/MusicAPI7.png",
+        "images/portfolio/MusicAPI/MusicAPI8.png",
+        "images/portfolio/MusicAPI/MusicAPI3.png",
+        "images/portfolio/MusicAPI/MusicAPI2.png",
+        "images/portfolio/MusicAPI/MusicAPI1.png"
+      ],
+      "url": "https://music-api-thomas-basham.herokuapp.com/",
+      "githubUrl": "https://github.com/Thomas-Basham/Music-API#readme",
+      "technologies": [
+        {
+          "class": "devicon-python-plain",
+          "name": "Python"
+        },
+        {
+          "class": "devicon-django-plain",
+          "name": "Django"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgreSQL"
+        },
+        {
+          "class": "devicon-amazonwebservices-plain",
+          "name": "AWS S3 Bucket"
+        },
+        {
+          "class": "devicon-html5-plain",
+          "name": "HTML5"
+        },
+        {
+          "class": "devicon-css3-plain",
+          "name": "CSS3"
+        }
+      ]
+    },
+    {
       "title": "Culinary Blog",
       "startDate": "June 2022",
       "description": "A Full Stack Django/React Blog website \n\n Features include user registration, user login, and blog posting capabilities with user image uploads.",
@@ -48,40 +170,7 @@
         }
       ]
     },
-    {
-      "title": "Washington Stocked Trout Finder",
-      "startDate": "June 2022",
-      "description": "A Full Stack Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State.\n\n Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
-      "images": [
-        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes3.png",
-        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes2.png",
-        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes1.png"
-      ],
-      "url": "https://wa-stocked-trout-finder.herokuapp.com",
-      "githubUrl": "https://github.com/Thomas-Basham/wa-stocked-trout-finder#readme",
-      "technologies": [
-        {
-          "class": "devicon-python-plain",
-          "name": "Python"
-        },
-        {
-          "class": "devicon-flask-original",
-          "name": "Flask"
-        },
-        {
-          "class": "devicon-pandas-original",
-          "name": "Pandas"
-        },
-        {
-          "class": "devicon-html5-plain",
-          "name": "HTML5"
-        },
-        {
-          "class": "devicon-css3-plain",
-          "name": "CSS3"
-        }
-      ]
-    },
+
     {
       "likes": "Digital Bookshelf",
       "title": "Digital Bookshelf",
@@ -170,93 +259,7 @@
         }
       ]
     },
-    {
-      "title": "Hiking Trails API",
-      "startDate": "May 2022",
-      "description": "A Full Stack API for storing favorite hiking trails \n\n Built with Django Rest Framework, PostgreSQL, Pandas, and Folium",
-      "images": [
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI7.png",
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI8.png",
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI9.png",
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI10.png",
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI11.png",
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI4.png",
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI5.png",
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI6.png"
-      ],
-      "url": "https://trails-api-thomas-basham.herokuapp.com",
-      "githubUrl": "https://github.com/Thomas-Basham/hiking-trails-api#readme",
-      "technologies": [
-        {
-          "class": "devicon-python-plain",
-          "name": "Python"
-        },
-        {
-          "class": "devicon-django-plain",
-          "name": "Django"
-        },
-        {
-          "class": "devicon-postgresql-plain",
-          "name": "PostgreSQL"
-        },
-        {
-          "class": "devicon-pandas-original",
-          "name": "Pandas"
-        },
 
-        {
-          "class": "devicon-html5-plain",
-          "name": "HTML5"
-        },
-        {
-          "class": "devicon-css3-plain",
-          "name": "CSS3"
-        }
-      ]
-    },
-    {
-      "title": "Music API",
-      "startDate": "May 2022",
-      "description": "A Full Stack API for storing favorite music \n\n Built with Django Rest Framework, PostgreSQL, Paginator, and Cloudinary bucket for user file uploads",
-      "images": [
-        "images/portfolio/MusicAPI/MusicAPI4.png",
-        "images/portfolio/MusicAPI/MusicAPI5.png",
-        "images/portfolio/MusicAPI/MusicAPI6.png",
-        "images/portfolio/MusicAPI/MusicAPI7.png",
-        "images/portfolio/MusicAPI/MusicAPI8.png",
-        "images/portfolio/MusicAPI/MusicAPI3.png",
-        "images/portfolio/MusicAPI/MusicAPI2.png",
-        "images/portfolio/MusicAPI/MusicAPI1.png"
-      ],
-      "url": "https://music-api-thomas-basham.herokuapp.com/",
-      "githubUrl": "https://github.com/Thomas-Basham/Music-API#readme",
-      "technologies": [
-        {
-          "class": "devicon-python-plain",
-          "name": "Python"
-        },
-        {
-          "class": "devicon-django-plain",
-          "name": "Django"
-        },
-        {
-          "class": "devicon-postgresql-plain",
-          "name": "PostgreSQL"
-        },
-        {
-          "class": "devicon-amazonwebservices-plain",
-          "name": "AWS S3 Bucket"
-        },
-        {
-          "class": "devicon-html5-plain",
-          "name": "HTML5"
-        },
-        {
-          "class": "devicon-css3-plain",
-          "name": "CSS3"
-        }
-      ]
-    },
     {
       "title": "Puppy Pics API",
       "startDate": "May 2022",

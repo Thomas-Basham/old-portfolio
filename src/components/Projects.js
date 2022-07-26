@@ -3,6 +3,7 @@ import ProjectDetailsModal from "./ProjectDetailsModal";
 import axios from "axios";
 import { withAuth0 } from "@auth0/auth0-react";
 import LoginButtonAutho from "./LoginButtonAutho";
+import UpdateProjectModal from "./UpdateProjectModal";
 
 class Projects extends Component {
   constructor(props) {
@@ -12,10 +13,12 @@ class Projects extends Component {
       projectDataMongo: [],
       currentProjectMongo: {},
       comments: [],
+      showLikeButton: true,
       showCommentUpdateForm: false,
       showReplyForm: false,
       showIframe: false,
       showDetailsModal: false,
+      showUpdateProjectModal: false,
       fadeAbout: false,
     };
   }
@@ -66,11 +69,31 @@ class Projects extends Component {
       let id = updatedProject._id;
       let url = `${process.env.REACT_APP_SERVER}/project/${id}`;
       let request = await axios.put(url, updatedProject);
-      let newProjects = this.state.project.map((element) => {
+      let newProjects = this.state.projectDataMongo.map((element) => {
         return element._id === id ? request.data : element;
       });
       this.setState({
         projectDataMongo: newProjects,
+      });
+    } catch (error) {
+      console.log("we have an error:", error);
+    }
+  };
+
+  updateProjectLikes = async (updatedProject) => {
+    try {
+      let id = updatedProject._id;
+      let url = `${process.env.REACT_APP_SERVER}/like/${id}`;
+      await axios.put(url, updatedProject);
+      // let newProjects = this.state.projectDataMongo.map((element) => {
+      //   return element._id === id ? request.data : element;
+      // });
+      // this.setState({
+      //   projectDataMongo: newProjects,
+      // });
+
+      this.setState({
+        showLikeButton: false,
       });
     } catch (error) {
       console.log("we have an error:", error);
@@ -143,6 +166,8 @@ class Projects extends Component {
     });
   };
   render() {
+    console.log(this.state.projectDataMongo);
+
     let fadeAbout = () => {
       this.setState({
         fadeAbout: !this.state.fadeAbout,
@@ -159,12 +184,22 @@ class Projects extends Component {
         fadeAbout: false,
       });
     };
-    let showDetailsModal = (data, currentProjectMongo) => {
+    let showDetailsModal = (data) => {
+      let currentMongoProject = () => {
+        if (this.state.currentProjectMongo) {
+          return this.state.projectDataMongo.filter(
+            (mongo) => data.title === mongo.project
+          );
+        }
+      };
+
       this.setState({
         showDetailsModal: true,
         currentProjectLocal: data,
-        currentProjectMongo: currentProjectMongo,
-
+        currentProjectMongo: currentMongoProject()
+          ? currentMongoProject()[0]
+          : "",
+        showLikeButton: true,
         showIframe: false,
       });
     };
@@ -177,21 +212,55 @@ class Projects extends Component {
         fadeAbout: false,
       });
 
-    let projectDataMongo = this.state.projectDataMongo;
+    let showUpdateProjectModal = (data) => {
+      let currentMongoProject = () => {
+        if (this.state.currentProjectMongo) {
+          return this.state.projectDataMongo.filter(
+            (mongo) => data.title === mongo.project
+          );
+        }
+      };
+      this.setState({
+        showUpdateProjectModal: true,
+        currentProjectLocal: data,
+        currentProjectMongo: currentMongoProject()[0], // this.state.projectDataMongo[0]  //
+      });
+    };
+
+    let updateProjectModalClose = () =>
+      this.setState({
+        showUpdateProjectModal: false,
+      });
+
+    let editProjectButton = (projects) => {
+      if (
+        this.props.auth0.isAuthenticated
+        && this.props.auth0.user.email === process.env.REACT_APP_ADMIN_EMAIL
+      )
+      return (
+        <div
+        style={{ cursor: "pointer", color: "white" }}
+        onClick={() => showUpdateProjectModal(projects)}
+      >
+        <p>EDIT</p>
+        </div>
+
+      )
+      
+    }
 
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {
       var sectionName = this.props.resumeBasicInfo.section_name.projects;
       var projects = this.props.resumeProjects.map(function (projects, i) {
         return (
-          <div
-            className="col-sm-12 col-md-6 col-lg-4"
-            key={projects.title}
-            style={{ cursor: "pointer" }}
-          >
+          <div className="col-sm-12 col-md-6 col-lg-4" key={projects.title}>
             <span className="portfolio-item d-block">
+              
+              {editProjectButton(projects)}
               <div
                 className="foto"
-                onClick={() => showDetailsModal(projects, projectDataMongo[i])}
+                onClick={() => showDetailsModal(projects)}
+                style={{ cursor: "pointer" }}
               >
                 <div>
                   <img
@@ -264,11 +333,12 @@ class Projects extends Component {
             showCommentUpdateForm={this.state.showCommentUpdateForm}
             currentProjectLocal={this.state.currentProjectLocal}
             currentProjectMongo={this.state.currentProjectMongo}
-            updateProject={this.updateProject}
+            updateProjectLikes={this.updateProjectLikes}
             comments={this.state.comments}
             postComment={this.postComment}
             updateComment={this.updateComment}
             commentData={this.state.commentData}
+            showLikeButton={this.state.showLikeButton}
             hideEditCommentForm={this.hideEditCommentForm}
             showReplyForm={this.showReplyForm}
             hideReplyForm={this.hideReplyForm}
@@ -279,6 +349,15 @@ class Projects extends Component {
             showAbout={showAbout}
             showIframe={showIframe}
             showIframeState={this.state.showIframe}
+          />
+
+          <UpdateProjectModal
+            show={this.state.showUpdateProjectModal}
+            onHide={updateProjectModalClose}
+            updateProject={this.updateProject}
+            currentProjectLocal={this.state.currentProjectLocal}
+            currentProjectMongo={this.state.currentProjectMongo}
+            projectDataMongo={this.state.projectDataMongo}
           />
         </div>
       </section>
