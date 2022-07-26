@@ -232,18 +232,31 @@ class Projects extends Component {
         showUpdateProjectModal: false,
       });
 
+    let editProjectButton = (projects) => {
+      if (
+        this.props.auth0.isAuthenticated
+        && this.props.auth0.user.email === process.env.REACT_APP_ADMIN_EMAIL
+      )
+      return (
+        <div
+        style={{ cursor: "pointer", color: "white" }}
+        onClick={() => showUpdateProjectModal(projects)}
+      >
+        <p>EDIT</p>
+        </div>
+
+      )
+      
+    }
+
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {
       var sectionName = this.props.resumeBasicInfo.section_name.projects;
       var projects = this.props.resumeProjects.map(function (projects, i) {
         return (
           <div className="col-sm-12 col-md-6 col-lg-4" key={projects.title}>
             <span className="portfolio-item d-block">
-              <div
-                style={{ cursor: "pointer" }}
-                onClick={() => showUpdateProjectModal(projects)}
-              >
-                <p>EDIT</p>
-              </div>
+              
+              {editProjectButton(projects)}
               <div
                 className="foto"
                 onClick={() => showDetailsModal(projects)}
