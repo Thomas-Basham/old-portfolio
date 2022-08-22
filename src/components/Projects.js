@@ -31,15 +31,9 @@ class Projects extends Component {
         projectDataMongo: request.data.reverse(), // reversed so that when I add JSON data and mongodb data the indexes align
       });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
-
-  
-    componentDidMount() {
-      this.getProjects();
-      this.getComments();
-    }
   getComments = async () => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/Comment`;
@@ -48,9 +42,15 @@ class Projects extends Component {
         comments: request.data,
       });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
+  
+    
+      componentDidMount() {
+        this.getProjects();
+        this.getComments();
+      }
 
   postProject = async (newProject) => {
     try {
