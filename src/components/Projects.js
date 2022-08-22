@@ -35,6 +35,11 @@ class Projects extends Component {
     }
   };
 
+  
+    componentDidMount() {
+      this.getProjects();
+      this.getComments();
+    }
   getComments = async () => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/Comment`;
@@ -46,11 +51,6 @@ class Projects extends Component {
       console.log(error);
     }
   };
-
-  componentDidMount() {
-    this.getProjects();
-    this.getComments();
-  }
 
   postProject = async (newProject) => {
     try {

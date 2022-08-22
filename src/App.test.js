@@ -1,8 +1,13 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import { cleanup, fireEvent, render } from "@testing-library/react";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+import Footer from "./components/Footer.js"
+import Header from "./components/Header.js"
+test('renders the Header', () => {
+  render(<Header />);
 });
+
+test('renders the Footer', () => {
+  render(<Footer />);
+});
+
+afterEach(cleanup);
