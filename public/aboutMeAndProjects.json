@@ -13,7 +13,7 @@
   "projects": [
     {
       "title": "Hiking Trails API",
-      "startDate": "May 2022",
+      "startDate": "August 2022",
       "description": "A Full Stack API for storing favorite hiking trails \n\n Built with Django Rest Framework, PostgreSQL, Pandas, and Folium",
       "images": [
         "images/portfolio/HikingTrailsAPI/HikingTrailsAPI7.png",
@@ -58,7 +58,7 @@
 
     {
       "title": "Washington Stocked Trout Finder",
-      "startDate": "June 2022",
+      "startDate": "August 2022",
       "description": "A Full Stack Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State.\n\n Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
       "images": [
         "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes3.png",
@@ -92,7 +92,7 @@
     },
     {
       "title": "Music API",
-      "startDate": "May 2022",
+      "startDate": "July 2022",
       "description": "A Full Stack API for storing favorite music \n\n Built with Django Rest Framework, PostgreSQL, Paginator, and Cloudinary bucket for user file uploads",
       "images": [
         "images/portfolio/MusicAPI/MusicAPI4.png",
@@ -135,7 +135,7 @@
     },
     {
       "title": "Culinary Blog",
-      "startDate": "June 2022",
+      "startDate": "July 2022",
       "description": "A Full Stack Django/React Blog website \n\n Features include user registration, user login, and blog posting capabilities with user image uploads.",
       "descriptionHTML": "<div class=\"made-with\"><p><strong>Team: </strong> </p><a href=\"https://github.com/eden-brekke\" target=\"_blank\" rel=\"noreferrer\">Eden Breke, </a><a href=\"https://github.com/dlindqu3\" target=\"_blank\" rel=\"noreferrer\">Dwight Lindquist, </a><a href=\"https://github.com/EllaSvete\" target=\"_blank\" rel=\"noreferrer\">Ella Svete, and </a><a href=\"https://github.com/MISalz\" target=\"_blank\" rel=\"noreferrer\">Michelle Salazar</a></div>",
       "images": [
@@ -174,7 +174,7 @@
     {
       "likes": "Digital Bookshelf",
       "title": "Digital Bookshelf",
-      "startDate": "May 2022",
+      "startDate": "June 2022",
       "description": "A full stack React/Node web app that allows users to manage their own digital bookshelf, and add books from the Google Books™ API \n\n Made with MongoDb, Express, React, and Node. User Authentication with Auth0",
       "descriptionHTML": "<div class=\"made-with\"><p><strong>Team: </strong> </p><a href=\"https://github.com/colegibbs\" target=\"_blank\" rel=\"noreferrer\">Cole Gibbs</a></div>",
       "images": [
@@ -262,7 +262,7 @@
 
     {
       "title": "Puppy Pics API",
-      "startDate": "May 2022",
+      "startDate": "April 2022",
       "description": "A Full Stack API for storing favorite family pet pics \n\n Built with Django Rest Framework, PostgreSQL, and Cloudinary for user file uploads",
       "images": [
         "images/portfolio/PuppyPicAPI/PuppyPicAPI4.png",

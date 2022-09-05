@@ -300,8 +300,7 @@ class Projects extends Component {
 
     let loginButton = () => {
       if (
-        !this.props.auth0.isAuthenticated &&
-        this.state.projectDataMongo.length > 3
+        !this.props.auth0.isAuthenticated 
       ) {
         return <LoginButtonAutho className="mt-5" style={{ paddingTop: 20 }} />;
       }
