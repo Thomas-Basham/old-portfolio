@@ -305,13 +305,6 @@ header h1 {
   margin: 0 !important;
 }
 
-@media only screen and (max-width: 1170px) {
-  .experience-icon {
-    font-size: 170%;
-    margin-top: 27%;
-    text-align: center;
-  }
-}
 
 .modal-inside .modal-content {
   // background-color: #1f1f1f;
@@ -471,14 +464,7 @@ input {
   font-size: 1.5rem;
 }
 
-@media (min-width: 576px) {
-  .portfolio .closeButtonResponsive {
-    display: block;
-  }
-  .portfolio .portfolio-item {
-    margin-bottom: 30px;
-  }
-}
+
 
 #skills {
   background: #1f1f1f;
@@ -552,4 +538,29 @@ footer a:focus {
 
 .image-gallery-image {
   border-radius: 5px;
+}
+
+
+
+@media only screen and (max-width: 1170px) {
+  .experience-icon {
+    font-size: 170%;
+    margin-top: 27%;
+    text-align: center;
+  }
+  img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+
+@media (min-width: 576px) {
+  .portfolio .closeButtonResponsive {
+    display: block;
+  }
+  .portfolio .portfolio-item {
+    margin-bottom: 30px;
+  }
+
 }

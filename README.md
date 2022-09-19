@@ -8,7 +8,7 @@ Created with a Create React App Starter Template by **Thomas Basham**
 
 ## [CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio)
 
-I took this simple React template and made it a full-stack web app. There is a comment and like section beneath each  I created the backend server using node.js, Express, and Mongoose. 
+I took this simple React template and made it a full-stack web app. There is a comment and like section beneath each project to encourage discussion. I created the backend server using node.js, Express, and MongoDB.
 
 [Backend Code](https://github.com/Thomas-Basham/portfolio-backend)
 
