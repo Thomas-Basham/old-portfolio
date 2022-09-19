@@ -270,6 +270,8 @@ class Projects extends Component {
                       marginBottom: 0,
                       paddingBottom: 0,
                       position: "relative",
+                      width: "569.984px",
+                      height: "285px",
                     }}
                   />
                   <span className="project-date">{projects.startDate}</span>
