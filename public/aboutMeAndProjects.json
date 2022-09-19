@@ -12,6 +12,48 @@
   },
   "projects": [
     {
+      "title": "Collab Done",
+      "startDate": "September 2022",
+      "description": "A Full Stack Web App used to help musicians connect and collaborate.\n\n  Built with NextJS, ReactJS, Supabase(An open source Firebase Alternative), and WavesurferJS. ",
+      "images": [
+        "images/portfolio/collabDone/collabDone1.png",
+        "images/portfolio/collabDone/collabDone2.png",
+        "images/portfolio/collabDone/collabDone3.png",
+        "images/portfolio/collabDone/collabDone4.png",
+        "images/portfolio/collabDone/collabDone5.png",
+        "images/portfolio/collabDone/collabDone6.png"
+      ],
+      "url": "https://collab-done.vercel.app",
+      "githubUrl": "https://github.com/Thomas-Basham/collab-done#README",
+      "technologies": [
+        {
+          "class": "devicon-nextjs-plain",
+          "name": "NextJS"
+        },
+        {
+          "class": "devicon-react-plain",
+          "name": "ReactJS"
+        },
+        {
+          "class": "devicon-postgresql-plain",
+          "name": "PostgeSQL"
+        },
+        {
+          "class": "devicon-visualstudio-plain",
+          "name": "Visual Studio"
+        },
+
+        {
+          "class": "devicon-html5-plain",
+          "name": "HTML5"
+        },
+        {
+          "class": "devicon-css3-plain",
+          "name": "CSS3"
+        }
+      ]
+    },
+    {
       "title": "Hiking Trails API",
       "startDate": "August 2022",
       "description": "A Full Stack API for storing favorite hiking trails \n\n Built with Django Rest Framework, PostgreSQL, Pandas, and Folium",
@@ -54,10 +96,10 @@
           "name": "CSS3"
         }
       ]
-    },    
+    },
 
     {
-      "title": "Washington Stocked Trout Finder",
+      "title": "Trout Finder",
       "startDate": "August 2022",
       "description": "A Full Stack Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State.\n\n Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
       "images": [
