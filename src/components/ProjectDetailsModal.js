@@ -31,6 +31,11 @@ class ProjectDetailsModal extends Component {
 
     this.props.updateProjectLikes(updatedProject);
     this.sendNotificationEmail(e, "like");
+    this.setState({
+      showLikeButton: false,
+    });
+    this.props.getProjects();
+    window.location.reload();
   };
 
   handleComments = (e) => {

@@ -14,11 +14,11 @@ I took this simple React template and made it a full-stack web app. There is a c
 
 ## Tech Used
 
+- ReactJS
+
 - MongoDB
 
 - Express
-
-- React
 
 - Node
 

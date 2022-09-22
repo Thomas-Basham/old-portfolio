@@ -45,12 +45,11 @@ class Projects extends Component {
       // console.log(error);
     }
   };
-  
-    
-      componentDidMount() {
-        this.getProjects();
-        this.getComments();
-      }
+
+  componentDidMount() {
+    this.getProjects();
+    this.getComments();
+  }
 
   postProject = async (newProject) => {
     try {
@@ -166,8 +165,6 @@ class Projects extends Component {
     });
   };
   render() {
-    console.log(this.state.projectDataMongo);
-
     let fadeAbout = () => {
       this.setState({
         fadeAbout: !this.state.fadeAbout,
@@ -234,20 +231,18 @@ class Projects extends Component {
 
     let editProjectButton = (projects) => {
       if (
-        this.props.auth0.isAuthenticated
-        && this.props.auth0.user.email === process.env.REACT_APP_ADMIN_EMAIL
+        this.props.auth0.isAuthenticated &&
+        this.props.auth0.user.email === process.env.REACT_APP_ADMIN_EMAIL
       )
-      return (
-        <div
-        style={{ cursor: "pointer", color: "white" }}
-        onClick={() => showUpdateProjectModal(projects)}
-      >
-        <p>EDIT</p>
-        </div>
-
-      )
-      
-    }
+        return (
+          <div
+            style={{ cursor: "pointer", color: "white" }}
+            onClick={() => showUpdateProjectModal(projects)}
+          >
+            <p>EDIT</p>
+          </div>
+        );
+    };
 
     if (this.props.resumeProjects && this.props.resumeBasicInfo) {
       var sectionName = this.props.resumeBasicInfo.section_name.projects;
@@ -255,7 +250,6 @@ class Projects extends Component {
         return (
           <div className="col-sm-12 col-md-6 col-lg-4" key={projects.title}>
             <span className="portfolio-item d-block">
-              
               {editProjectButton(projects)}
               <div
                 className="foto"
@@ -301,9 +295,7 @@ class Projects extends Component {
     };
 
     let loginButton = () => {
-      if (
-        !this.props.auth0.isAuthenticated 
-      ) {
+      if (!this.props.auth0.isAuthenticated) {
         return <LoginButtonAutho className="mt-5" style={{ paddingTop: 20 }} />;
       }
     };
@@ -350,6 +342,7 @@ class Projects extends Component {
             showAbout={showAbout}
             showIframe={showIframe}
             showIframeState={this.state.showIframe}
+            getProjects={this.getProjects}
           />
 
           <UpdateProjectModal
