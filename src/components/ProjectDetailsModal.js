@@ -280,7 +280,7 @@ class ProjectDetailsModal extends Component {
               className="w-100"
             ></input>
             <Button className="w-100" variant="outline-primary" type="submit">
-              Comment
+              Submit
             </Button>
           </form>
         );
