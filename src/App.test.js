@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-
+import { Auth0Provider } from "@auth0/auth0-react";
 import Footer from "./components/Footer.js"
 import Header from "./components/Header.js"
 import Projects from "./components/Projects.js"
@@ -14,12 +14,12 @@ test('renders the Header', () => {
 test('renders Projects', () => {
   render(<Projects />);
 
-  fireEvent.click(screen.getByText('Click an image to view more details'))
+  expect(screen.findByText("These are some of the projects I've had the honor of working on"));
 });
 
 test('renders the Footer', () => {
   render(<Footer />);
-  expect(screen.findByRole("small"));
+  expect(screen.findByText("small"));
 
 });
 
