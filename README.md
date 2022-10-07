@@ -2,8 +2,6 @@
 
 [![Node.js CI](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml)
 
-Created with a Create React App Starter Template by **Thomas Basham**
-
 ## [https://thomasbashamportfolio.net](https://thomasbashamportfolio.net)
 
 ## [CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio)
