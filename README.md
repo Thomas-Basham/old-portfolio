@@ -1,11 +1,11 @@
 # [Thomas Basham](https://thomasbashamportfolio.net)
 
-## [https://thomasbashamportfolio.net](https://thomasbashamportfolio.net)  Check out what I've been working on!
+## [https://thomasbashamportfolio.net](https://thomasbashamportfolio.net) &nbsp; &nbsp; Check out what I've been working on!
 
 [![Node.js CI](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml)
 
 
-I started with this sweet[ React CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio) and made it a full-stack web app. 
+I started with this [ React CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio) and made it a full-stack web app. 
 
 There is a comment and like section beneath each project to encourage discussion. 
 
