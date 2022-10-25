@@ -15,14 +15,13 @@ I created the backend server using node.js, Express, and MongoDB.
 
 ## Tech Used
 
-- ReactJS
+- ReactJS  - Auth0
 
-- MongoDB
+- MongoDB - EmailJS
 
-- ExpressJS
+- ExpressJS  - Bootstrap
 
-- Auth0
 
-- EmailJS
+
 
 - Bootstrap
