@@ -5,7 +5,7 @@
 ## [https://thomasbashamportfolio.net](https://thomasbashamportfolio.net)
 
 
-I started with this great[ React CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio) and made it a full-stack web app. 
+I started with this sweet[ React CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio) and made it a full-stack web app. 
 
 There is a comment and like section beneath each project to encourage discussion. I created the backend server using node.js, Express, and MongoDB.
 
@@ -17,18 +17,10 @@ There is a comment and like section beneath each project to encourage discussion
 
 - MongoDB
 
-- Express
-
-- Node
+- ExpressJS
 
 - Auth0
 
 - EmailJS
 
 - Bootstrap
-
-- Sass
-
-- Axios
-
-- Jquery
