@@ -1,4 +1,4 @@
-# Welcome to my Portfolio
+# [Thomas Basham](https://thomasbashamportfolio.net)
 
 [![Node.js CI](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml)
 
