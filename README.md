@@ -4,6 +4,7 @@
 ![Node.js CI](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 ![Node.js CI](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Node.js CI](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Node.js CI](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
 ![Node.js CI]( 	https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 [![Node.js CI](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml)
