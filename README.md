@@ -4,9 +4,10 @@
 
 ## [https://thomasbashamportfolio.net](https://thomasbashamportfolio.net)
 
-## [CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio)
 
-I took this simple React template and made it a full-stack web app. There is a comment and like section beneath each project to encourage discussion. I created the backend server using node.js, Express, and MongoDB.
+I started with this great[ React CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio) and made it a full-stack web app. 
+
+There is a comment and like section beneath each project to encourage discussion. I created the backend server using node.js, Express, and MongoDB.
 
 [Backend Code](https://github.com/Thomas-Basham/portfolio-backend)
 
