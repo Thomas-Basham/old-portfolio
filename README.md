@@ -12,9 +12,7 @@ I started with this [ React CRA Starter Template](https://www.npmjs.com/package/
 
 There is a comment and like section beneath each project to encourage discussion.
 
-I created the backend server using node.js, Express, and MongoDB.
-
-[Backend Code](https://github.com/Thomas-Basham/portfolio-backend)
+I created the [backend server](https://github.com/Thomas-Basham/portfolio-backend) using node.js, Express, and MongoDB.
 
 ## Tech Used
 
