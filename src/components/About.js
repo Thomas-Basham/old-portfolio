@@ -176,6 +176,8 @@ class About extends Component {
                           height: "auto",
                           fontSize: "150%",
                           lineHeight: "230%",
+                          whiteSpace: "pre-line",
+                          verticalAlign: "bottom",
                         }}
                         id="example-fade-text"
                       >
