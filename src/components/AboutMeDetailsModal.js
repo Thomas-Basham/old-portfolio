@@ -75,7 +75,9 @@ class AboutMeDetailsModal extends Component {
               style={{
                 height: "auto",
                 fontSize: "150%",
-                lineHeight: "230%",
+                lineHeight: "180%",
+                whiteSpace: "pre-line",
+                verticalAlign: "bottom",
               }}
             >
               <br />
@@ -83,6 +85,7 @@ class AboutMeDetailsModal extends Component {
               <br />
               <br />
               {this.props.about}
+              <br />
               <br />
             </div>
           </Collapse>

@@ -175,7 +175,7 @@ class About extends Component {
                         style={{
                           height: "auto",
                           fontSize: "150%",
-                          lineHeight: "230%",
+                          lineHeight: "180%",
                           whiteSpace: "pre-line",
                           verticalAlign: "bottom",
                         }}
