@@ -45,6 +45,15 @@ class Header extends Component {
           <Nav.Item>
               <Nav.Link href="about">About</Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+              <Nav.Link href="#portfolio">Projects</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+              <Nav.Link href="#skills">Skills</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+              <Nav.Link href="#resume">Experience</Nav.Link>
+          </Nav.Item>
         </Nav>
 
         <img className="header-image" alt="logo" src={logo}></img>
