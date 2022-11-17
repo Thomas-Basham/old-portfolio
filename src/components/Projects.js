@@ -311,10 +311,7 @@ class Projects extends Component {
               id="welcome-message"
               className="text-white text-center display-4"
               style={{ fontSize: "1vmax", marginTop: "1vmax" }}
-            >
-              These are some of the projects I've had the honor of working on 
-              <br></br>
-              <br></br>
+            > 
               Click an image to view more details
             </p>
           </h1>
