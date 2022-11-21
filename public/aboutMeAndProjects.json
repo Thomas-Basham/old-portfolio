@@ -12,18 +12,62 @@
   },
   "projects": [
     {
+      "title": "Construction Website",
+      "startDate": "November 2022",
+      "description": "A NextJS/ReactJS website template for a construction contractor company. \n\n  Built with NextJS, ReactJS, Bootstrap CSS, EmailJS, and Vercel.",
+      "images": [
+        "images/portfolio/constructionWebsite/constructionWebsite1.png",
+        "images/portfolio/constructionWebsite/constructionWebsite2.png",
+        "images/portfolio/constructionWebsite/constructionWebsite3.png",
+        "images/portfolio/constructionWebsite/constructionWebsite4.png",
+        "images/portfolio/constructionWebsite/constructionWebsite5.png",
+        "images/portfolio/constructionWebsite/constructionWebsite6.png",
+        "images/portfolio/constructionWebsite/constructionWebsite7.png",
+        "images/portfolio/constructionWebsite/constructionWebsite8.png"
+      ],
+      "url": "https://construction-website-template-bashamtg.vercel.app",
+      "githubUrl": "https://github.com/Thomas-Basham/construction-website#readme",
+      "technologies": [
+        {
+          "class": "devicon-nextjs-plain",
+          "name": "NextJS"
+        },
+        {
+          "class": "devicon-react-plain",
+          "name": "ReactJS"
+        },
+        {
+          "class": "devicon-visualstudio-plain",
+          "name": "Visual Studio"
+        },
+        {
+          "class": "devicon-bootstrap-plain",
+          "name": "Bootstrap"
+        },
+        {
+          "class": "devicon-html5-plain",
+          "name": "HTML5"
+        },
+        {
+          "class": "devicon-css3-plain",
+          "name": "CSS3"
+        }
+      ]
+    },
+    {
       "title": "Collab Done",
       "startDate": "September 2022",
-      "description": "A Full Stack Web App used to help musicians connect and collaborate.\n\n  Built with NextJS, ReactJS, Supabase(An open source Firebase Alternative), and WavesurferJS. ",
+      "description": "A NextJS/ReactJS Web App used to help musicians connect and collaborate.\n\n  Built with NextJS, ReactJS, Supabase(An open source Firebase Alternative), and WavesurferJS. ",
       "images": [
         "images/portfolio/collabDone/collabDone1.png",
         "images/portfolio/collabDone/collabDone2.png",
         "images/portfolio/collabDone/collabDone3.png",
         "images/portfolio/collabDone/collabDone4.png",
-        "images/portfolio/collabDone/collabDone5.png"
+        "images/portfolio/collabDone/collabDone5.png",
+        "images/portfolio/collabDone/collabDone6.png"
       ],
       "url": "https://collab-done.vercel.app",
-      "githubUrl": "https://github.com/Thomas-Basham/collab-done#README",
+      "githubUrl": "https://github.com/Thomas-Basham/collab-done#readme",
       "technologies": [
         {
           "class": "devicon-nextjs-plain",
@@ -57,11 +101,9 @@
       "startDate": "August 2022",
       "description": "A Full Stack API for storing favorite hiking trails \n\n Built with Django Rest Framework, PostgreSQL, Pandas, and Folium",
       "images": [
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI7.png",
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI8.png",
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI9.png",
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI10.png",
-        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI11.png",
+        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI1.png",
+        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI2.png",
+        "images/portfolio/HikingTrailsAPI/HikingTrailsAPI3.png",
         "images/portfolio/HikingTrailsAPI/HikingTrailsAPI4.png",
         "images/portfolio/HikingTrailsAPI/HikingTrailsAPI5.png",
         "images/portfolio/HikingTrailsAPI/HikingTrailsAPI6.png"
@@ -100,11 +142,13 @@
     {
       "title": "Trout Finder",
       "startDate": "August 2022",
-      "description": "A Full Stack Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State.\n\n Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
+      "description": "A Flask Web App used for visually displaying the 100 most recent lakes that were stocked with trout in Washington State.\n\n Data scraped from WDFW.wa.gov website with Beautiful Soup, put into a Pandas Dataframe which is fed to Folium to render the map",
       "images": [
-        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes3.png",
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes1.png",
         "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes2.png",
-        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes1.png"
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes3.png",
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes4.png",
+        "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes5.png"
       ],
       "url": "https://wa-stocked-trout-finder.herokuapp.com",
       "githubUrl": "https://github.com/Thomas-Basham/wa-stocked-trout-finder#readme",
