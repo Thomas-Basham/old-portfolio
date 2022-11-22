@@ -181,21 +181,23 @@ class Projects extends Component {
         fadeAbout: false,
       });
     };
-    let showDetailsModal = (data) => {
-      let currentMongoProject = () => {
-        if (this.state.currentProjectMongo) {
-          return this.state.projectDataMongo.filter(
-            (mongo) => data.title === mongo.project
-          );
-        }
-      };
 
+    let showDetailsModal = (data) => {
+      if (this.state.projectDataMongo.length < 1) {
+        this.getProjects();
+        this.getComments();
+      }
+      let currentMongoProject = () => {
+        return this.state.projectDataMongo.filter(
+          (mongo) => data.title === mongo.project
+        );
+      };
       this.setState({
         showDetailsModal: true,
         currentProjectLocal: data,
         currentProjectMongo: currentMongoProject()
           ? currentMongoProject()[0]
-          : "",
+          : {},
         showLikeButton: true,
         showIframe: false,
       });
@@ -207,6 +209,7 @@ class Projects extends Component {
         showCommentUpdateForm: false,
         showReplyForm: false,
         fadeAbout: false,
+        currentProjectMongo: {},
       });
 
     let showUpdateProjectModal = (data) => {
@@ -311,7 +314,7 @@ class Projects extends Component {
               id="welcome-message"
               className="text-white text-center display-4"
               style={{ fontSize: "1vmax", marginTop: "1vmax" }}
-            > 
+            >
               Click an image to view more details
             </p>
           </h1>
@@ -345,6 +348,7 @@ class Projects extends Component {
             showIframe={showIframe}
             showIframeState={this.state.showIframe}
             getProjects={this.getProjects}
+            getComments={this.getComments}
           />
 
           <UpdateProjectModal

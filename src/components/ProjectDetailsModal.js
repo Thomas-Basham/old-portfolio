@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ImageGallery from "react-image-gallery";
@@ -17,10 +17,20 @@ class ProjectDetailsModal extends Component {
     };
   }
   componentDidMount() {
-    this.setState({
-      showLikeButton: true,
-    });
+    if (
+      this.props.auth0.isAuthenticated &&
+      this.props.currentProjectMongo &&
+      this.props.currentProjectMongo.likedBy &&
+      !this.props.currentProjectMongo.likedBy.includes(
+        this.props.auth0.user.name
+      )
+    ) {
+      this.setState({
+        showLikeButton: true,
+      });
+    }
   }
+
   handleLikes = (e) => {
     e.preventDefault();
     let updatedProject = {
@@ -314,6 +324,7 @@ class ProjectDetailsModal extends Component {
           </Button>
         );
     };
+
     let projectComments = () => {
       if (this.props.currentProjectMongo) {
         return this.props.comments.filter(
