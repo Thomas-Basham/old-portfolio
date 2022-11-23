@@ -510,9 +510,13 @@ footer a:visited {
   color: #fff;
 }
 
+a:hover{
+  color: #1d334c !important;
+
+}
 footer a:hover,
 footer a:focus {
-  color: #fff;
+  color: #1d334c;
 }
 
 .social-links {
