@@ -14,7 +14,7 @@ test('renders the Header', () => {
 test('renders Projects', () => {
   render(<Projects />);
 
-  expect(screen.findByText("These are some of the projects I've had the honor of working on"));
+  expect(screen.findByText("CLICK AN IMAGE TO VIEW MORE DETAILS"));
 });
 
 test('renders the Footer', () => {
