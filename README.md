@@ -1,4 +1,4 @@
-# [Thomas Basham](https://thomasbashamportfolio.net)
+# [Thomas Basham](https://github.com/Thomas-Basham/Thomas-Basham)
 
 ## [https://thomasbashamportfolio.net](https://thomasbashamportfolio.net) &nbsp; &nbsp; Check out what I've been working on!
 ![Node.js CI](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
@@ -9,7 +9,7 @@
 
 [![Node.js CI](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml/badge.svg)](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml)
 
-I started with this [ React CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio) and made it a full-stack web app. 
+I started with this [ React CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio).
 
 There is a comment and like section beneath each project to encourage discussion.
 
