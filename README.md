@@ -9,7 +9,7 @@
 
 [![Node.js CI](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml/badge.svg)](https://github.com/Thomas-Basham/Thomas-Basham/actions/workflows/node.js.yml)
 
-I started with this [ React CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio).
+To make this portfolio web page, I started with this [ React CRA Starter Template](https://www.npmjs.com/package/cra-template-react-portfolio).
 
 I created the [backend server](https://github.com/Thomas-Basham/portfolio-backend) using Node.js, Express.js, and MongoDB.
 
