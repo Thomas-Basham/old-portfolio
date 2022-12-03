@@ -13,4 +13,3 @@ I started with this [ React CRA Starter Template](https://www.npmjs.com/package/
 
 I created the [backend server](https://github.com/Thomas-Basham/portfolio-backend) using Node.js, Express.js, and MongoDB.
 
-![Profile views](https://gpvc.arturio.dev/Thomas-Basham)
