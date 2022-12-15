@@ -150,7 +150,7 @@
         "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes4.png",
         "images/portfolio/WaStockedTroutLakes/WaStockedTroutLakes5.png"
       ],
-      "url": "https://wa-stocked-trout-finder.herokuapp.com",
+      "url": "https://trout-finder.vercel.app",
       "githubUrl": "https://github.com/Thomas-Basham/wa-stocked-trout-finder#readme",
       "technologies": [
         {
