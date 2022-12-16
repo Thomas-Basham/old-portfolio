@@ -343,45 +343,6 @@
           "name": "CSS3"
         }
       ]
-    },
-
-    {
-      "title": "Puppy Pics API",
-      "startDate": "April 2022",
-      "description": "A Full Stack API for storing favorite family pet pics \n\n Built with Django Rest Framework, PostgreSQL, and Cloudinary for user file uploads",
-      "images": [
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI4.png",
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI5.png",
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI6.png",
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI7.png",
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI3.png",
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI2.png",
-        "images/portfolio/PuppyPicAPI/PuppyPicAPI1.png"
-      ],
-      "url": "https://puppy-pics-api-thomas-basham.herokuapp.com",
-      "githubUrl": "https://github.com/Thomas-Basham/puppy-pics-api#readme",
-      "technologies": [
-        {
-          "class": "devicon-python-plain",
-          "name": "Python"
-        },
-        {
-          "class": "devicon-django-plain",
-          "name": "Django"
-        },
-        {
-          "class": "devicon-postgresql-plain",
-          "name": "PostgreSQL"
-        },
-        {
-          "class": "devicon-html5-plain",
-          "name": "HTML5"
-        },
-        {
-          "class": "devicon-css3-plain",
-          "name": "CSS3"
-        }
-      ]
     }
   ],
   "experience": [
