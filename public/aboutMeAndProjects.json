@@ -189,7 +189,7 @@
         "images/portfolio/MusicAPI/MusicAPI2.png",
         "images/portfolio/MusicAPI/MusicAPI1.png"
       ],
-      "url": "https://music-api-thomas-basham.herokuapp.com/",
+      "url": "https://music-api-bashamtg.vercel.app",
       "githubUrl": "https://github.com/Thomas-Basham/Music-API#readme",
       "technologies": [
         {
