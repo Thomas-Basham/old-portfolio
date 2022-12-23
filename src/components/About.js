@@ -61,47 +61,13 @@ class About extends Component {
           <h1 className="section-title">
             <span>{sectionName}</span>
           </h1>
-          <div className="row center mx-auto padding-bottom-10">
-            <div className="col-md-4 mb-5  center">
-              <div className="polaroid">
-                <span style={{ cursor: "auto" }}>
-                  <img
-                    style={{ margin: "0 auto" }}
-                    height="100px"
-                    src={profilepic}
-                    alt="Avatar placeholder"
-                    onClick={this.detailsModalShow}
-                  />
-                  <a href="https://www.python.org/" target="blank_">
-                    <Icon
-                      icon={pythonIcon}
-                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                    />
-                  </a>
-                  <a href="https://www.javascript.com/" target="blank_">
-                    <Icon
-                      icon={javascriptIcon}
-                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                    />
-                  </a>
-                  <a href="https://www.djangoproject.com/" target="blank_">
-                    <Icon
-                      icon={djangoIcon}
-                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                    />
-                  </a>
-                  <a href="https://reactjs.org/" target="blank_">
-                    <Icon
-                      icon={reactIcon}
-                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                    />
-                  </a>
-                </span>
-              </div>
-            </div>
+          <div
+            id="about-row"
+            className=" row center d-flex align-items-start padding-bottom-10"
+          >
             {!this.state.exposeMusicPlayer ? (
-              <div className="col-md-8 center rounded ">
-                <div className="col-md-10 rounded">
+              <div className="about-card col-6  rounded ">
+                <div className="col-md-12 rounded">
                   <div
                     className="card rounded"
                     style={{
@@ -197,6 +163,44 @@ class About extends Component {
             ) : (
               <ReactPlayer url="https://soundcloud.com/theheadandtheheart/lost-in-my-mind" />
             )}
+
+            <div className="col-1 center">
+              <div className="polaroid">
+                <span style={{ cursor: "auto" }}>
+                  <img
+                    style={{ margin: "0 auto" }}
+                    width="100px"
+                    src={profilepic}
+                    alt="Avatar"
+                    onClick={this.detailsModalShow}
+                  />
+                  <a href="https://www.python.org/" target="blank_">
+                    <Icon
+                      icon={pythonIcon}
+                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
+                    />
+                  </a>
+                  <a href="https://www.javascript.com/" target="blank_">
+                    <Icon
+                      icon={javascriptIcon}
+                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
+                    />
+                  </a>
+                  <a href="https://www.djangoproject.com/" target="blank_">
+                    <Icon
+                      icon={djangoIcon}
+                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
+                    />
+                  </a>
+                  <a href="https://reactjs.org/" target="blank_">
+                    <Icon
+                      icon={reactIcon}
+                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
+                    />
+                  </a>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
         <AboutMeDetailsModal
