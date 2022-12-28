@@ -7,7 +7,7 @@ import javascriptIcon from "@iconify/icons-logos/javascript";
 import AboutMeDetailsModal from "./AboutMeDetailsModal";
 import Collapse from "react-bootstrap/Collapse";
 import ReactPlayer from "react-player";
-import logo from "./logo.png";
+// import logo from "./logo.png";
 class About extends Component {
   constructor(props) {
     super(props);
@@ -50,7 +50,7 @@ class About extends Component {
       var profilepic = "images/" + this.props.sharedBasicInfo.image;
     }
     if (this.props.resumeBasicInfo) {
-      var sectionName = this.props.resumeBasicInfo.section_name.about;
+      // var sectionName = this.props.resumeBasicInfo.section_name.about;
       var hello = this.props.resumeBasicInfo.description_header;
       var about = this.props.resumeBasicInfo.description;
     }
