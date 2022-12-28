@@ -6,6 +6,7 @@ import {CircleMenu,CircleMenuItem,TooltipPlacement} from "react-circular-menu";
 
 class Header extends Component {
   render() {
+    console.log(window.innerWidth)
     return (
       <header id="home" style={{ display: "block" }}>
         <GithubCorner
@@ -56,7 +57,8 @@ class Header extends Component {
             startAngle={-90}
             rotationAngle={360}
             itemSize={15}
-            radius={20}
+
+            radius={window.innerWidth > 480 ? 20 : 10}
             menuActive={true}
             menuToggleClassName={"menu-toggle"}
             // menuToggleElement={

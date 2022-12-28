@@ -706,5 +706,12 @@ p {
   .polaroid img {
     width: 50px !important;
   }
-
+  .menu-item , .menu-toggle{
+    width: 100px !important;
+    height: 100px !important;
+    font-size: 100% !important;
+  }
+  .circle-menu{
+    width: 100px !important;
+  }
 } 
