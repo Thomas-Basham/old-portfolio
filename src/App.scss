@@ -25,7 +25,17 @@ html, body {
     background-color: var(--custom-bg-color);
     
 }
-
+#btn-back-to-top {
+  position: fixed; 
+  width: 100%;
+  left: 95vw;
+  bottom: 50px;
+  height: 20px;
+  font-size: 3rem;
+  z-index: 1;
+  cursor: pointer;
+  color: var(--custom-color-brand);
+}
 .aligner {
   display: flex;
   align-items: center;
@@ -45,8 +55,7 @@ html, body {
   color:rgb(198, 211, 231) !important;
   -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
   clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
- 
-  box-shadow: 20px 20px 20px 20px 20px !important;
+
 
 }
 .jBlSYD{
@@ -89,6 +98,10 @@ header{
   background-size: cover
 }
 
+header a {
+  font-size: 250% !important;
+  color: var(--custom-color-brand) !important;
+}
 
 
 .project-date {
@@ -111,22 +124,7 @@ header{
   border-radius: 8px;
 }
 
-.language {
-  font-size: 25px;
-  background-color: #e9d5a1;
-  padding-bottom: 10px;
-  padding-top: 80px;
-}
 
-header h1 {
-  font-size: 400%;
-  text-align: center;
-  font-weight: 600 !important;
-  color: #ffffff;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin: 0 auto 18px auto;
-  width: 100%;
-}
 
 .slider-image {
   border: 5px solid rgb(53, 53, 53);
