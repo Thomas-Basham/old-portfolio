@@ -4,18 +4,18 @@
     "titles": ["Full Stack Software Developer"],
     "social": [
       {
-        "name": "github",
+        "name": "Github",
         "url": "https://github.com/thomas-Basham",
         "class": "fab fa-github"
       },
       {
-        "name": "linkedin",
+        "name": "Linkedin",
         "url": "https://www.linkedin.com/in/thomas-basham",
         "class": "fab fa-linkedin"
       },
       {
-        "name": "leetcode",
-        "url": "https://www.instagram.com/ThomasGBasham",
+        "name": "Leetcode",
+        "url": "https://leetcode.com/Thomas-Basham",
         "class": "fa-solid fa-code"
       }
     ],

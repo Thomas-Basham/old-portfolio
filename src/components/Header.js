@@ -1,13 +1,7 @@
 import React, { Component } from "react";
-import Nav from "react-bootstrap/Nav";
 // import { LinkContainer } from "react-router-bootstrap";
-import logo from "./logo.png";
 import GithubCorner from "react-github-corner";
-import {
-  CircleMenu,
-  CircleMenuItem,
-  TooltipPlacement,
-} from "react-circular-menu";
+import {CircleMenu,CircleMenuItem,TooltipPlacement} from "react-circular-menu";
 
 class Header extends Component {
   render() {
