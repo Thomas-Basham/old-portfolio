@@ -1,12 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap");
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
-
-html {
-  font-size: 75%;
+@import url('https://fonts.cdnfonts.com/css/games');
+html, body {
   -webkit-font-smoothing: antialiased;
-  margin: 0;
-  padding: 0;
-
+  
+  --custom-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+  Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --custom-bg-color: #101010;
+  --custom-panel-color: #222;
+  --custom-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8);
+  --custom-color: #fff;
+  --custom-color-brand: rgb(36, 132, 229);
+  --custom-color-brand-secondary: #3a2e69;
+  --custom-color-secondary: #666;
+  --custom-border: 1px solid #333;
+  --custom-border-radius: 5px;
+  --custom-spacing: 5px;
+  
+  
+    font-size: 75%;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: var(--custom-font-family) !important;
+    background-color: var(--custom-bg-color);
+    
 }
 
 .aligner {
@@ -23,50 +40,56 @@ html {
   font-family: "Raleway", sans-serif;
   font-size: 250%;
 }
+.menu-toggle{
+  background-color: black !important;
+  color:rgb(198, 211, 231) !important;
+  -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+ 
+  box-shadow: 20px 20px 20px 20px 20px !important;
 
-.header-image {
-  margin-top: 2vh;
-  width: 35vw;
+}
+.jBlSYD{
+  background-color: white !important;
+}
+.menu-toggle:hover{
+ 
+  .jBlSYD{ 
+    background-color: var(--custom-color-brand) !important;
+  }
+}
+.menu-item{
+  -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  background-color: var(--custom-panel-color) !important;
+  border: None  !important;
+  color: white !important;
+  font-size: 250% !important;
+  font-family: 'Games', sans-serif;
+}
+.menu-item:hover{
+  background-color: var(--custom-color-brand) !important;
+  color: var(--custom-color-brand) !important;
+  .small-hex{
+  
+      -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+      background-color: var(--custom-panel-color) !important;
+      width: 100% ;
+      height: 100%;
+      padding-top: 40%;
+      text-align: center;
+    }
+
+}  
+
+header{
+  height: 100vh;
+  background-image: url('../public/images/honey-comb-center.jpg');
+  background-size: cover
 }
 
-.header-icon {
-  height: 150px;
-  width: 150px;
-}
 
-header {
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  position: relative;
-  height: 100%;
-  min-height: 100%;
-  width: 100%;
-  color: white;
-  background-size: contain;
-  -webkit-background-size: cover;
-  text-align: center;
-
-  background-color: hsla(200, 40%, 30%, 0.4);
-  background-image: url("../public/images/wallpaper.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 4vh;
-  // padding-bottom: 10vh;
-}
-header .nav {
-  font: 24px/32px "Helvetica Neue";
-  text-transform: uppercase;
-  letter-spacing: 5px;
-}
-.nav-link {
-  font: 3vmin/4vmin "Helvetica Neue";
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  color: rgb(237, 235, 235);
-}
 
 .project-date {
   font-size: 16px;
@@ -128,14 +151,14 @@ header h1 {
 }
 
 #about {
-  background-image: linear-gradient(
-    to right top,
-    #061123,
-    #0c1a2d,
-    #122237,
-    #172a41,
-    #1d334c
-  );
+  // background-image: linear-gradient(
+  //   to right top,
+  //   #061123,
+  //   #0c1a2d,
+  //   #122237,
+  //   #172a41,
+  //   #1d334c
+  // );
   overflow: hidden;
   padding-bottom: 10vh;
 }
@@ -202,8 +225,8 @@ header h1 {
   -moz-box-shadow: 0 0 6px rgb(132, 132, 132);
   -webkit-box-shadow: 0 0 6px rgb(132, 132, 132);
   box-shadow: 0 0 6px rgb(132, 132, 132);
-  border-radius: 50px;
   box-shadow: 2px 2px 2px 2px 2px;
+  border-radius: 50px;
   display: block;
   cursor: pointer;
 }
@@ -262,14 +285,16 @@ header h1 {
 }
 
 #resume {
-  background-image: linear-gradient(
-    to right top,
-    #061123,
-    #0c1a2d,
-    #122237,
-    #172a41,
-    #1d334c
-  );
+  // background-image: linear-gradient(
+  //   to right top,
+  //   #061123,
+  //   #0c1a2d,
+  //   #122237,
+  //   #172a41,
+  //   #1d334c
+  // );
+  background-image: url(../public/images/honey-comb.jpg);
+  background-size: cover
 }
 
 .experience-icon {
@@ -425,14 +450,17 @@ input {
 }
 
 #portfolio {
-  background-image: linear-gradient(
-    to right top,
-    #061123,
-    #0c1a2d,
-    #122237,
-    #172a41,
-    #1d334c
-  );
+  // background-image: linear-gradient(
+  //   to right top,
+  //   #061123,
+  //   #0c1a2d,
+  //   #122237,
+  //   #172a41,
+  //   #1d334c
+  // );
+  // background-image: url('../public/images/honey-comb.jpg');
+
+    
   padding-bottom: 5%;
 }
 
@@ -468,7 +496,7 @@ input {
 
 
 #skills {
-  background: #1f1f1f;
+  background: var(--custom-panel-color);
   min-height: 200px;
   width: 100%;
   overflow: hidden;
@@ -563,6 +591,10 @@ footer a:focus {
 .polaroid img {
   width: 100px !important;
 }
+
+
+
+
 
 
 
