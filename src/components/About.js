@@ -182,7 +182,7 @@ class About extends Component {
                                       </a>
                                     </li>
                                     <li>
-                                      <a href="#!">
+                                      <a href="https://www.google.com/maps/place/Renton,+WA/@47.4814262,-122.2573102,12z/data=!3m1!4b1!4m5!3m4!1s0x549008cc03bb6f23:0xcd42b24716babb9f!8m2!3d47.4796927!4d-122.2079218">
                                         <i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>
                                         Renton, WA, USA
                                       </a>
