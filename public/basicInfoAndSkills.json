@@ -14,9 +14,9 @@
         "class": "fab fa-linkedin"
       },
       {
-        "name": "instagram",
+        "name": "leetcode",
         "url": "https://www.instagram.com/ThomasGBasham",
-        "class": "fab fa-instagram"
+        "class": "fa-solid fa-code"
       }
     ],
     "image": "HeadShot100x100.jpg"
