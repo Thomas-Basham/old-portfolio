@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import { LinkContainer } from "react-router-bootstrap";
 import GithubCorner from "react-github-corner";
+import { Nav } from "react-bootstrap";
 import {CircleMenu,CircleMenuItem,TooltipPlacement} from "react-circular-menu";
 
 class Header extends Component {
@@ -13,9 +14,10 @@ class Header extends Component {
           title="View Project on Github"
         />
 
-        {/* <Nav
+        <Nav
           activeKey="/home"
           fill
+          
           style={{ position: "absolute", top: 10, right: 50 }}
         >
           <Nav.Item>
@@ -25,7 +27,7 @@ class Header extends Component {
           <Nav.Item>
             <Nav.Link href="about">About</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
+          {/* <Nav.Item>
             <Nav.Link href="/#portfolio">Projects</Nav.Link>
           </Nav.Item>
           <Nav.Item>
@@ -33,8 +35,8 @@ class Header extends Component {
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/#resume">Experience</Nav.Link>
-          </Nav.Item>
-        </Nav> */}
+          </Nav.Item> */}
+        </Nav>
         <div
           style={{
             display: "flex",
@@ -51,7 +53,7 @@ class Header extends Component {
           ></img> */}
           <CircleMenu
             className="circle-menu"
-            startAngle={-60}
+            startAngle={-90}
             rotationAngle={360}
             itemSize={15}
             radius={20}
@@ -95,20 +97,20 @@ class Header extends Component {
               <div className="small-hex">SKILLS</div>
             </CircleMenuItem>
             <CircleMenuItem
+              tooltip="Experience"
+              tooltipPlacement={TooltipPlacement.Right}
+              className="menu-item"
+              link="/#resume"
+            >
+              <div className="small-hex">EXPERIENCE</div>
+            </CircleMenuItem>
+            <CircleMenuItem
               tooltip="Projects"
               tooltipPlacement={TooltipPlacement.Right}
               className="menu-item"
               link="/#portfolio"
             >
               <div className="small-hex">PROJECTS</div>
-            </CircleMenuItem>
-            <CircleMenuItem
-              tooltip="About"
-              tooltipPlacement={TooltipPlacement.Right}
-              className="menu-item"
-              link="/#resume"
-            >
-              <div className="small-hex">EXPERIENCE</div>
             </CircleMenuItem>
           </CircleMenu>
         </div>
