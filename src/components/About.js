@@ -190,17 +190,17 @@ class About extends Component {
                                   </ul>
                                   <ul class="social-icon-style2 ps-0">
                                     <li>
-                                      <a href="#!" class="rounded-3" title="Github">
+                                      <a href="https://github.com/thomas-Basham" target={"_blank"} rel="noreferrer" class="rounded-3" title="Github">
                                         <i class="fab fa-github"></i>
                                       </a>
                                     </li>
                                     <li>
-                                      <a href="#!" class="rounded-3" title="LinkedIn">
+                                      <a href="https://www.linkedin.com/in/thomas-basham" target={"_blank"} rel="noreferrer" class="rounded-3" title="LinkedIn">
                                         <i class="fab fa-linkedin-in"></i>
                                       </a>
                                     </li>
                                     <li>
-                                      <a href="https://leetcode.com/Thomas-Basham" class="rounded-3" title="LeetCode">
+                                      <a href="https://leetcode.com/Thomas-Basham" target={"_blank"} rel="noreferrer" class="rounded-3" title="LeetCode">
                                         <i class="fa-solid fa-code"></i>
                                       </a>
                                     </li>
@@ -252,9 +252,9 @@ class About extends Component {
                                 </div>
                                 <div class="mb-5 wow fadeIn">
                                   <div class="text-start mb-1-6 wow fadeIn">
-                                    <h2 class="mb-0 text-primary">
-                                      #Education
-                                    </h2>
+                                    {/* <h2 class="mb-0 text-primary">
+                                      #Summary
+                                    </h2> */}
                                   </div>
                                   <div class="row mt-n4">
                                     <div class="col-sm-6 col-xl-4 mt-4">
