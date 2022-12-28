@@ -7,10 +7,9 @@ import javascriptIcon from "@iconify/icons-logos/javascript";
 import AboutMeDetailsModal from "./AboutMeDetailsModal";
 import Collapse from "react-bootstrap/Collapse";
 import ReactPlayer from "react-player";
-
+import logo from "./logo.png";
 class About extends Component {
   constructor(props) {
-    // this.audioInstance = null
     super(props);
     this.state = {
       detailsModalShow: false,
@@ -58,9 +57,10 @@ class About extends Component {
     return (
       <section id="about">
         <div className="col-md-12">
-          <h1 className="section-title">
+          {/* <h1 className="section-title">
             <span>{sectionName}</span>
-          </h1>
+          </h1> */}
+          <br></br>
           <div
             id="about-row"
             className=" row center d-flex align-items-start padding-bottom-10"
@@ -140,19 +140,334 @@ class About extends Component {
                         className="font-trebuchet  ml-3 mr-3 rounded"
                         style={{
                           height: "auto",
-                          fontSize: "150%",
-                          lineHeight: "180%",
+                          fontSize: "115%",
+                          lineHeight: "130%",
                           whiteSpace: "pre-line",
                           verticalAlign: "bottom",
                         }}
                         id="example-fade-text"
                       >
-                        <br />
-                        <span className="wave">{hello} </span>
-                        <br />
-                        <br />
+                        <br></br>
+                        <div class="container">
+                          {/* https://www.bootdey.com/snippets/view/bs5-team-member-details */}
+                          <div class="row justify-content-center">
+                            <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
+                              <div class="card border-0 shadow">
+                                <img
+                                  style={{ margin: "0 auto" }}
+                                  width="75%"
+                                  src={profilepic}
+                                  alt="Avatar"
+                                  onClick={this.detailsModalShow}
+                                />
 
-                        {about}
+                                <div class="card-body p-1-9 p-xl-5">
+                                  <div class="mb-4">
+                                    <h3 class="h4 mb-0">Thomas Basham</h3>
+                                    <span class="text-primary">
+                                      Software Developer
+                                    </span>
+                                  </div>
+                                  <ul class="list-unstyled mb-4">
+                                    <li class="mb-3">
+                                      <a href = "mailto: bashamtg@gmail.com">
+                                        <i class="far fa-envelope display-25 me-3 text-secondary"></i>
+                                        bashamtg@gmail.com
+                                      </a>
+                                    </li>
+                                    <li class="mb-3">
+                                      <a href="tel:+02532582526">
+                                        <i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>
+                                        +253-258-2526
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#!">
+                                        <i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>
+                                        Renton, WA, USA
+                                      </a>
+                                    </li>
+                                  </ul>
+                                  <ul class="social-icon-style2 ps-0">
+                                    <li>
+                                      <a href="#!" class="rounded-3" title="Github">
+                                        <i class="fab fa-github"></i>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#!" class="rounded-3" title="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="https://leetcode.com/Thomas-Basham" class="rounded-3" title="LeetCode">
+                                        <i class="fa-solid fa-code"></i>
+                                      </a>
+                                    </li>
+    
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-8">
+                              <div class="ps-lg-1-6 ps-xl-5">
+                                <div class="mb-5 wow fadeIn">
+                                  <div class="text-start mb-1-6 wow fadeIn">
+                                    <h2 class="h1 mb-0 text-primary">
+                                      #About Me
+                                    </h2>
+                                  </div>
+                                  <p
+                                    style={{
+                                      height: "auto",
+                                      // fontSize: "150%",
+                                      lineHeight: "120%",
+                                      whiteSpace: "pre-line",
+                                      verticalAlign: "bottom",
+                                    }}
+                                  >
+                                    Welcome to my portfolio. I`m a software
+                                    developer based in the Seattle area.
+                                    <br></br>
+                                    <br></br>I enjoy making applications that
+                                    help others and I'm passionate about the
+                                    creative process.
+                                    <br></br>
+                                    <br></br>
+                                    Before learning how to code I was in the
+                                    Army, and when I wasn't a soldier, I was a
+                                    carpenter.
+                                    <br></br>
+                                    <br></br>
+                                    <h5 class="mb-0 text-primary">Hobbies:</h5>
+                                    <ul>
+                                      <li>Producing music</li>
+                                      <li>Woodworking</li>
+                                      <li>Growing plants</li>
+                                      <li>Fishing</li>
+                                      <li>Hiking</li>
+                                      <li>Snowboarding</li>
+                                    </ul>
+                                  </p>
+                                </div>
+                                <div class="mb-5 wow fadeIn">
+                                  <div class="text-start mb-1-6 wow fadeIn">
+                                    <h2 class="mb-0 text-primary">
+                                      #Education
+                                    </h2>
+                                  </div>
+                                  <div class="row mt-n4">
+                                    <div class="col-sm-6 col-xl-4 mt-4">
+                                      <div class="card text-center border-0 rounded-3">
+                                        <div class="card-body">
+                                          <i class="ti-bookmark-alt icon-box medium rounded-3 mb-4"></i>
+                                          <h3 class="h5 mb-3">Education</h3>
+                                          <p class="mb-0">
+                                            Certificate in Software Development
+                                            in Python and Javascript from Code
+                                            Fellows
+                                            <br></br>
+                                            2022
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-4 mt-4">
+                                      <div class="card text-center border-0 rounded-3">
+                                        <div class="card-body">
+                                          <i class="ti-pencil-alt icon-box medium rounded-3 mb-4"></i>
+                                          <h3 class="h5 mb-3">Tools</h3>
+                                          <p class="mb-0">
+                                            <a
+                                              href="https://www.python.org/"
+                                              target="blank_"
+                                            >
+                                              <Icon
+                                                icon={pythonIcon}
+                                                style={{
+                                                  fontSize: "400%",
+                                                  margin: "9% 5% 0 5%",
+                                                }}
+                                              />
+                                            </a>
+                                            <a
+                                              href="https://www.javascript.com/"
+                                              target="blank_"
+                                            >
+                                              <Icon
+                                                icon={javascriptIcon}
+                                                style={{
+                                                  fontSize: "400%",
+                                                  margin: "9% 5% 0 5%",
+                                                }}
+                                              />
+                                            </a>
+                                            <a
+                                              href="https://www.djangoproject.com/"
+                                              target="blank_"
+                                            >
+                                              <Icon
+                                                icon={djangoIcon}
+                                                style={{
+                                                  fontSize: "400%",
+                                                  margin: "9% 5% 0 5%",
+                                                }}
+                                              />
+                                            </a>
+                                            <a
+                                              href="https://reactjs.org/"
+                                              target="blank_"
+                                            >
+                                              <Icon
+                                                icon={reactIcon}
+                                                style={{
+                                                  fontSize: "400%",
+                                                  margin: "9% 5% 0 5%",
+                                                }}
+                                              />
+                                            </a>
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-4 mt-4">
+                                      <div class="card text-center border-0 rounded-3">
+                                        <div class="card-body">
+                                          <i class="ti-medall-alt icon-box medium rounded-3 mb-4"></i>
+                                          <h3 class="h5 mb-3">Experience</h3>
+                                          <p class="mb-0">
+                                            4 years in the Army.
+                                            <br></br>6 years working as a
+                                            Carpenter.
+                                            <br></br>1 year studying Computer
+                                            Science.
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="wow fadeIn">
+                                  <div class="text-start mb-1-6 wow fadeIn">
+                                    <h2 class="mb-0 text-primary">
+                                      #Skills &amp; Experience
+                                    </h2>
+                                  </div>
+                                  <p>
+                                    This summary was generated with AI by{" "}
+                                    <a
+                                      href="https://chat.openai.com/chat"
+                                      target={"_blank"}
+                                      rel="noreferrer"
+                                    >
+                                      ChatGPT
+                                    </a>
+                                    :
+                                  </p>
+                                  <p class="mb-4">
+                                    Thomas Basham is a full-stack software
+                                    developer with a strong background in Python
+                                    and JavaScript development. He has
+                                    experience with a range of frameworks and
+                                    tools, including Django, Flask, React.js,
+                                    Next.js, Pandas, Numpy, MongoDB, GitHub,
+                                    Git, and more. He is passionate about user
+                                    experience, data management, and writing
+                                    clean, readable code.
+                                    <br></br>
+                                    <br></br>
+                                    Thomas has completed a number of projects,
+                                    including Collab Done, a social media web
+                                    app used to help musicians connect and
+                                    collaborate, and Trout Finder, an app that
+                                    displays current statistics on the amount of
+                                    trout fish in the various lakes in
+                                    Washington State.
+                                    <br></br>
+                                    <br></br>
+                                    Thomas has received a certificate in
+                                    software development in Python and a
+                                    certificate in software development in
+                                    full-stack JavaScript from Code Fellows, and
+                                    a certificate in music production from ICON
+                                    Collective School of Music.
+                                    <br></br>
+                                    <br></br>
+                                    In addition to his technical skills, Thomas
+                                    has experience working as a lead carpenter
+                                    for Westmark Construction, where he
+                                    performed various carpentry tasks with a
+                                    team of 1 to 3 carpenters on commercial
+                                    buildings totaling more than $800,000 of
+                                    work/repairs annually. He has also served as
+                                    a sergeant in the US Army, where he trained
+                                    and mentored a team of 6 to conduct field
+                                    training on base and missions in
+                                    Afghanistan, and was accountable for over
+                                    $1m worth of government equipment stateside
+                                    and overseas with zero losses.
+                                  </p>
+                                  {/* <div class="progress-style1">
+                                    <div class="progress-text">
+                                      <div class="row">
+                                        <div class="col-6 fw-bold">
+                                          Wind Turbines
+                                        </div>
+                                        <div class="col-6 text-end">70%</div>
+                                      </div>
+                                    </div>
+                                    <div class="custom-progress progress rounded-3 mb-4">
+                                      <div
+                                        class="animated custom-bar progress-bar slideInLeft"
+                                        style={{ width: "70%" }}
+                                        aria-valuemax="100"
+                                        aria-valuemin="0"
+                                        aria-valuenow="10"
+                                        role="progressbar"
+                                      ></div>
+                                    </div>
+                                    <div class="progress-text">
+                                      <div class="row">
+                                        <div class="col-6 fw-bold">
+                                          Solar Panels
+                                        </div>
+                                        <div class="col-6 text-end">90%</div>
+                                      </div>
+                                    </div>
+                                    <div class="custom-progress progress rounded-3 mb-4">
+                                      <div
+                                        class="animated custom-bar progress-bar bg-secondary slideInLeft"
+                                        style={{ width: "90%" }}
+                                        aria-valuemax="100"
+                                        aria-valuemin="0"
+                                        aria-valuenow="70"
+                                        role="progressbar"
+                                      ></div>
+                                    </div>
+                                    <div class="progress-text">
+                                      <div class="row">
+                                        <div class="col-6 fw-bold">
+                                          Hybrid Energy
+                                        </div>
+                                        <div class="col-6 text-end">80%</div>
+                                      </div>
+                                    </div>
+                                    <div class="custom-progress progress rounded-3">
+                                      <div
+                                        class="animated custom-bar progress-bar bg-dark slideInLeft"
+                                        style={{ width: "80%" }}
+                                        aria-valuemax="100"
+                                        aria-valuemin="0"
+                                        aria-valuenow="70"
+                                        role="progressbar"
+                                      ></div>
+                                    </div>
+                                  </div> */}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 
                         <br />
                       </div>
@@ -163,44 +478,6 @@ class About extends Component {
             ) : (
               <ReactPlayer url="https://soundcloud.com/theheadandtheheart/lost-in-my-mind" />
             )}
-
-            <div className="col-1 center">
-              <div className="polaroid">
-                <span style={{ cursor: "auto" }}>
-                  <img
-                    style={{ margin: "0 auto" }}
-                    width="100px"
-                    src={profilepic}
-                    alt="Avatar"
-                    onClick={this.detailsModalShow}
-                  />
-                  <a href="https://www.python.org/" target="blank_">
-                    <Icon
-                      icon={pythonIcon}
-                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                    />
-                  </a>
-                  <a href="https://www.javascript.com/" target="blank_">
-                    <Icon
-                      icon={javascriptIcon}
-                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                    />
-                  </a>
-                  <a href="https://www.djangoproject.com/" target="blank_">
-                    <Icon
-                      icon={djangoIcon}
-                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                    />
-                  </a>
-                  <a href="https://reactjs.org/" target="blank_">
-                    <Icon
-                      icon={reactIcon}
-                      style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                    />
-                  </a>
-                </span>
-              </div>
-            </div>
           </div>
         </div>
         <AboutMeDetailsModal

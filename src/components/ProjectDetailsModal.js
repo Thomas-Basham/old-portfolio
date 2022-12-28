@@ -450,7 +450,6 @@ class ProjectDetailsModal extends Component {
         {...this.props}
         size="xl"
         aria-labelledby="contained-modal-title-vcenter"
-        centered
         className="modal-inside"
       >
         <div
@@ -458,12 +457,13 @@ class ProjectDetailsModal extends Component {
           style={{
             paddingBottom: "50px",
             textAlign: "left",
-            maxWidth: "95%",
+            maxWidth: "100%",
             margin: "0 auto",
           }}
         >
           <div className="slider-tab">
             <button
+              title="Close"
               onClick={this.props.onHide}
               style={{
                 padding: 0,
@@ -481,6 +481,7 @@ class ProjectDetailsModal extends Component {
             </button>
             &nbsp;
             <button
+              title="Minimize"
               onClick={this.props.fadeAbout}
               style={{
                 padding: 0,
@@ -498,6 +499,7 @@ class ProjectDetailsModal extends Component {
             &nbsp;
             <button
               onClick={this.props.showIframe}
+              title="Show iframe Demo"
               style={{
                 padding: 0,
                 border: "none",
@@ -518,6 +520,7 @@ class ProjectDetailsModal extends Component {
             <ImageGallery items={imageGalleryData()} />
           )}
         </div>
+
         <div className="col-md-12">
           <Collapse in={!this.props.fadeAboutState}>
             <div className="col-md-12">
