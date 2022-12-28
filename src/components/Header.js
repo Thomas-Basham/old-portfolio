@@ -25,7 +25,7 @@ class Header extends Component {
           </Nav.Item>
 
           <Nav.Item>
-            <Nav.Link href="about">About</Nav.Link>
+            <Nav.Link href="/about#about">About</Nav.Link>
           </Nav.Item>
           {/* <Nav.Item>
             <Nav.Link href="/#portfolio">Projects</Nav.Link>
@@ -72,7 +72,7 @@ class Header extends Component {
           >
             <CircleMenuItem
               tooltip="Home"
-              tooltipPlacement={TooltipPlacement.Right}
+              tooltipPlacement={TooltipPlacement.Bottom}
               className="menu-item"
               link="/"
             >
@@ -82,7 +82,7 @@ class Header extends Component {
             </CircleMenuItem>
             <CircleMenuItem
               tooltip="About"
-              tooltipPlacement={TooltipPlacement.Right}
+              tooltipPlacement={TooltipPlacement.Left}
               className="menu-item"
               link="/about#about"
             >
@@ -90,7 +90,7 @@ class Header extends Component {
             </CircleMenuItem>
             <CircleMenuItem
               tooltip="Skills"
-              tooltipPlacement={TooltipPlacement.Right}
+              tooltipPlacement={TooltipPlacement.Top}
               className="menu-item"
               link="/#skills"
             >
@@ -98,7 +98,7 @@ class Header extends Component {
             </CircleMenuItem>
             <CircleMenuItem
               tooltip="Experience"
-              tooltipPlacement={TooltipPlacement.Right}
+              tooltipPlacement={TooltipPlacement.Top}
               className="menu-item"
               link="/#resume"
             >

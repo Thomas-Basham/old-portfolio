@@ -25,7 +25,17 @@ html, body {
     background-color: var(--custom-bg-color);
     
 }
-
+#btn-back-to-top {
+  position: fixed; 
+  width: 100%;
+  left: 95vw;
+  bottom: 50px;
+  height: 20px;
+  font-size: 3rem;
+  z-index: 1;
+  cursor: pointer;
+  color: var(--custom-color-brand);
+}
 .aligner {
   display: flex;
   align-items: center;
@@ -45,8 +55,7 @@ html, body {
   color:rgb(198, 211, 231) !important;
   -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
   clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
- 
-  box-shadow: 20px 20px 20px 20px 20px !important;
+
 
 }
 .jBlSYD{

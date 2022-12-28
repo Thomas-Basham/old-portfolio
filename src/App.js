@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Home from "./components/Home";
-
+import ScrollButton from "./components/ScrollButton";
 class App extends Component {
   constructor(props) {
     super();
@@ -77,7 +77,11 @@ class App extends Component {
     });
   };
 
+  
+  
+
   render() {
+
     return (
       <Router>
         <Header sharedData={this.state.basicInfoAndSkills.basic_info} />
@@ -98,6 +102,8 @@ class App extends Component {
           </Route>
         </Switch>
 
+        <ScrollButton/>
+        
         <Footer
           sharedBasicInfo={this.state.basicInfoAndSkills.basic_info}
           applyPickedLanguage={this.applyPickedLanguage}
