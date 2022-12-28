@@ -1,7 +1,7 @@
 // https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/
 
 import React, { useState } from "react";
-import { FaAccessibleIcon, FaArrowCircleUp } from "react-icons/fa";
+import { FaArrowCircleUp } from "react-icons/fa";
 
 const ScrollButton = () => {
   const [visible, setVisible] = useState(false);
