@@ -2,11 +2,15 @@ import React, { Component } from "react";
 // import { LinkContainer } from "react-router-bootstrap";
 import GithubCorner from "react-github-corner";
 import { Nav } from "react-bootstrap";
-import {CircleMenu,CircleMenuItem,TooltipPlacement} from "react-circular-menu";
+import {
+  CircleMenu,
+  CircleMenuItem,
+  TooltipPlacement,
+} from "react-circular-menu";
 
 class Header extends Component {
   render() {
-    console.log(window.innerWidth)
+    console.log(window.innerWidth);
     return (
       <header id="home" style={{ display: "block" }}>
         <GithubCorner
@@ -18,7 +22,6 @@ class Header extends Component {
         <Nav
           activeKey="/home"
           fill
-          
           style={{ position: "absolute", top: 10, right: 50 }}
         >
           <Nav.Item>
@@ -28,16 +31,8 @@ class Header extends Component {
           <Nav.Item>
             <Nav.Link href="/about#about">About</Nav.Link>
           </Nav.Item>
-          {/* <Nav.Item>
-            <Nav.Link href="/#portfolio">Projects</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/#skills">Skills</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/#resume">Experience</Nav.Link>
-          </Nav.Item> */}
         </Nav>
+
         <div
           style={{
             display: "flex",
@@ -46,18 +41,11 @@ class Header extends Component {
             height: "100vh",
           }}
         >
-          {/* <img
-            className="header-image"
-            alt="logo"
-            src={logo}
-            width={"300px"}
-          ></img> */}
           <CircleMenu
             className="circle-menu"
             startAngle={-90}
             rotationAngle={360}
             itemSize={15}
-
             radius={window.innerWidth > 480 ? 20 : 10}
             menuActive={true}
             menuToggleClassName={"menu-toggle"}
