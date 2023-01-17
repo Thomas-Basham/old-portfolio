@@ -339,8 +339,7 @@ class About extends Component {
                                             4 years in the Army.
                                             <br></br>6 years working as a
                                             Carpenter.
-                                            <br></br>1 year studying Computer
-                                            Science.
+                                            <br></br>1 year developing web applications
                                           </p>
                                         </div>
                                       </div>
