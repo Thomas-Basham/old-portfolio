@@ -170,7 +170,7 @@ class About extends Component {
                                   </div>
                                   <ul class="list-unstyled mb-4">
                                     <li class="mb-3">
-                                      <a href = "mailto: bashamtg@gmail.com">
+                                      <a href="mailto: bashamtg@gmail.com">
                                         <i class="far fa-envelope display-25 me-3 text-secondary"></i>
                                         bashamtg@gmail.com
                                       </a>
@@ -190,21 +190,38 @@ class About extends Component {
                                   </ul>
                                   <ul class="social-icon-style2 ps-0">
                                     <li>
-                                      <a href="https://github.com/thomas-Basham" target={"_blank"} rel="noreferrer" class="rounded-3" title="Github">
+                                      <a
+                                        href="https://github.com/thomas-Basham"
+                                        target={"_blank"}
+                                        rel="noreferrer"
+                                        class="rounded-3"
+                                        title="Github"
+                                      >
                                         <i class="fab fa-github"></i>
                                       </a>
                                     </li>
                                     <li>
-                                      <a href="https://www.linkedin.com/in/thomas-basham" target={"_blank"} rel="noreferrer" class="rounded-3" title="LinkedIn">
+                                      <a
+                                        href="https://www.linkedin.com/in/thomas-basham"
+                                        target={"_blank"}
+                                        rel="noreferrer"
+                                        class="rounded-3"
+                                        title="LinkedIn"
+                                      >
                                         <i class="fab fa-linkedin-in"></i>
                                       </a>
                                     </li>
                                     <li>
-                                      <a href="https://leetcode.com/Thomas-Basham" target={"_blank"} rel="noreferrer" class="rounded-3" title="LeetCode">
+                                      <a
+                                        href="https://leetcode.com/Thomas-Basham"
+                                        target={"_blank"}
+                                        rel="noreferrer"
+                                        class="rounded-3"
+                                        title="LeetCode"
+                                      >
                                         <i class="fa-solid fa-code"></i>
                                       </a>
                                     </li>
-    
                                   </ul>
                                 </div>
                               </div>
@@ -242,7 +259,16 @@ class About extends Component {
                                     <h5 class="mb-0 text-primary">Hobbies:</h5>
                                     <ul>
                                       <li>Producing music</li>
-                                      <li>Woodworking</li>
+                                      <li>
+                                        Carpentry/Woodworking
+                                        <a
+                                          href="https://construction-portfolio.vercel.app"
+                                          target={"_blank"}
+                                          rel="noreferrer"
+                                        >
+                                          &nbsp;View Gallery
+                                        </a>
+                                      </li>
                                       <li>Growing plants</li>
                                       <li>Fishing</li>
                                       <li>Hiking</li>
@@ -339,7 +365,8 @@ class About extends Component {
                                             4 years in the Army.
                                             <br></br>6 years working as a
                                             Carpenter.
-                                            <br></br>1 year developing web applications
+                                            <br></br>1 year developing web
+                                            applications
                                           </p>
                                         </div>
                                       </div>
