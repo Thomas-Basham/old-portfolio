@@ -230,7 +230,7 @@ class About extends Component {
                               <div class="ps-lg-1-6 ps-xl-5">
                                 <div class="mb-5 wow fadeIn">
                                   <div class="text-start mb-1-6 wow fadeIn">
-                                    <h2 class="h1 mb-0 text-primary">
+                                    <h2 class=" mb-0 text-primary">
                                       #About Me
                                     </h2>
                                   </div>
@@ -260,7 +260,7 @@ class About extends Component {
                                     <ul>
                                       <li>Producing music</li>
                                       <li>
-                                        Carpentry/Woodworking
+                                        Carpentry/Woodworkinge
                                         <a
                                           href="https://construction-portfolio.vercel.app"
                                           target={"_blank"}
