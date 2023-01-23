@@ -545,7 +545,16 @@ footer a:focus {
   margin-top: 10px;
   font-size: 22px;
 }
-
+.main-badge{
+  background-color: var(--custom-panel-color) !important;
+}
+.main-badge:hover{
+  background-color: var(--custom-color) !important;
+}
+.experience-badge{
+  background-color: var(--custom-color-brand) !important;
+  color: var(--custom-color);  
+}
 .card {
   // background-image: linear-gradient(
   //   to right top,
