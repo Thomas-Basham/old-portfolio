@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import GitHubCalendar from 'react-github-calendar';
 class Footer extends Component {
   render() {
     if (this.props.sharedBasicInfo) {
@@ -49,6 +49,7 @@ class Footer extends Component {
                   data-inline="false"
                   id={window.$secondaryLanguageIconId}
                 ></span>
+                <GitHubCalendar username="thomas-basham" />
               </div>
             </div>
             <div className="col">
