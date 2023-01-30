@@ -17,35 +17,9 @@ class App extends Component {
     };
   }
 
-  applyPickedLanguage = (pickedLanguage, oppositeLangIconId) => {
-    this.swapCurrentlyActiveLanguage(oppositeLangIconId);
-    document.documentElement.lang = pickedLanguage;
-    var resumePath =
-      document.documentElement.lang === window.$primaryLanguage
-        ? `aboutMeAndProjects.json`
-        : `res_secondaryLanguage.json`;
-    this.loadResumeFromPath(resumePath);
-  };
-
-  swapCurrentlyActiveLanguage = (oppositeLangIconId) => {
-    var pickedLangIconId =
-      oppositeLangIconId === window.$primaryLanguageIconId
-        ? window.$secondaryLanguageIconId
-        : window.$primaryLanguageIconId;
-    document
-      .getElementById(oppositeLangIconId)
-      .removeAttribute("filter", "brightness(40%)");
-    document
-      .getElementById(pickedLangIconId)
-      .setAttribute("filter", "brightness(40%)");
-  };
-
   componentDidMount = () => {
+    this.loadResumeFromPath(`aboutMeAndProjects.json`);
     this.loadBasicInfoAndSkills();
-    this.applyPickedLanguage(
-      window.$primaryLanguage,
-      window.$secondaryLanguageIconId
-    );
   };
 
   loadResumeFromPath = (path) => {
@@ -77,11 +51,7 @@ class App extends Component {
     });
   };
 
-  
-  
-
   render() {
-
     return (
       <Router>
         <Header sharedData={this.state.basicInfoAndSkills.basic_info} />
@@ -102,12 +72,9 @@ class App extends Component {
           </Route>
         </Switch>
 
-        <ScrollButton/>
-        
-        <Footer
-          sharedBasicInfo={this.state.basicInfoAndSkills.basic_info}
-          applyPickedLanguage={this.applyPickedLanguage}
-        />
+        <ScrollButton />
+
+        <Footer sharedBasicInfo={this.state.basicInfoAndSkills.basic_info} />
       </Router>
     );
   }

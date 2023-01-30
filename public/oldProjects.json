@@ -4,7 +4,7 @@
     "title": "Digital Bookshelf",
     "startDate": "June 2022",
     "description": "A full stack React/Node web app that allows users to manage their own digital bookshelf, and add books from the Google Books™ API \n\n Made with MongoDb, Express, React, and Node. User Authentication with Auth0",
-    "descriptionHTML": "<div class=\"made-with\"><p><strong>Team: </strong> </p><a href=\"https://github.com/colegibbs\" target=\"_blank\" rel=\"noreferrer\">Cole Gibbs</a></div>",
+    "descriptionHTML": "<div className=\"made-with\"><p><strong>Team: </strong> </p><a href=\"https://github.com/colegibbs\" target=\"_blank\" rel=\"noreferrer\">Cole Gibbs</a></div>",
     "images": [
       "images/portfolio/digitalBookshelf/digitalBookshelf5.png",
       "images/portfolio/digitalBookshelf/digitalBookshelf4.png",
@@ -16,31 +16,31 @@
     "githubUrl": "https://github.com/Thomas-Basham/digital-bookshelf#readme",
     "technologies": [
       {
-        "class": "devicon-javascript-plain",
+        "className": "devicon-javascript-plain",
         "name": "Javascript"
       },
       {
-        "class": "devicon-react-plain",
+        "className": "devicon-react-plain",
         "name": "React"
       },
       {
-        "class": "devicon-mongodb-plain",
+        "className": "devicon-mongodb-plain",
         "name": "MongoDB"
       },
       {
-        "class": "devicon-express-original",
+        "className": "devicon-express-original",
         "name": "ExpressJS"
       },
       {
-        "class": "devicon-nodejs-plain",
+        "className": "devicon-nodejs-plain",
         "name": "NodeJS"
       },
       {
-        "class": "devicon-bootstrap-plain",
+        "className": "devicon-bootstrap-plain",
         "name": "Bootstrap"
       },
       {
-        "class": "devicon-css3-plain",
+        "className": "devicon-css3-plain",
         "name": "CSS3"
       }
     ]
@@ -58,31 +58,31 @@
     "githubUrl": "https://github.com/Thomas-Basham/city-explorer#readme",
     "technologies": [
       {
-        "class": "devicon-javascript-plain",
+        "className": "devicon-javascript-plain",
         "name": "Javascript"
       },
       {
-        "class": "devicon-react-plain",
+        "className": "devicon-react-plain",
         "name": "React"
       },
       {
-        "class": "devicon-mongodb-plain",
+        "className": "devicon-mongodb-plain",
         "name": "MongoDB"
       },
       {
-        "class": "devicon-express-original",
+        "className": "devicon-express-original",
         "name": "ExpressJS"
       },
       {
-        "class": "devicon-nodejs-plain",
+        "className": "devicon-nodejs-plain",
         "name": "NodeJS"
       },
       {
-        "class": "devicon-bootstrap-plain",
+        "className": "devicon-bootstrap-plain",
         "name": "Bootstrap"
       },
       {
-        "class": "devicon-css3-plain",
+        "className": "devicon-css3-plain",
         "name": "CSS3"
       }
     ]

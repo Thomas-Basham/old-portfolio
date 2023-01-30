@@ -152,7 +152,9 @@ class ProjectDetailsModal extends Component {
         );
       } else if (this.props.currentProjectMongo) {
         return (
-          <p className="text-left">❤️ {this.props.currentProjectMongo.likes}</p>
+          <p classNameNameName="text-left">
+            ❤️ {this.props.currentProjectMongo.likes}
+          </p>
         );
       }
     };
@@ -426,7 +428,7 @@ class ProjectDetailsModal extends Component {
             <li className="list-inline-item mx-3" key={i}>
               <span>
                 <div className="text-center">
-                  <i className={icons.class} style={{ fontSize: "300%" }}>
+                  <i className={icons.className} style={{ fontSize: "300%" }}>
                     <p className="text-center" style={{ fontSize: "30%" }}>
                       {icons.name}
                     </p>

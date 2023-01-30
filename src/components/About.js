@@ -148,11 +148,11 @@ class About extends Component {
                         id="example-fade-text"
                       >
                         <br></br>
-                        <div class="container">
+                        <div className="container">
                           {/* https://www.bootdey.com/snippets/view/bs5-team-member-details */}
-                          <div class="row justify-content-center">
-                            <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
-                              <div class="card border-0 shadow">
+                          <div className="row justify-content-center">
+                            <div className="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
+                              <div className="card border-0 shadow">
                                 <img
                                   style={{ margin: "0 auto" }}
                                   width="75%"
@@ -161,43 +161,43 @@ class About extends Component {
                                   onClick={this.detailsModalShow}
                                 />
 
-                                <div class="card-body p-1-9 p-xl-5">
-                                  <div class="mb-4">
-                                    <h3 class="h4 mb-0">Thomas Basham</h3>
-                                    <span class="text-primary">
+                                <div className="card-body p-1-9 p-xl-5">
+                                  <div className="mb-4">
+                                    <h3 className="h4 mb-0">Thomas Basham</h3>
+                                    <span className="text-primary">
                                       Software Developer
                                     </span>
                                   </div>
-                                  <ul class="list-unstyled mb-4">
-                                    <li class="mb-3">
+                                  <ul className="list-unstyled mb-4">
+                                    <li className="mb-3">
                                       <a href="mailto: bashamtg@gmail.com">
-                                        <i class="far fa-envelope display-25 me-3 text-secondary"></i>
+                                        <i className="far fa-envelope display-25 me-3 text-secondary"></i>
                                         bashamtg@gmail.com
                                       </a>
                                     </li>
-                                    <li class="mb-3">
+                                    <li className="mb-3">
                                       <a href="tel:+02532582526">
-                                        <i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>
+                                        <i className="fas fa-mobile-alt display-25 me-3 text-secondary"></i>
                                         +253-258-2526
                                       </a>
                                     </li>
                                     <li>
                                       <a href="https://www.google.com/maps/place/Renton,+WA/@47.4814262,-122.2573102,12z/data=!3m1!4b1!4m5!3m4!1s0x549008cc03bb6f23:0xcd42b24716babb9f!8m2!3d47.4796927!4d-122.2079218">
-                                        <i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>
+                                        <i className="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>
                                         Renton, WA, USA
                                       </a>
                                     </li>
                                   </ul>
-                                  <ul class="social-icon-style2 ps-0">
+                                  <ul className="social-icon-style2 ps-0">
                                     <li>
                                       <a
                                         href="https://github.com/thomas-Basham"
                                         target={"_blank"}
                                         rel="noreferrer"
-                                        class="rounded-3"
+                                        className="rounded-3"
                                         title="Github"
                                       >
-                                        <i class="fab fa-github"></i>
+                                        <i className="fab fa-github"></i>
                                       </a>
                                     </li>
                                     <li>
@@ -205,10 +205,10 @@ class About extends Component {
                                         href="https://www.linkedin.com/in/thomas-basham"
                                         target={"_blank"}
                                         rel="noreferrer"
-                                        class="rounded-3"
+                                        className="rounded-3"
                                         title="LinkedIn"
                                       >
-                                        <i class="fab fa-linkedin-in"></i>
+                                        <i className="fab fa-linkedin-in"></i>
                                       </a>
                                     </li>
                                     <li>
@@ -216,21 +216,21 @@ class About extends Component {
                                         href="https://leetcode.com/Thomas-Basham"
                                         target={"_blank"}
                                         rel="noreferrer"
-                                        class="rounded-3"
+                                        className="rounded-3"
                                         title="LeetCode"
                                       >
-                                        <i class="fa-solid fa-code"></i>
+                                        <i className="fa-solid fa-code"></i>
                                       </a>
                                     </li>
                                   </ul>
                                 </div>
                               </div>
                             </div>
-                            <div class="col-lg-8">
-                              <div class="ps-lg-1-6 ps-xl-5">
-                                <div class="mb-5 wow fadeIn">
-                                  <div class="text-start mb-1-6 wow fadeIn">
-                                    <h2 class=" mb-0 text-primary">
+                            <div className="col-lg-8">
+                              <div className="ps-lg-1-6 ps-xl-5">
+                                <div className="mb-5 wow fadeIn">
+                                  <div className="text-start mb-1-6 wow fadeIn">
+                                    <h2 className=" mb-0 text-primary">
                                       #About Me
                                     </h2>
                                   </div>
@@ -256,7 +256,9 @@ class About extends Component {
                                     carpenter.
                                     <br></br>
                                     <br></br>
-                                    <h5 class="mb-0 text-primary">Hobbies:</h5>
+                                    <h5 className="mb-0 text-primary">
+                                      Hobbies:
+                                    </h5>
                                     <ul>
                                       <li>Producing music</li>
                                       <li>
@@ -276,19 +278,19 @@ class About extends Component {
                                     </ul>
                                   </p>
                                 </div>
-                                <div class="mb-5 wow fadeIn">
-                                  <div class="text-start mb-1-6 wow fadeIn">
-                                    {/* <h2 class="mb-0 text-primary">
+                                <div className="mb-5 wow fadeIn">
+                                  <div className="text-start mb-1-6 wow fadeIn">
+                                    {/* <h2 className="mb-0 text-primary">
                                       #Summary
                                     </h2> */}
                                   </div>
-                                  <div class="row mt-n4">
-                                    <div class="col-sm-6 col-xl-4 mt-4">
-                                      <div class="card text-center border-0 rounded-3">
-                                        <div class="card-body">
-                                          <i class="ti-bookmark-alt icon-box medium rounded-3 mb-4"></i>
-                                          <h3 class="h5 mb-3">Education</h3>
-                                          <p class="mb-0">
+                                  <div className="row mt-n4">
+                                    <div className="col-sm-6 col-xl-4 mt-4">
+                                      <div className="card text-center border-0 rounded-3">
+                                        <div className="card-body">
+                                          <i className="ti-bookmark-alt icon-box medium rounded-3 mb-4"></i>
+                                          <h3 className="h5 mb-3">Education</h3>
+                                          <p className="mb-0">
                                             Certificate in Software Development
                                             in Python and Javascript from Code
                                             Fellows
@@ -298,12 +300,12 @@ class About extends Component {
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="col-sm-6 col-xl-4 mt-4">
-                                      <div class="card text-center border-0 rounded-3">
-                                        <div class="card-body">
-                                          <i class="ti-pencil-alt icon-box medium rounded-3 mb-4"></i>
-                                          <h3 class="h5 mb-3">Tools</h3>
-                                          <p class="mb-0">
+                                    <div className="col-sm-6 col-xl-4 mt-4">
+                                      <div className="card text-center border-0 rounded-3">
+                                        <div className="card-body">
+                                          <i className="ti-pencil-alt icon-box medium rounded-3 mb-4"></i>
+                                          <h3 className="h5 mb-3">Tools</h3>
+                                          <p className="mb-0">
                                             <a
                                               href="https://www.python.org/"
                                               target="blank_"
@@ -356,12 +358,14 @@ class About extends Component {
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="col-sm-6 col-xl-4 mt-4">
-                                      <div class="card text-center border-0 rounded-3">
-                                        <div class="card-body">
-                                          <i class="ti-medall-alt icon-box medium rounded-3 mb-4"></i>
-                                          <h3 class="h5 mb-3">Experience</h3>
-                                          <p class="mb-0">
+                                    <div className="col-sm-6 col-xl-4 mt-4">
+                                      <div className="card text-center border-0 rounded-3">
+                                        <div className="card-body">
+                                          <i className="ti-medall-alt icon-box medium rounded-3 mb-4"></i>
+                                          <h3 className="h5 mb-3">
+                                            Experience
+                                          </h3>
+                                          <p className="mb-0">
                                             4 years in the Army.
                                             <br></br>6 years working as a
                                             Carpenter.
@@ -373,9 +377,9 @@ class About extends Component {
                                     </div>
                                   </div>
                                 </div>
-                                <div class="wow fadeIn">
-                                  <div class="text-start mb-1-6 wow fadeIn">
-                                    <h2 class="mb-0 text-primary">
+                                <div className="wow fadeIn">
+                                  <div className="text-start mb-1-6 wow fadeIn">
+                                    <h2 className="mb-0 text-primary">
                                       #Skills &amp; Experience
                                     </h2>
                                   </div>
@@ -390,7 +394,7 @@ class About extends Component {
                                     </a>
                                     :
                                   </p>
-                                  <p class="mb-4">
+                                  <p className="mb-4">
                                     Thomas Basham is a full-stack software
                                     developer with a strong background in Python
                                     and JavaScript development. He has
@@ -433,18 +437,18 @@ class About extends Component {
                                     $1m worth of government equipment stateside
                                     and overseas with zero losses.
                                   </p>
-                                  {/* <div class="progress-style1">
-                                    <div class="progress-text">
-                                      <div class="row">
-                                        <div class="col-6 fw-bold">
+                                  {/* <div className="progress-style1">
+                                    <div className="progress-text">
+                                      <div className="row">
+                                        <div className="col-6 fw-bold">
                                           Wind Turbines
                                         </div>
-                                        <div class="col-6 text-end">70%</div>
+                                        <div className="col-6 text-end">70%</div>
                                       </div>
                                     </div>
-                                    <div class="custom-progress progress rounded-3 mb-4">
+                                    <div className="custom-progress progress rounded-3 mb-4">
                                       <div
-                                        class="animated custom-bar progress-bar slideInLeft"
+                                        className="animated custom-bar progress-bar slideInLeft"
                                         style={{ width: "70%" }}
                                         aria-valuemax="100"
                                         aria-valuemin="0"
@@ -452,17 +456,17 @@ class About extends Component {
                                         role="progressbar"
                                       ></div>
                                     </div>
-                                    <div class="progress-text">
-                                      <div class="row">
-                                        <div class="col-6 fw-bold">
+                                    <div className="progress-text">
+                                      <div className="row">
+                                        <div className="col-6 fw-bold">
                                           Solar Panels
                                         </div>
-                                        <div class="col-6 text-end">90%</div>
+                                        <div className="col-6 text-end">90%</div>
                                       </div>
                                     </div>
-                                    <div class="custom-progress progress rounded-3 mb-4">
+                                    <div className="custom-progress progress rounded-3 mb-4">
                                       <div
-                                        class="animated custom-bar progress-bar bg-secondary slideInLeft"
+                                        className="animated custom-bar progress-bar bg-secondary slideInLeft"
                                         style={{ width: "90%" }}
                                         aria-valuemax="100"
                                         aria-valuemin="0"
@@ -470,17 +474,17 @@ class About extends Component {
                                         role="progressbar"
                                       ></div>
                                     </div>
-                                    <div class="progress-text">
-                                      <div class="row">
-                                        <div class="col-6 fw-bold">
+                                    <div className="progress-text">
+                                      <div className="row">
+                                        <div className="col-6 fw-bold">
                                           Hybrid Energy
                                         </div>
-                                        <div class="col-6 text-end">80%</div>
+                                        <div className="col-6 text-end">80%</div>
                                       </div>
                                     </div>
-                                    <div class="custom-progress progress rounded-3">
+                                    <div className="custom-progress progress rounded-3">
                                       <div
-                                        class="animated custom-bar progress-bar bg-dark slideInLeft"
+                                        className="animated custom-bar progress-bar bg-dark slideInLeft"
                                         style={{ width: "80%" }}
                                         aria-valuemax="100"
                                         aria-valuemin="0"

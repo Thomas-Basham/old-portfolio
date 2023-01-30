@@ -6,17 +6,17 @@
       {
         "name": "Github",
         "url": "https://github.com/thomas-Basham",
-        "class": "fab fa-github"
+        "className": "fab fa-github"
       },
       {
         "name": "Linkedin",
         "url": "https://www.linkedin.com/in/thomas-basham",
-        "class": "fab fa-linkedin"
+        "className": "fab fa-linkedin"
       },
       {
         "name": "Leetcode",
         "url": "https://leetcode.com/Thomas-Basham",
-        "class": "fa-solid fa-code"
+        "className": "fa-solid fa-code"
       }
     ],
     "image": "HeadShot100x100.jpg"
@@ -25,88 +25,88 @@
     "icons": [
       {
         "name": "Python",
-        "class": "devicon-python-plain",
+        "className": "devicon-python-plain",
         "level": "95"
       },
       {
         "name": "Django",
-        "class": "devicon-django-plain",
+        "className": "devicon-django-plain",
         "level": "95"
       },
       {
         "name": "Flask",
-        "class": "devicon-flask-original",
+        "className": "devicon-flask-original",
         "level": "95"
       },
       {
         "name": "PostgreSQL",
-        "class": "devicon-postgresql-plain",
+        "className": "devicon-postgresql-plain",
         "level": "95"
       },
       {
         "name": "React",
-        "class": "devicon-react-plain",
+        "className": "devicon-react-plain",
         "level": "95"
       },
       {
         "name": "MongoDB",
-        "class": "devicon-mongodb-plain",
+        "className": "devicon-mongodb-plain",
         "level": "95"
       },
       {
         "name": "Express",
-        "class": "devicon-express-original",
+        "className": "devicon-express-original",
         "level": "95"
       },
       {
         "name": "NodeJS",
-        "class": "devicon-nodejs-plain",
+        "className": "devicon-nodejs-plain",
         "level": "95"
       },
       {
         "name": "JavaScript",
-        "class": "devicon-javascript-plain",
+        "className": "devicon-javascript-plain",
         "level": "70"
       },
       {
         "name": "HTML 5",
-        "class": "devicon-html5-plain",
+        "className": "devicon-html5-plain",
         "level": "95"
       },
       {
         "name": "CSS 3",
-        "class": "devicon-css3-plain",
+        "className": "devicon-css3-plain",
         "level": "95"
       },
 
       {
         "name": "Bootstrap",
-        "class": "devicon-bootstrap-plain",
+        "className": "devicon-bootstrap-plain",
         "level": "75"
       },
       {
         "name": "Docker",
-        "class": "devicon-docker-plain",
+        "className": "devicon-docker-plain",
         "level": "75"
       },
       {
         "name": "AWS",
-        "class": "devicon-amazonwebservices-plain",
+        "className": "devicon-amazonwebservices-plain",
         "level": "75"
       },
       {
         "name": "Heroku",
-        "class": "devicon-heroku-plain",
+        "className": "devicon-heroku-plain",
         "level": "95"
       },
       {
         "name": "Pycharm",
-        "class": "devicon-pycharm-plain",
+        "className": "devicon-pycharm-plain",
         "level": "95"
       },
       {
         "name": "VS Code",
-        "class": "devicon-visualstudio-plain",
+        "className": "devicon-visualstudio-plain",
         "level": "95"
       }
     ]

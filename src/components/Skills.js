@@ -19,7 +19,7 @@ class Skills extends Component {
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <div className="text-center skills-tile">
-                  <i className={skills.class} style={{ fontSize: "220%" }}>
+                  <i className={skills.className} style={{ fontSize: "220%" }}>
                     <p
                       className="text-center"
                       style={{ fontSize: "30%", marginTop: "4px" }}

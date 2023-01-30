@@ -29,27 +29,27 @@
       "githubUrl": "https://github.com/Thomas-Basham/construction-website#readme",
       "technologies": [
         {
-          "class": "devicon-nextjs-plain",
+          "className": "devicon-nextjs-plain",
           "name": "NextJS"
         },
         {
-          "class": "devicon-react-plain",
+          "className": "devicon-react-plain",
           "name": "ReactJS"
         },
         {
-          "class": "devicon-visualstudio-plain",
+          "className": "devicon-visualstudio-plain",
           "name": "Visual Studio"
         },
         {
-          "class": "devicon-bootstrap-plain",
+          "className": "devicon-bootstrap-plain",
           "name": "Bootstrap"
         },
         {
-          "class": "devicon-html5-plain",
+          "className": "devicon-html5-plain",
           "name": "HTML5"
         },
         {
-          "class": "devicon-css3-plain",
+          "className": "devicon-css3-plain",
           "name": "CSS3"
         }
       ]
@@ -70,28 +70,28 @@
       "githubUrl": "https://github.com/Thomas-Basham/collab-done#readme",
       "technologies": [
         {
-          "class": "devicon-nextjs-plain",
+          "className": "devicon-nextjs-plain",
           "name": "NextJS"
         },
         {
-          "class": "devicon-react-plain",
+          "className": "devicon-react-plain",
           "name": "ReactJS"
         },
         {
-          "class": "devicon-postgresql-plain",
+          "className": "devicon-postgresql-plain",
           "name": "PostgeSQL"
         },
         {
-          "class": "devicon-visualstudio-plain",
+          "className": "devicon-visualstudio-plain",
           "name": "Visual Studio"
         },
 
         {
-          "class": "devicon-html5-plain",
+          "className": "devicon-html5-plain",
           "name": "HTML5"
         },
         {
-          "class": "devicon-css3-plain",
+          "className": "devicon-css3-plain",
           "name": "CSS3"
         }
       ]
@@ -112,28 +112,28 @@
       "githubUrl": "https://github.com/Thomas-Basham/hiking-trails-api#readme",
       "technologies": [
         {
-          "class": "devicon-python-plain",
+          "className": "devicon-python-plain",
           "name": "Python"
         },
         {
-          "class": "devicon-django-plain",
+          "className": "devicon-django-plain",
           "name": "Django"
         },
         {
-          "class": "devicon-postgresql-plain",
+          "className": "devicon-postgresql-plain",
           "name": "PostgreSQL"
         },
         {
-          "class": "devicon-pandas-original",
+          "className": "devicon-pandas-original",
           "name": "Pandas"
         },
 
         {
-          "class": "devicon-html5-plain",
+          "className": "devicon-html5-plain",
           "name": "HTML5"
         },
         {
-          "class": "devicon-css3-plain",
+          "className": "devicon-css3-plain",
           "name": "CSS3"
         }
       ]
@@ -154,23 +154,23 @@
       "githubUrl": "https://github.com/Thomas-Basham/wa-stocked-trout-finder#readme",
       "technologies": [
         {
-          "class": "devicon-python-plain",
+          "className": "devicon-python-plain",
           "name": "Python"
         },
         {
-          "class": "devicon-flask-original",
+          "className": "devicon-flask-original",
           "name": "Flask"
         },
         {
-          "class": "devicon-pandas-original",
+          "className": "devicon-pandas-original",
           "name": "Pandas"
         },
         {
-          "class": "devicon-html5-plain",
+          "className": "devicon-html5-plain",
           "name": "HTML5"
         },
         {
-          "class": "devicon-css3-plain",
+          "className": "devicon-css3-plain",
           "name": "CSS3"
         }
       ]
@@ -193,27 +193,27 @@
       "githubUrl": "https://github.com/Thomas-Basham/Music-API#readme",
       "technologies": [
         {
-          "class": "devicon-python-plain",
+          "className": "devicon-python-plain",
           "name": "Python"
         },
         {
-          "class": "devicon-django-plain",
+          "className": "devicon-django-plain",
           "name": "Django"
         },
         {
-          "class": "devicon-postgresql-plain",
+          "className": "devicon-postgresql-plain",
           "name": "PostgreSQL"
         },
         {
-          "class": "devicon-amazonwebservices-plain",
+          "className": "devicon-amazonwebservices-plain",
           "name": "AWS S3 Bucket"
         },
         {
-          "class": "devicon-html5-plain",
+          "className": "devicon-html5-plain",
           "name": "HTML5"
         },
         {
-          "class": "devicon-css3-plain",
+          "className": "devicon-css3-plain",
           "name": "CSS3"
         }
       ]
@@ -222,7 +222,7 @@
       "title": "Culinary Blog",
       "startDate": "July 2022",
       "description": "A Full Stack Django/React Blog website \n\n Features include user registration, user login, and blog posting capabilities with user image uploads.",
-      "descriptionHTML": "<div class=\"made-with\"><p><strong>Team: </strong> </p><a href=\"https://github.com/eden-brekke\" target=\"_blank\" rel=\"noreferrer\">Eden Breke, </a><a href=\"https://github.com/dlindqu3\" target=\"_blank\" rel=\"noreferrer\">Dwight Lindquist, </a><a href=\"https://github.com/EllaSvete\" target=\"_blank\" rel=\"noreferrer\">Ella Svete, and </a><a href=\"https://github.com/MISalz\" target=\"_blank\" rel=\"noreferrer\">Michelle Salazar</a></div>",
+      "descriptionHTML": "<div className=\"made-with\"><p><strong>Team: </strong> </p><a href=\"https://github.com/eden-brekke\" target=\"_blank\" rel=\"noreferrer\">Eden Breke, </a><a href=\"https://github.com/dlindqu3\" target=\"_blank\" rel=\"noreferrer\">Dwight Lindquist, </a><a href=\"https://github.com/EllaSvete\" target=\"_blank\" rel=\"noreferrer\">Ella Svete, and </a><a href=\"https://github.com/MISalz\" target=\"_blank\" rel=\"noreferrer\">Michelle Salazar</a></div>",
       "images": [
         "images/portfolio/culinaryBlog/culinaryBlog1.png",
         "images/portfolio/culinaryBlog/culinaryBlog2.png",
@@ -234,23 +234,23 @@
       "githubUrl": "https://github.com/The-Spice-Devs/Smells-Like-Devs-Cooking-Frontend#readme",
       "technologies": [
         {
-          "class": "devicon-python-plain",
+          "className": "devicon-python-plain",
           "name": "Python"
         },
         {
-          "class": "devicon-django-plain",
+          "className": "devicon-django-plain",
           "name": "Django"
         },
         {
-          "class": "devicon-nextjs-plain",
+          "className": "devicon-nextjs-plain",
           "name": "NextJS"
         },
         {
-          "class": "devicon-html5-plain",
+          "className": "devicon-html5-plain",
           "name": "HTML5"
         },
         {
-          "class": "devicon-css3-plain",
+          "className": "devicon-css3-plain",
           "name": "CSS3"
         }
       ]
