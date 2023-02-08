@@ -262,7 +262,7 @@ class About extends Component {
                                     <ul>
                                       <li>Producing music</li>
                                       <li>
-                                        Carpentry/Woodworkinge
+                                        Carpentry/Woodworking
                                         <a
                                           href="https://construction-portfolio.vercel.app"
                                           target={"_blank"}
