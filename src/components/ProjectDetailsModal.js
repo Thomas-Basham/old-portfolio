@@ -306,7 +306,7 @@ class ProjectDetailsModal extends Component {
       ) {
         return (
           <form className="mt-2 w-50" onSubmit={this.handleReplyComment}>
-            <input required id="comment" type="text" className="w-100"></input>
+            <textarea required id="comment" type="text" className="w-100"></textarea>
             <Button className="w-100" variant="outline-primary" type="submit">
               Comment
             </Button>
