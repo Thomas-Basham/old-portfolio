@@ -19,7 +19,7 @@ class Footer extends Component {
         <div className="container">
           <div className="row">
             <div className="col social-links">{networks}</div>
-            <div className="col">
+            <div className="col mt-4">
               <GitHubCalendar
                 username="thomas-basham"
                 labels={{
